@@ -21,6 +21,7 @@ namespace View
           //     var con =  AutoFact.InJect();
 
           //    StudentService =con.Resolve<StudentService>();
+         
              
            // StudentService.Addstudent(new Student() { Name = " Abanob ", Age = 22 });
 
