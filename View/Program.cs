@@ -12,6 +12,8 @@ namespace View
 {
     internal class Program
     {
+
+        //hellllllloo
         static IStudentService StudentService;
         //IStudentRepository _studentRepository = new IStudentRepository()
       //  StudentService StudentService = ;
