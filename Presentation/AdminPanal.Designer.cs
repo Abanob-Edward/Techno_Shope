@@ -30,13 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Form1
+            // AdminPanal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(999, 450);
-            Name = "Form1";
+            ClientSize = new Size(874, 382);
+            Name = "AdminPanal";
             Text = "Form1";
+           
             ResumeLayout(false);
         }
 
