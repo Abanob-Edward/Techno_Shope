@@ -11,7 +11,7 @@ namespace Presentation
         ///  The main entry point for the application.
         /// </summary>
     
-        static IStudentService StudentService;
+        static IStudentService? StudentService;
         [STAThread]
         static void Main()
         {
@@ -24,7 +24,8 @@ namespace Presentation
             var StdbYID = StudentService.GetStudentbyID(1);*/
 
 
-            Application.Run(new AdminPanal());
+            //Application.Run(new AdminPanal());
+            Application.Run(new LoginAndRegister());
         }
     }
 }
