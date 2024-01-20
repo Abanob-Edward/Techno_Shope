@@ -1,7 +1,11 @@
+using Model.Models;
+
 namespace Presentation
 {
     public partial class AdminPanal : Form
     {
+        Category Category;
+        Product product;
         public AdminPanal()
         {
             InitializeComponent();
@@ -64,6 +68,7 @@ namespace Presentation
                 {
                     SideBarExpand = true;
                     SideBarTransition.Stop();
+
                 }
             }
 
@@ -73,5 +78,53 @@ namespace Presentation
         {
             SideBarTransition.Start();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Category == null)
+            {
+                Category = new Category();
+                Category.FormClosed += Category_FormClosed;
+                Category.MdiParent = this;
+                Category.Dock = DockStyle.Fill;
+                Category.Show();
+            }
+            else
+            {
+                Category.Activate();
+            }
+        }
+
+        private void Category_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            Category = null;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (product == null)
+            {
+                product = new Product();
+                product.FormClosed += product_FormClosed;
+                product.MdiParent = this;
+                product.Dock = DockStyle.Fill;
+                product.Show();
+            }
+            else
+            {
+                product.Activate();
+            }
+        }
+
+        private void product_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            product = null;
+        }
     }
 }
+

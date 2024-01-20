@@ -137,6 +137,7 @@
             button3.Text = "        Home";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // panel6
             // 
@@ -163,6 +164,7 @@
             button5.Text = "        Orders";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // CategoryMenu
             // 
@@ -279,6 +281,7 @@
             button1.Text = "        Product";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // panel3
             // 
@@ -322,6 +325,7 @@
             ClientSize = new Size(1443, 725);
             Controls.Add(sideBar);
             Controls.Add(panel1);
+            IsMdiContainer = true;
             Name = "AdminPanal";
             Text = "Admin";
             Load += AdminPanal_Load;

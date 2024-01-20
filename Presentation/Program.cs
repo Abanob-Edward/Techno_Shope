@@ -24,7 +24,7 @@ namespace Presentation
             var StdbYID = StudentService.GetStudentbyID(1);*/
 
 
-            Application.Run(new Category());
+            Application.Run(new AdminPanal());
         }
     }
 }

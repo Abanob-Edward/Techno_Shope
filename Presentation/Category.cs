@@ -92,8 +92,10 @@ namespace Presentation
 
         private void Category_Load(object sender, EventArgs e)
         {
-
+            
             loadtabel();
+
+            this.ControlBox = false;
         }
     }
 }
