@@ -42,18 +42,31 @@ namespace Infrastructure.Repositores
                
         }
 
-        public T update(T entity) {
+        public T update(T entity)
+        {
             var result = context.Update(entity).Entity;
             context.SaveChanges();
             return result;
         }
-        public void delete(TID id) {
-            // test it again
 
-            var result = context.Remove(id).Entity;
-            context.SaveChanges();
-           
+        public void delete(TID id)
+        {
+            var entityToDelete = context.Find<T>(id);
+
+            if (entityToDelete != null)
+            {
+                context.Remove(entityToDelete);
+                context.SaveChanges();
+            }
         }
+
+        //public void delete(TID id) {
+        //    // test it again
+
+        //    var result = context.Remove(id).Entity;
+        //    context.SaveChanges();
+           
+        //}
 
 
      
