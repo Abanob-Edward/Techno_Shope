@@ -17,6 +17,6 @@ namespace Model.Models
         public string Type { get; set; }
 
         public ICollection<Product> Products { get; set; }
-
+        
     }
 }

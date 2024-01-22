@@ -12,6 +12,7 @@ namespace Appliaction.Services
         void AddCategory(Category category);
         Category? GetCategorybyID(int id);
         IQueryable<Category> GetCategory();
+        IQueryable<Category> GetByName(string? Name);
         public Category UpdateCategory(Category category);
         public void DeleteCategory(int id);
     }

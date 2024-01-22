@@ -1,5 +1,6 @@
 ﻿using Appliaction.Contract;
 using Context;
+using Microsoft.EntityFrameworkCore;
 using Model.Models;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,15 @@ namespace Infrastructure.Repositores
 {
     public class CatgoryRepositry : Repository<Category, int>, ICategoryRepository
     {
+        private readonly _Context context;
         public CatgoryRepositry(_Context _context) : base(_context)
         {
+            this.context = _context;
         }
 
         public IQueryable<Category> SearchByName(string Name)
         {
-            throw new NotImplementedException();
+            return context.Categories.Where(x => x.Name.Contains(Name));
         }
     }
 }

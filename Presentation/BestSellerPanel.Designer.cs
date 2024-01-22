@@ -1,6 +1,6 @@
 ﻿namespace Presentation
 {
-    partial class Product
+    partial class BestSellerPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -34,23 +34,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(218, 243);
+            label1.Font = new Font("Segoe MDL2 Assets", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(168, 165);
             label1.Name = "label1";
-            label1.Size = new Size(215, 29);
-            label1.TabIndex = 0;
-            label1.Text = "product panal ";
+            label1.Size = new Size(409, 37);
+            label1.TabIndex = 1;
+            label1.Text = "Show the Best Seller Product";
             // 
-            // Product
+            // BestSellerPanal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Product";
-            Text = "Product";
-            Load += Product_Load;
+            Name = "BestSellerPanal";
+            Text = "BestSellerPanal";
             ResumeLayout(false);
             PerformLayout();
         }
