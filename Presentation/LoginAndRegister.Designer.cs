@@ -33,24 +33,33 @@ namespace Presentation
             button_GoToLogin = new Button();
             button_GoTo_Register = new Button();
             panel_login = new Panel();
-            button1 = new Button();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            label_log_suc = new Label();
+            label_error_mas_log = new Label();
+            button_Login = new Button();
+            textBox_Pss_login = new TextBox();
+            label_Pass_login = new Label();
+            textBox_UName_Login = new TextBox();
+            label_UName_login = new Label();
             pictureBox1_close = new PictureBox();
             panel_register = new Panel();
-            textBox_8 = new TextBox();
-            label8 = new Label();
-            textBox9 = new TextBox();
-            label9 = new Label();
-            textBox10 = new TextBox();
-            label10 = new Label();
-            button3 = new Button();
-            textBox11 = new TextBox();
+            label_User_regis = new Label();
+            label_ErrorMas = new Label();
+            textBox_eimal = new TextBox();
+            label_Eimal = new Label();
+            label_PNmber = new Label();
+            textBox_Phone_Number = new TextBox();
+            label_UName = new Label();
+            textBox_FName = new TextBox();
+            label_FName = new Label();
+            textBox_Confirm_Pass = new TextBox();
+            label_Confirm_Pass = new Label();
+            textBox_Pass = new TextBox();
+            label_Pass = new Label();
+            button_Register = new Button();
+            textBox_UName = new TextBox();
             label11 = new Label();
-            textBox12 = new TextBox();
-            label12 = new Label();
+            textBox_LName = new TextBox();
+            label_LName = new Label();
             panel_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1_close).BeginInit();
             panel_register.SuspendLayout();
@@ -88,64 +97,92 @@ namespace Presentation
             // 
             // panel_login
             // 
-            panel_login.Controls.Add(button1);
-            panel_login.Controls.Add(textBox2);
-            panel_login.Controls.Add(label2);
-            panel_login.Controls.Add(textBox1);
-            panel_login.Controls.Add(label1);
+            panel_login.Controls.Add(label_log_suc);
+            panel_login.Controls.Add(label_error_mas_log);
+            panel_login.Controls.Add(button_Login);
+            panel_login.Controls.Add(textBox_Pss_login);
+            panel_login.Controls.Add(label_Pass_login);
+            panel_login.Controls.Add(textBox_UName_Login);
+            panel_login.Controls.Add(label_UName_login);
             panel_login.Location = new Point(7, 112);
             panel_login.Name = "panel_login";
-            panel_login.Size = new Size(534, 528);
+            panel_login.Size = new Size(573, 528);
             panel_login.TabIndex = 2;
+            panel_login.Paint += panel_login_Paint;
             // 
-            // button1
+            // label_log_suc
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(77, 272);
-            button1.Name = "button1";
-            button1.Size = new Size(443, 40);
-            button1.TabIndex = 4;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            label_log_suc.AutoSize = true;
+            label_log_suc.BackColor = Color.Black;
+            label_log_suc.Font = new Font("Simplified Arabic Fixed", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_log_suc.ForeColor = Color.Lime;
+            label_log_suc.Location = new Point(174, 11);
+            label_log_suc.Name = "label_log_suc";
+            label_log_suc.Size = new Size(0, 34);
+            label_log_suc.TabIndex = 18;
             // 
-            // textBox2
+            // label_error_mas_log
             // 
-            textBox2.Location = new Point(169, 164);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(334, 27);
-            textBox2.TabIndex = 3;
-            textBox2.UseSystemPasswordChar = true;
+            label_error_mas_log.AutoSize = true;
+            label_error_mas_log.BackColor = Color.Black;
+            label_error_mas_log.Font = new Font("Simplified Arabic Fixed", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_error_mas_log.ForeColor = Color.Red;
+            label_error_mas_log.Location = new Point(18, 13);
+            label_error_mas_log.Name = "label_error_mas_log";
+            label_error_mas_log.Size = new Size(0, 28);
+            label_error_mas_log.TabIndex = 17;
             // 
-            // label2
+            // button_Login
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(60, 163);
-            label2.Name = "label2";
-            label2.Size = new Size(97, 28);
-            label2.TabIndex = 2;
-            label2.Text = "Password:";
+            button_Login.FlatStyle = FlatStyle.Flat;
+            button_Login.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button_Login.ForeColor = Color.White;
+            button_Login.Location = new Point(90, 279);
+            button_Login.Name = "button_Login";
+            button_Login.Size = new Size(443, 40);
+            button_Login.TabIndex = 4;
+            button_Login.Text = "Login";
+            button_Login.UseVisualStyleBackColor = true;
+            button_Login.Click += button_Login_Click;
             // 
-            // textBox1
+            // textBox_Pss_login
             // 
-            textBox1.Location = new Point(169, 102);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(334, 27);
-            textBox1.TabIndex = 1;
+            textBox_Pss_login.Location = new Point(205, 161);
+            textBox_Pss_login.Name = "textBox_Pss_login";
+            textBox_Pss_login.Size = new Size(334, 27);
+            textBox_Pss_login.TabIndex = 3;
+            textBox_Pss_login.UseSystemPasswordChar = true;
+            textBox_Pss_login.TextChanged += textBox_Pass_login_TextChanged;
             // 
-            // label1
+            // label_Pass_login
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(60, 101);
-            label1.Name = "label1";
-            label1.Size = new Size(107, 28);
-            label1.TabIndex = 0;
-            label1.Text = "UserName:";
+            label_Pass_login.AutoSize = true;
+            label_Pass_login.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_Pass_login.ForeColor = Color.White;
+            label_Pass_login.Location = new Point(96, 160);
+            label_Pass_login.Name = "label_Pass_login";
+            label_Pass_login.Size = new Size(97, 28);
+            label_Pass_login.TabIndex = 2;
+            label_Pass_login.Text = "Password:";
+            // 
+            // textBox_UName_Login
+            // 
+            textBox_UName_Login.Location = new Point(205, 91);
+            textBox_UName_Login.Name = "textBox_UName_Login";
+            textBox_UName_Login.Size = new Size(334, 27);
+            textBox_UName_Login.TabIndex = 1;
+            textBox_UName_Login.TextChanged += textBox_UName_Login_TextChanged;
+            // 
+            // label_UName_login
+            // 
+            label_UName_login.AutoSize = true;
+            label_UName_login.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_UName_login.ForeColor = Color.White;
+            label_UName_login.Location = new Point(96, 90);
+            label_UName_login.Name = "label_UName_login";
+            label_UName_login.Size = new Size(107, 28);
+            label_UName_login.TabIndex = 0;
+            label_UName_login.Text = "UserName:";
             // 
             // pictureBox1_close
             // 
@@ -161,98 +198,187 @@ namespace Presentation
             // 
             // panel_register
             // 
-            panel_register.Controls.Add(textBox_8);
-            panel_register.Controls.Add(label8);
-            panel_register.Controls.Add(textBox9);
-            panel_register.Controls.Add(label9);
-            panel_register.Controls.Add(textBox10);
-            panel_register.Controls.Add(label10);
-            panel_register.Controls.Add(button3);
-            panel_register.Controls.Add(textBox11);
+            panel_register.Controls.Add(label_User_regis);
+            panel_register.Controls.Add(label_ErrorMas);
+            panel_register.Controls.Add(textBox_eimal);
+            panel_register.Controls.Add(label_Eimal);
+            panel_register.Controls.Add(label_PNmber);
+            panel_register.Controls.Add(textBox_Phone_Number);
+            panel_register.Controls.Add(label_UName);
+            panel_register.Controls.Add(textBox_FName);
+            panel_register.Controls.Add(label_FName);
+            panel_register.Controls.Add(textBox_Confirm_Pass);
+            panel_register.Controls.Add(label_Confirm_Pass);
+            panel_register.Controls.Add(textBox_Pass);
+            panel_register.Controls.Add(label_Pass);
+            panel_register.Controls.Add(button_Register);
+            panel_register.Controls.Add(textBox_UName);
             panel_register.Controls.Add(label11);
-            panel_register.Controls.Add(textBox12);
-            panel_register.Controls.Add(label12);
+            panel_register.Controls.Add(textBox_LName);
+            panel_register.Controls.Add(label_LName);
             panel_register.Location = new Point(7, 112);
             panel_register.Name = "panel_register";
-            panel_register.Size = new Size(534, 528);
+            panel_register.Size = new Size(573, 528);
             panel_register.TabIndex = 6;
+            panel_register.Paint += panel_register_Paint_1;
             // 
-            // textBox_8
+            // label_User_regis
             // 
-            textBox_8.Location = new Point(165, 60);
-            textBox_8.Name = "textBox_8";
-            textBox_8.Size = new Size(334, 27);
-            textBox_8.TabIndex = 10;
-            textBox_8.TextChanged += textBox_8_TextChanged;
+            label_User_regis.AutoSize = true;
+            label_User_regis.BackColor = Color.Black;
+            label_User_regis.Font = new Font("Simplified Arabic Fixed", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_User_regis.ForeColor = Color.Lime;
+            label_User_regis.Location = new Point(90, 11);
+            label_User_regis.Name = "label_User_regis";
+            label_User_regis.Size = new Size(0, 28);
+            label_User_regis.TabIndex = 17;
             // 
-            // label8
+            // label_ErrorMas
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(56, 59);
-            label8.Name = "label8";
-            label8.Size = new Size(103, 28);
-            label8.TabIndex = 9;
-            label8.Text = "Fist Name:";
+            label_ErrorMas.AutoSize = true;
+            label_ErrorMas.BackColor = Color.Black;
+            label_ErrorMas.Font = new Font("Simplified Arabic Fixed", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_ErrorMas.ForeColor = Color.Red;
+            label_ErrorMas.Location = new Point(37, 14);
+            label_ErrorMas.Name = "label_ErrorMas";
+            label_ErrorMas.Size = new Size(0, 23);
+            label_ErrorMas.TabIndex = 16;
+            label_ErrorMas.Click += ErrorMas_Click;
             // 
-            // textBox9
+            // textBox_eimal
             // 
-            textBox9.Location = new Point(165, 268);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(334, 27);
-            textBox9.TabIndex = 8;
-            textBox9.UseSystemPasswordChar = true;
+            textBox_eimal.Location = new Point(199, 263);
+            textBox_eimal.Name = "textBox_eimal";
+            textBox_eimal.Size = new Size(334, 27);
+            textBox_eimal.TabIndex = 15;
+            textBox_eimal.TextChanged += textBox1_eimal_TextChanged;
             // 
-            // label9
+            // label_Eimal
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(36, 267);
-            label9.Name = "label9";
-            label9.Size = new Size(127, 28);
-            label9.TabIndex = 7;
-            label9.Text = "Confirm Pass:";
+            label_Eimal.AutoSize = true;
+            label_Eimal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_Eimal.ForeColor = Color.White;
+            label_Eimal.Location = new Point(122, 259);
+            label_Eimal.Name = "label_Eimal";
+            label_Eimal.Size = new Size(63, 28);
+            label_Eimal.TabIndex = 14;
+            label_Eimal.Text = "Eimal:";
+            label_Eimal.Click += Email_Click;
             // 
-            // textBox10
+            // label_PNmber
             // 
-            textBox10.Location = new Point(165, 216);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(334, 27);
-            textBox10.TabIndex = 6;
-            textBox10.UseSystemPasswordChar = true;
+            label_PNmber.AutoSize = true;
+            label_PNmber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_PNmber.ForeColor = Color.White;
+            label_PNmber.Location = new Point(41, 209);
+            label_PNmber.Name = "label_PNmber";
+            label_PNmber.Size = new Size(148, 28);
+            label_PNmber.TabIndex = 13;
+            label_PNmber.Text = "Phone Number:";
+            label_PNmber.Click += PNumber_Click;
             // 
-            // label10
+            // textBox_Phone_Number
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(56, 215);
-            label10.Name = "label10";
-            label10.Size = new Size(97, 28);
-            label10.TabIndex = 5;
-            label10.Text = "Password:";
+            textBox_Phone_Number.Location = new Point(200, 213);
+            textBox_Phone_Number.Name = "textBox_Phone_Number";
+            textBox_Phone_Number.Size = new Size(334, 27);
+            textBox_Phone_Number.TabIndex = 12;
+            textBox_Phone_Number.TextChanged += Phone_Number_TextChanged;
             // 
-            // button3
+            // label_UName
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(56, 370);
-            button3.Name = "button3";
-            button3.Size = new Size(443, 40);
-            button3.TabIndex = 4;
-            button3.Text = "Register";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            label_UName.AutoSize = true;
+            label_UName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_UName.ForeColor = Color.White;
+            label_UName.Location = new Point(86, 163);
+            label_UName.Name = "label_UName";
+            label_UName.Size = new Size(107, 28);
+            label_UName.TabIndex = 11;
+            label_UName.Text = "UserName:";
+            label_UName.Click += label_UName_Click;
             // 
-            // textBox11
+            // textBox_FName
             // 
-            textBox11.Location = new Point(165, 164);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(334, 27);
-            textBox11.TabIndex = 3;
+            textBox_FName.Location = new Point(199, 66);
+            textBox_FName.Name = "textBox_FName";
+            textBox_FName.Size = new Size(334, 27);
+            textBox_FName.TabIndex = 10;
+            textBox_FName.TextChanged += textBox_FName_TextChanged;
+            // 
+            // label_FName
+            // 
+            label_FName.AutoSize = true;
+            label_FName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_FName.ForeColor = Color.White;
+            label_FName.Location = new Point(87, 62);
+            label_FName.Name = "label_FName";
+            label_FName.Size = new Size(106, 28);
+            label_FName.TabIndex = 9;
+            label_FName.Text = "First Name";
+            label_FName.Click += label_FName_Click;
+            // 
+            // textBox_Confirm_Pass
+            // 
+            textBox_Confirm_Pass.Location = new Point(199, 351);
+            textBox_Confirm_Pass.Name = "textBox_Confirm_Pass";
+            textBox_Confirm_Pass.Size = new Size(334, 27);
+            textBox_Confirm_Pass.TabIndex = 8;
+            textBox_Confirm_Pass.UseSystemPasswordChar = true;
+            textBox_Confirm_Pass.TextChanged += textBox_Confirm_Pass_TextChanged;
+            // 
+            // label_Confirm_Pass
+            // 
+            label_Confirm_Pass.AutoSize = true;
+            label_Confirm_Pass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_Confirm_Pass.ForeColor = Color.White;
+            label_Confirm_Pass.Location = new Point(13, 350);
+            label_Confirm_Pass.Name = "label_Confirm_Pass";
+            label_Confirm_Pass.Size = new Size(172, 28);
+            label_Confirm_Pass.TabIndex = 7;
+            label_Confirm_Pass.Text = "Confirm Password:";
+            label_Confirm_Pass.Click += label_Confirm_Pass_Click;
+            // 
+            // textBox_Pass
+            // 
+            textBox_Pass.Location = new Point(199, 310);
+            textBox_Pass.Name = "textBox_Pass";
+            textBox_Pass.Size = new Size(334, 27);
+            textBox_Pass.TabIndex = 6;
+            textBox_Pass.UseSystemPasswordChar = true;
+            textBox_Pass.TextChanged += textBox_Pass_TextChanged;
+            // 
+            // label_Pass
+            // 
+            label_Pass.AutoSize = true;
+            label_Pass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_Pass.ForeColor = Color.White;
+            label_Pass.Location = new Point(92, 306);
+            label_Pass.Name = "label_Pass";
+            label_Pass.Size = new Size(97, 28);
+            label_Pass.TabIndex = 5;
+            label_Pass.Text = "Password:";
+            label_Pass.Click += label_Pass_Click;
+            // 
+            // button_Register
+            // 
+            button_Register.FlatStyle = FlatStyle.Flat;
+            button_Register.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button_Register.ForeColor = Color.White;
+            button_Register.Location = new Point(86, 431);
+            button_Register.Name = "button_Register";
+            button_Register.Size = new Size(443, 40);
+            button_Register.TabIndex = 4;
+            button_Register.Text = "Register";
+            button_Register.UseVisualStyleBackColor = true;
+            button_Register.Click += buttonٌُ_ٌRegister_Click;
+            // 
+            // textBox_UName
+            // 
+            textBox_UName.Location = new Point(199, 167);
+            textBox_UName.Name = "textBox_UName";
+            textBox_UName.Size = new Size(334, 27);
+            textBox_UName.TabIndex = 3;
+            textBox_UName.TextChanged += textBox_UName_TextChanged;
             // 
             // label11
             // 
@@ -265,30 +391,32 @@ namespace Presentation
             label11.TabIndex = 2;
             label11.Text = " ";
             // 
-            // textBox12
+            // textBox_LName
             // 
-            textBox12.Location = new Point(165, 112);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(334, 27);
-            textBox12.TabIndex = 1;
+            textBox_LName.Location = new Point(199, 118);
+            textBox_LName.Name = "textBox_LName";
+            textBox_LName.Size = new Size(334, 27);
+            textBox_LName.TabIndex = 1;
+            textBox_LName.TextChanged += textBox_LName_TextChanged;
             // 
-            // label12
+            // label_LName
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(56, 111);
-            label12.Name = "label12";
-            label12.Size = new Size(107, 28);
-            label12.TabIndex = 0;
-            label12.Text = "Last Name:";
+            label_LName.AutoSize = true;
+            label_LName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_LName.ForeColor = Color.White;
+            label_LName.Location = new Point(88, 114);
+            label_LName.Name = "label_LName";
+            label_LName.Size = new Size(107, 28);
+            label_LName.TabIndex = 0;
+            label_LName.Text = "Last Name:";
+            label_LName.Click += label_LName_Click;
             // 
             // LoginAndRegister
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(568, 663);
+            ClientSize = new Size(584, 677);
             Controls.Add(pictureBox1_close);
             Controls.Add(button_GoTo_Register);
             Controls.Add(button_GoToLogin);
@@ -316,23 +444,32 @@ namespace Presentation
         private Button button_GoToLogin;
         private Button button_GoTo_Register;
         private Panel panel_login;
-        private Label label1;
-        private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox1;
-        private Button button1;
+        private Label label_UName_login;
+        private TextBox textBox_Pss_login;
+        private Label label_Pass_login;
+        private TextBox textBox_UName_Login;
+        private Button button_Login;
         private PictureBox pictureBox1_close;
         private Panel panel_register;
-        private TextBox textBox_8;
-        private Label label8;
-        private TextBox textBox9;
-        private Label label9;
-        private TextBox textBox10;
-        private Label label10;
-        private Button button3;
-        private TextBox textBox11;
+        private TextBox textBox_FName;
+        private Label label_FName;
+        private TextBox textBox_Confirm_Pass;
+        private Label label_Confirm_Pass;
+        private TextBox textBox_Pass;
+        private Label label_Pass;
+        private Button button_Register;
+        private TextBox textBox_UName;
         private Label label11;
-        private TextBox textBox12;
-        private Label label12;
+        private TextBox textBox_LName;
+        private Label label_LName;
+        private Label label_UName;
+        private Label label_PNmber;
+        private TextBox textBox_Phone_Number;
+        private TextBox textBox_eimal;
+        private Label label_Eimal;
+        private Label label_ErrorMas;
+        private Label label_error_mas_log;
+        private Label label_log_suc;
+        private Label label_User_regis;
     }
 }

@@ -92,10 +92,15 @@ namespace Presentation
 
         private void Category_Load(object sender, EventArgs e)
         {
-            
+
             loadtabel();
 
             this.ControlBox = false;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
