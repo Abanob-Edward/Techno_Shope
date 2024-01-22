@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Presentation
 {
-    public partial class Product : Form
+    public partial class EditProductPanel : Form
     {
-        public Product()
+        public EditProductPanel()
         {
             InitializeComponent();
-        }
-
-        private void Product_Load(object sender, EventArgs e)
-        {
-            this.ControlBox = false;
         }
     }
 }

@@ -36,6 +36,13 @@ namespace Appliaction.Services
             return categoryRepository.getAll();
             
         }
+         public IQueryable<Category> GetByName(string? Name)
+            {
+                return categoryRepository.SearchByName(Name);
+            
+            }
+
+
 
         public Category? GetCategorybyID(int id)
         {

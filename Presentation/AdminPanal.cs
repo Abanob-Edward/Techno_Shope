@@ -4,23 +4,21 @@ namespace Presentation
 {
     public partial class AdminPanal : Form
     {
-        Category Category;
-        Product product;
+        CategoryPanel categoryPanel;
+        ProductPanel productPanel;
+        EditProductPanel editProductPanel;
+        BestSellerPanel BestSellerPanel;
+        OrderStatusPanel OrderStatusPanel;
+        AllOrdersPanal allOrdersPanal;
         public AdminPanal()
         {
             InitializeComponent();
         }
 
         bool CatMenuExpand = false;
-        private void button1_Click(object sender, EventArgs e)
-        {
+        bool OrderMenuExpand = false;
 
-        }
 
-        private void AdminPanal_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void CategoryTransition_Tick(object sender, EventArgs e)
         {
@@ -36,7 +34,7 @@ namespace Presentation
             else
             {
                 CategoryMenu.Height -= 10;
-                if (CategoryMenu.Height <= 80)
+                if (CategoryMenu.Height <= 75)
                 {
                     CategoryTransition.Stop();
                     CatMenuExpand = false;
@@ -79,51 +77,169 @@ namespace Presentation
             SideBarTransition.Start();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (Category == null)
-            {
-                Category = new Category();
-                Category.FormClosed += Category_FormClosed;
-                Category.MdiParent = this;
-                Category.Dock = DockStyle.Fill;
-                Category.Show();
-            }
-            else
-            {
-                Category.Activate();
-            }
-        }
+
 
         private void Category_FormClosed(object? sender, FormClosedEventArgs e)
         {
             Category = null;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void BestSellerClosed(object? sender, FormClosedEventArgs e)
         {
-
+            BestSellerPanel = null;
+        }
+        private void OrderStatusClosed(object? sender, FormClosedEventArgs e)
+        {
+            OrderStatusPanel = null;
+        }
+        private void AllOrdersPanalClosed(object? sender, FormClosedEventArgs e)
+        {
+            allOrdersPanal = null;
+        }
+        private void editProductPanelClosed(object? sender, FormClosedEventArgs e)
+        {
+            editProductPanel = null;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (product == null)
-            {
-                product = new Product();
-                product.FormClosed += product_FormClosed;
-                product.MdiParent = this;
-                product.Dock = DockStyle.Fill;
-                product.Show();
-            }
-            else
-            {
-                product.Activate();
-            }
-        }
+
+
+
+
+
 
         private void product_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            product = null;
+            productPanel = null;
+        }
+
+        private void CategoryBTN1_Click(object sender, EventArgs e)
+        {
+            if (categoryPanel == null)
+            {
+                categoryPanel = new CategoryPanel();
+                categoryPanel.FormClosed += Category_FormClosed;
+                categoryPanel.MdiParent = this;
+                categoryPanel.Dock = DockStyle.Fill;
+                categoryPanel.Show();
+            }
+            else
+            {
+                categoryPanel.Activate();
+            }
+        }
+
+        private void ShowALLProduct_Click(object sender, EventArgs e)
+        {
+            if (productPanel == null)
+            {
+                productPanel = new ProductPanel();
+                productPanel.FormClosed += Category_FormClosed;
+                productPanel.MdiParent = this;
+                productPanel.Dock = DockStyle.Fill;
+                productPanel.Show();
+            }
+            else
+            {
+                productPanel.Activate();
+            }
+        }
+
+
+
+        private void OrderTransition_Tick(object sender, EventArgs e)
+        {
+
+
+            if (OrderMenuExpand == false)
+            {
+                OrderMenu.Height += 10;
+                if (OrderMenu.Height >= 195)
+                {
+                    OrderTransition.Stop();
+                    OrderMenuExpand = true;
+                }
+            }
+            else
+            {
+                OrderMenu.Height -= 10;
+                if (OrderMenu.Height <= 75)
+                {
+                    OrderTransition.Stop();
+                    OrderMenuExpand = false;
+                }
+            }
+
+        }
+
+        private void OrderBTN_Click(object sender, EventArgs e)
+        {
+            OrderTransition.Start();
+        }
+
+        private void BestSeller_Click(object sender, EventArgs e)
+        {
+            if (BestSellerPanel == null)
+            {
+                BestSellerPanel = new BestSellerPanel();
+                BestSellerPanel.FormClosed += BestSellerClosed;
+                BestSellerPanel.MdiParent = this;
+                BestSellerPanel.Dock = DockStyle.Fill;
+                BestSellerPanel.Show();
+            }
+            else
+            {
+                BestSellerPanel.Activate();
+            }
+        }
+
+        private void OrderStatusBTN_Click(object sender, EventArgs e)
+        {
+            if (OrderStatusPanel == null)
+            {
+                OrderStatusPanel = new OrderStatusPanel();
+                OrderStatusPanel.FormClosed += OrderStatusClosed;
+                OrderStatusPanel.MdiParent = this;
+                OrderStatusPanel.Dock = DockStyle.Fill;
+                OrderStatusPanel.Show();
+            }
+            else
+            {
+                OrderStatusPanel.Activate();
+            }
+        }
+
+        
+        private void ProOutOfStock_Click(object sender, EventArgs e)
+        {
+            if (editProductPanel == null)
+            {
+                editProductPanel = new EditProductPanel();
+                editProductPanel.FormClosed += editProductPanelClosed;
+                editProductPanel.MdiParent = this;
+                editProductPanel.Dock = DockStyle.Fill;
+                editProductPanel.Show();
+            }
+            else
+            {
+                categoryPanel.Activate();
+            }
+        }
+
+        private void AllOrders_Click(object sender, EventArgs e)
+        {
+
+            if (allOrdersPanal == null)
+            {
+                allOrdersPanal = new AllOrdersPanal();
+                allOrdersPanal.FormClosed += AllOrdersPanalClosed;
+                allOrdersPanal.MdiParent = this;
+                allOrdersPanal.Dock = DockStyle.Fill;
+                allOrdersPanal.Show();
+            }
+            else
+            {
+                allOrdersPanal.Activate();
+            }
         }
     }
 }

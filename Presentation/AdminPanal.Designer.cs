@@ -35,33 +35,45 @@
             BtnSideBar = new PictureBox();
             sideBar = new FlowLayoutPanel();
             panel4 = new Panel();
-            button3 = new Button();
-            panel6 = new Panel();
-            button5 = new Button();
+            HomeBTN = new Button();
+            OrderMenu = new FlowLayoutPanel();
+            panel9 = new Panel();
+            OrderBTN = new Button();
+            panel10 = new Panel();
+            OrderStatusBTN = new Button();
+            panel11 = new Panel();
+            AllOrders = new Button();
+            panel2 = new Panel();
+            CategoryBTN = new Button();
             CategoryMenu = new FlowLayoutPanel();
             panel5 = new Panel();
-            CatMenuBtn = new Button();
+            ProMenuBtn = new Button();
             panel7 = new Panel();
-            button6 = new Button();
+            ShowALLProduct = new Button();
             panel8 = new Panel();
-            button7 = new Button();
-            panel2 = new Panel();
-            button1 = new Button();
+            EditProduct = new Button();
             panel3 = new Panel();
-            button2 = new Button();
+            LogoutBTN = new Button();
             CategoryTransition = new System.Windows.Forms.Timer(components);
             SideBarTransition = new System.Windows.Forms.Timer(components);
+            OrderTransition = new System.Windows.Forms.Timer(components);
+            BestSeller = new Button();
+            panel6 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSideBar).BeginInit();
             sideBar.SuspendLayout();
             panel4.SuspendLayout();
-            panel6.SuspendLayout();
+            OrderMenu.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
+            panel11.SuspendLayout();
+            panel2.SuspendLayout();
             CategoryMenu.SuspendLayout();
             panel5.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -72,7 +84,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1443, 60);
+            panel1.Size = new Size(1531, 60);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -100,71 +112,161 @@
             // 
             sideBar.BackColor = Color.Black;
             sideBar.Controls.Add(panel4);
-            sideBar.Controls.Add(panel6);
-            sideBar.Controls.Add(CategoryMenu);
             sideBar.Controls.Add(panel2);
+            sideBar.Controls.Add(CategoryMenu);
+            sideBar.Controls.Add(OrderMenu);
+            sideBar.Controls.Add(panel6);
             sideBar.Controls.Add(panel3);
             sideBar.Dock = DockStyle.Left;
             sideBar.FlowDirection = FlowDirection.TopDown;
             sideBar.Location = new Point(0, 60);
             sideBar.Name = "sideBar";
-            sideBar.Size = new Size(280, 665);
+            sideBar.Size = new Size(280, 683);
             sideBar.TabIndex = 1;
             // 
             // panel4
             // 
             panel4.BackColor = SystemColors.ActiveCaptionText;
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(HomeBTN);
             panel4.Location = new Point(3, 20);
             panel4.Margin = new Padding(3, 20, 3, 3);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(0, 25, 0, 0);
-            panel4.Size = new Size(280, 70);
+            panel4.Size = new Size(277, 70);
             panel4.TabIndex = 5;
             // 
-            // button3
+            // HomeBTN
             // 
-            button3.BackColor = SystemColors.ActiveCaptionText;
-            button3.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-8, -18);
-            button3.Name = "button3";
-            button3.Padding = new Padding(10, 0, 0, 0);
-            button3.Size = new Size(321, 100);
-            button3.TabIndex = 2;
-            button3.Text = "        Home";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            HomeBTN.BackColor = SystemColors.ActiveCaptionText;
+            HomeBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            HomeBTN.ForeColor = SystemColors.ControlLightLight;
+            HomeBTN.Image = (Image)resources.GetObject("HomeBTN.Image");
+            HomeBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            HomeBTN.Location = new Point(-9, -11);
+            HomeBTN.Name = "HomeBTN";
+            HomeBTN.Padding = new Padding(10, 0, 0, 0);
+            HomeBTN.Size = new Size(321, 100);
+            HomeBTN.TabIndex = 2;
+            HomeBTN.Text = "        Home";
+            HomeBTN.TextAlign = ContentAlignment.MiddleLeft;
+            HomeBTN.UseVisualStyleBackColor = false;
             // 
-            // panel6
+            // OrderMenu
             // 
-            panel6.BackColor = SystemColors.ActiveCaptionText;
-            panel6.Controls.Add(button5);
-            panel6.Location = new Point(3, 96);
-            panel6.Name = "panel6";
-            panel6.Padding = new Padding(0, 25, 0, 0);
-            panel6.Size = new Size(280, 67);
-            panel6.TabIndex = 6;
+            OrderMenu.BackColor = Color.Black;
+            OrderMenu.Controls.Add(panel9);
+            OrderMenu.Controls.Add(panel10);
+            OrderMenu.Controls.Add(panel11);
+            OrderMenu.Location = new Point(3, 247);
+            OrderMenu.Name = "OrderMenu";
+            OrderMenu.Size = new Size(277, 68);
+            OrderMenu.TabIndex = 8;
             // 
-            // button5
+            // panel9
             // 
-            button5.BackColor = SystemColors.ActiveCaptionText;
-            button5.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            button5.ForeColor = SystemColors.ControlLightLight;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-11, -18);
-            button5.Name = "button5";
-            button5.Padding = new Padding(10, 0, 0, 0);
-            button5.Size = new Size(321, 100);
-            button5.TabIndex = 2;
-            button5.Text = "        Orders";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            panel9.BackColor = SystemColors.ActiveCaptionText;
+            panel9.Controls.Add(OrderBTN);
+            panel9.Location = new Point(3, 3);
+            panel9.Name = "panel9";
+            panel9.Padding = new Padding(0, 25, 0, 0);
+            panel9.Size = new Size(280, 70);
+            panel9.TabIndex = 6;
+            // 
+            // OrderBTN
+            // 
+            OrderBTN.BackColor = SystemColors.ActiveCaptionText;
+            OrderBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            OrderBTN.ForeColor = SystemColors.ControlLightLight;
+            OrderBTN.Image = (Image)resources.GetObject("OrderBTN.Image");
+            OrderBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            OrderBTN.Location = new Point(-11, -16);
+            OrderBTN.Name = "OrderBTN";
+            OrderBTN.Padding = new Padding(10, 0, 0, 0);
+            OrderBTN.Size = new Size(328, 100);
+            OrderBTN.TabIndex = 2;
+            OrderBTN.Text = "        Orders";
+            OrderBTN.TextAlign = ContentAlignment.MiddleLeft;
+            OrderBTN.UseVisualStyleBackColor = false;
+            OrderBTN.Click += OrderBTN_Click;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(64, 64, 64);
+            panel10.Controls.Add(OrderStatusBTN);
+            panel10.Location = new Point(3, 79);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(0, 25, 0, 0);
+            panel10.Size = new Size(280, 55);
+            panel10.TabIndex = 8;
+            // 
+            // OrderStatusBTN
+            // 
+            OrderStatusBTN.BackColor = Color.FromArgb(64, 64, 64);
+            OrderStatusBTN.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OrderStatusBTN.ForeColor = SystemColors.ControlLightLight;
+            OrderStatusBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            OrderStatusBTN.Location = new Point(-8, -18);
+            OrderStatusBTN.Name = "OrderStatusBTN";
+            OrderStatusBTN.Padding = new Padding(10, 0, 0, 0);
+            OrderStatusBTN.Size = new Size(321, 100);
+            OrderStatusBTN.TabIndex = 2;
+            OrderStatusBTN.Text = "Order status";
+            OrderStatusBTN.TextAlign = ContentAlignment.MiddleLeft;
+            OrderStatusBTN.UseVisualStyleBackColor = false;
+            OrderStatusBTN.Click += OrderStatusBTN_Click;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = SystemColors.ActiveCaptionText;
+            panel11.Controls.Add(AllOrders);
+            panel11.Location = new Point(3, 140);
+            panel11.Name = "panel11";
+            panel11.Padding = new Padding(0, 25, 0, 0);
+            panel11.Size = new Size(280, 55);
+            panel11.TabIndex = 9;
+            // 
+            // AllOrders
+            // 
+            AllOrders.BackColor = Color.FromArgb(64, 64, 64);
+            AllOrders.Font = new Font("Tahoma", 10.2F, FontStyle.Bold);
+            AllOrders.ForeColor = SystemColors.ControlLightLight;
+            AllOrders.ImageAlign = ContentAlignment.MiddleLeft;
+            AllOrders.Location = new Point(-8, -18);
+            AllOrders.Name = "AllOrders";
+            AllOrders.Padding = new Padding(10, 0, 0, 0);
+            AllOrders.Size = new Size(321, 100);
+            AllOrders.TabIndex = 2;
+            AllOrders.Text = "All Orders";
+            AllOrders.TextAlign = ContentAlignment.MiddleLeft;
+            AllOrders.UseVisualStyleBackColor = false;
+            AllOrders.Click += AllOrders_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ActiveCaptionText;
+            panel2.Controls.Add(CategoryBTN);
+            panel2.Location = new Point(3, 96);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(0, 25, 0, 0);
+            panel2.Size = new Size(277, 67);
+            panel2.TabIndex = 6;
+            // 
+            // CategoryBTN
+            // 
+            CategoryBTN.BackColor = SystemColors.ActiveCaptionText;
+            CategoryBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            CategoryBTN.ForeColor = SystemColors.ControlLightLight;
+            CategoryBTN.Image = (Image)resources.GetObject("CategoryBTN.Image");
+            CategoryBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            CategoryBTN.Location = new Point(-11, -15);
+            CategoryBTN.Name = "CategoryBTN";
+            CategoryBTN.Padding = new Padding(10, 0, 0, 0);
+            CategoryBTN.Size = new Size(321, 100);
+            CategoryBTN.TabIndex = 8;
+            CategoryBTN.Text = "       Category";
+            CategoryBTN.TextAlign = ContentAlignment.MiddleLeft;
+            CategoryBTN.UseVisualStyleBackColor = false;
+            CategoryBTN.Click += CategoryBTN1_Click;
             // 
             // CategoryMenu
             // 
@@ -174,140 +276,113 @@
             CategoryMenu.Controls.Add(panel8);
             CategoryMenu.Location = new Point(3, 169);
             CategoryMenu.Name = "CategoryMenu";
-            CategoryMenu.Size = new Size(280, 67);
+            CategoryMenu.Size = new Size(277, 72);
             CategoryMenu.TabIndex = 7;
             // 
             // panel5
             // 
             panel5.BackColor = SystemColors.ActiveCaptionText;
-            panel5.Controls.Add(CatMenuBtn);
+            panel5.Controls.Add(ProMenuBtn);
             panel5.Location = new Point(3, 3);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(0, 25, 0, 0);
             panel5.Size = new Size(280, 70);
             panel5.TabIndex = 6;
             // 
-            // CatMenuBtn
+            // ProMenuBtn
             // 
-            CatMenuBtn.BackColor = SystemColors.ActiveCaptionText;
-            CatMenuBtn.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            CatMenuBtn.ForeColor = SystemColors.ControlLightLight;
-            CatMenuBtn.Image = (Image)resources.GetObject("CatMenuBtn.Image");
-            CatMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CatMenuBtn.Location = new Point(-15, -16);
-            CatMenuBtn.Name = "CatMenuBtn";
-            CatMenuBtn.Padding = new Padding(10, 0, 0, 0);
-            CatMenuBtn.Size = new Size(321, 100);
-            CatMenuBtn.TabIndex = 2;
-            CatMenuBtn.Text = "        Category";
-            CatMenuBtn.TextAlign = ContentAlignment.MiddleLeft;
-            CatMenuBtn.UseVisualStyleBackColor = false;
-            CatMenuBtn.Click += CatMenuBtn_Click;
+            ProMenuBtn.BackColor = SystemColors.ActiveCaptionText;
+            ProMenuBtn.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            ProMenuBtn.ForeColor = SystemColors.ControlLightLight;
+            ProMenuBtn.Image = (Image)resources.GetObject("ProMenuBtn.Image");
+            ProMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            ProMenuBtn.Location = new Point(-11, -16);
+            ProMenuBtn.Name = "ProMenuBtn";
+            ProMenuBtn.Padding = new Padding(10, 0, 0, 0);
+            ProMenuBtn.Size = new Size(328, 100);
+            ProMenuBtn.TabIndex = 2;
+            ProMenuBtn.Text = "        Product";
+            ProMenuBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ProMenuBtn.UseVisualStyleBackColor = false;
+            ProMenuBtn.Click += CatMenuBtn_Click;
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(64, 64, 64);
-            panel7.Controls.Add(button6);
+            panel7.Controls.Add(ShowALLProduct);
             panel7.Location = new Point(3, 79);
             panel7.Name = "panel7";
             panel7.Padding = new Padding(0, 25, 0, 0);
             panel7.Size = new Size(280, 55);
             panel7.TabIndex = 8;
             // 
-            // button6
+            // ShowALLProduct
             // 
-            button6.BackColor = Color.FromArgb(64, 64, 64);
-            button6.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.ControlLightLight;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-8, -18);
-            button6.Name = "button6";
-            button6.Padding = new Padding(10, 0, 0, 0);
-            button6.Size = new Size(321, 100);
-            button6.TabIndex = 2;
-            button6.Text = "             Show All Category";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = false;
+            ShowALLProduct.BackColor = Color.FromArgb(64, 64, 64);
+            ShowALLProduct.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ShowALLProduct.ForeColor = SystemColors.ControlLightLight;
+            ShowALLProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            ShowALLProduct.Location = new Point(-8, -18);
+            ShowALLProduct.Name = "ShowALLProduct";
+            ShowALLProduct.Padding = new Padding(10, 0, 0, 0);
+            ShowALLProduct.Size = new Size(321, 100);
+            ShowALLProduct.TabIndex = 2;
+            ShowALLProduct.Text = " Show All Products";
+            ShowALLProduct.TextAlign = ContentAlignment.MiddleLeft;
+            ShowALLProduct.UseVisualStyleBackColor = false;
+            ShowALLProduct.Click += ShowALLProduct_Click;
             // 
             // panel8
             // 
             panel8.BackColor = SystemColors.ActiveCaptionText;
-            panel8.Controls.Add(button7);
+            panel8.Controls.Add(EditProduct);
             panel8.Location = new Point(3, 140);
             panel8.Name = "panel8";
             panel8.Padding = new Padding(0, 25, 0, 0);
             panel8.Size = new Size(280, 55);
             panel8.TabIndex = 9;
             // 
-            // button7
+            // EditProduct
             // 
-            button7.BackColor = Color.FromArgb(64, 64, 64);
-            button7.Font = new Font("Tahoma", 10.2F, FontStyle.Bold);
-            button7.ForeColor = SystemColors.ControlLightLight;
-            button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(-8, -18);
-            button7.Name = "button7";
-            button7.Padding = new Padding(10, 0, 0, 0);
-            button7.Size = new Size(321, 100);
-            button7.TabIndex = 2;
-            button7.Text = "            Add New Category";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.ActiveCaptionText;
-            panel2.Controls.Add(button1);
-            panel2.Location = new Point(3, 242);
-            panel2.Name = "panel2";
-            panel2.Padding = new Padding(0, 25, 0, 0);
-            panel2.Size = new Size(280, 67);
-            panel2.TabIndex = 6;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaptionText;
-            button1.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-8, -18);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(321, 100);
-            button1.TabIndex = 2;
-            button1.Text = "        Product";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            EditProduct.BackColor = Color.FromArgb(64, 64, 64);
+            EditProduct.Font = new Font("Tahoma", 10.2F, FontStyle.Bold);
+            EditProduct.ForeColor = SystemColors.ControlLightLight;
+            EditProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            EditProduct.Location = new Point(-8, -18);
+            EditProduct.Name = "EditProduct";
+            EditProduct.Padding = new Padding(10, 0, 0, 0);
+            EditProduct.Size = new Size(321, 100);
+            EditProduct.TabIndex = 2;
+            EditProduct.Text = "Edit | Delete Product";
+            EditProduct.TextAlign = ContentAlignment.MiddleLeft;
+            EditProduct.UseVisualStyleBackColor = false;
+            EditProduct.Click += ProOutOfStock_Click;
             // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ActiveCaptionText;
-            panel3.Controls.Add(button2);
-            panel3.Location = new Point(3, 315);
+            panel3.Controls.Add(LogoutBTN);
+            panel3.Location = new Point(3, 394);
             panel3.Name = "panel3";
             panel3.Padding = new Padding(0, 25, 0, 0);
-            panel3.Size = new Size(280, 67);
+            panel3.Size = new Size(277, 67);
             panel3.TabIndex = 6;
             // 
-            // button2
+            // LogoutBTN
             // 
-            button2.BackColor = SystemColors.ActiveCaptionText;
-            button2.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-8, -18);
-            button2.Name = "button2";
-            button2.Padding = new Padding(10, 0, 0, 0);
-            button2.Size = new Size(321, 100);
-            button2.TabIndex = 2;
-            button2.Text = "        Logout";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
+            LogoutBTN.BackColor = SystemColors.ActiveCaptionText;
+            LogoutBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            LogoutBTN.ForeColor = SystemColors.ControlLightLight;
+            LogoutBTN.Image = (Image)resources.GetObject("LogoutBTN.Image");
+            LogoutBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            LogoutBTN.Location = new Point(-11, -17);
+            LogoutBTN.Name = "LogoutBTN";
+            LogoutBTN.Padding = new Padding(10, 0, 0, 0);
+            LogoutBTN.Size = new Size(321, 100);
+            LogoutBTN.TabIndex = 2;
+            LogoutBTN.Text = "        Logout";
+            LogoutBTN.TextAlign = ContentAlignment.MiddleLeft;
+            LogoutBTN.UseVisualStyleBackColor = false;
             // 
             // CategoryTransition
             // 
@@ -319,28 +394,63 @@
             SideBarTransition.Interval = 10;
             SideBarTransition.Tick += SideBarTransition_Tick;
             // 
+            // OrderTransition
+            // 
+            OrderTransition.Interval = 10;
+            OrderTransition.Tick += OrderTransition_Tick;
+            // 
+            // BestSeller
+            // 
+            BestSeller.BackColor = SystemColors.ActiveCaptionText;
+            BestSeller.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            BestSeller.ForeColor = SystemColors.ControlLightLight;
+            BestSeller.Image = (Image)resources.GetObject("BestSeller.Image");
+            BestSeller.ImageAlign = ContentAlignment.MiddleLeft;
+            BestSeller.Location = new Point(-11, -18);
+            BestSeller.Name = "BestSeller";
+            BestSeller.Padding = new Padding(10, 0, 0, 0);
+            BestSeller.Size = new Size(321, 100);
+            BestSeller.TabIndex = 2;
+            BestSeller.Text = "        Best Seller";
+            BestSeller.TextAlign = ContentAlignment.MiddleLeft;
+            BestSeller.UseVisualStyleBackColor = false;
+            BestSeller.Click += BestSeller_Click;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = SystemColors.ActiveCaptionText;
+            panel6.Controls.Add(BestSeller);
+            panel6.Location = new Point(3, 321);
+            panel6.Name = "panel6";
+            panel6.Padding = new Padding(0, 25, 0, 0);
+            panel6.Size = new Size(277, 67);
+            panel6.TabIndex = 6;
+            // 
             // AdminPanal
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1443, 725);
+            ClientSize = new Size(1531, 743);
             Controls.Add(sideBar);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Name = "AdminPanal";
             Text = "Admin";
-            Load += AdminPanal_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSideBar).EndInit();
             sideBar.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel6.ResumeLayout(false);
+            OrderMenu.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             CategoryMenu.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -351,21 +461,30 @@
         private PictureBox BtnSideBar;
         private FlowLayoutPanel sideBar;
         private Panel panel4;
-        private Button button3;
+        private Button HomeBTN;
         private Panel panel2;
-        private Button button1;
+        private Button Category;
         private Panel panel3;
-        private Button button2;
+        private Button LogoutBTN;
         private Panel panel5;
-        private Button CatMenuBtn;
+        private Button ProMenuBtn;
         private FlowLayoutPanel CategoryMenu;
         private Panel panel7;
-        private Button button6;
+        private Button ShowALLProduct;
         private Panel panel8;
-        private Button button7;
-        private Button button5;
-        private Panel panel6;
+        private Button EditProduct;
         private System.Windows.Forms.Timer CategoryTransition;
         private System.Windows.Forms.Timer SideBarTransition;
+        private Button CategoryBTN;
+        private FlowLayoutPanel OrderMenu;
+        private Panel panel9;
+        private Button OrderBTN;
+        private Panel panel10;
+        private Button OrderStatusBTN;
+        private Panel panel11;
+        private Button AllOrders;
+        private System.Windows.Forms.Timer OrderTransition;
+        private Button BestSeller;
+        private Panel panel6;
     }
 }

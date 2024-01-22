@@ -20,21 +20,21 @@ namespace Model.Models
 
         public string Title { get; set; }
 
-        public Decimal Price { get; set; }
+        public decimal Price { get; set; }
         [MaxLength(300)]
 
         public string Description { get; set; }
         public string Image { get; set; }
-        public int Cat_id { get; set; }
+       /* public int Cat_id { get; set; }*/
 
         // one to many with user 
         [ForeignKey("User")]
-        public int AdminID { get; set; }
+        public int? AdminID { get; set; }
         public User User { get; set; }
 
         // one to many with user 
         [ForeignKey("category")]
-        public int CatID { get; set; }
+        public int? CatID { get; set; }
         public Category category { get; set; }
 
 
