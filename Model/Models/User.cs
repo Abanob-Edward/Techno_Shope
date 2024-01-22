@@ -21,7 +21,7 @@ namespace Model.Models
         public string Email { get; set; }
         public string Password { get; set; }
         [DisplayName("Phone")]
-       // [RegularExpression(@"^01[0125][0-9]{8}$", ErrorMessage = "Invalid PhoneNumber")]
+       //[RegularExpression(@"^01[0125][0-9]{8}$", ErrorMessage = "Invalid PhoneNumber")]
         public int PhoneNumber { get; set; }
 
         
@@ -29,5 +29,11 @@ namespace Model.Models
 
         public ICollection<Product> products { get; set; }
 
+
+        // what this the eroro 
+        //public static implicit operator User(User v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
