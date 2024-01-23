@@ -60,13 +60,7 @@ namespace Infrastructure.Repositores
             }
         }
 
-        //public void delete(TID id) {
-        //    // test it again
-
-        //    var result = context.Remove(id).Entity;
-        //    context.SaveChanges();
-           
-        //}
+       
 
 
      
