@@ -22,7 +22,7 @@ namespace Presentation
 
         public CategoryPanel()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             categoryService = new CategoryService(new CatgoryRepositry(new _Context()));
         }
 
@@ -84,7 +84,7 @@ namespace Presentation
 
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
-            if(CatNameTxt2.Text != null && CatNameTxt2.Text != "")
+            if (CatNameTxt2.Text != null && CatNameTxt2.Text != "")
             {
                 int Id = int.Parse(CategoryDGV.CurrentRow.Cells[0].Value.ToString());
                 var obj = categoryService.GetCategorybyID(Id);
@@ -103,23 +103,23 @@ namespace Presentation
 
 
         }
-        
+
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
 
             if (CatNameTxt2.Text != null && CatNameTxt2.Text != "")
             {
-              
-               var Result = MessageBox.Show("Are you shure  to delete ","Delete Confirem", MessageBoxButtons.YesNo);
+
+                var Result = MessageBox.Show("Are you shure  to delete ", "Delete Confirem", MessageBoxButtons.YesNo);
 
                 if (Result == DialogResult.Yes)
                 {
                     int Id = int.Parse(CategoryDGV.CurrentRow.Cells[0].Value.ToString());
                     var obj = categoryService.GetCategorybyID(Id);
                     categoryService.DeleteCategory(1);
-                    loadtabel(); 
+                    loadtabel();
                 }
-              
+
 
             }
             else
@@ -127,14 +127,14 @@ namespace Presentation
                 ErrorMessage.Text = "Please Select Row to delete";
             }
 
-               
+
         }
 
         private void AddCategory_Click(object sender, EventArgs e)
         {
             string categoryName = CatNameTxt1.Text;
             string categoryType = CatTybetxt1.Text;
-           
+
             categoryService.AddCategory(new Model.Models.Category { Name = categoryName, Type = categoryType });
             CatNameTxt1.Clear();
             CatTybetxt1.Clear();
@@ -148,5 +148,7 @@ namespace Presentation
             CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[2].Value.ToString();
             ErrorMessage.Text = "";
         }
+
+       
     }
 }

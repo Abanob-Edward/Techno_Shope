@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
             CatNameTxt1 = new TextBox();
             CatTybetxt1 = new TextBox();
             AddCategory = new Button();
@@ -45,6 +44,7 @@
             UpdateBTN = new Button();
             DeleteBtn = new Button();
             ErrorMessage = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)CategoryDGV).BeginInit();
             SuspendLayout();
             // 
@@ -58,17 +58,6 @@
             label1.Size = new Size(164, 28);
             label1.TabIndex = 0;
             label1.Text = "Catagory Name :";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(33, 42, 81);
-            label2.Location = new Point(463, 468);
-            label2.Name = "label2";
-            label2.Size = new Size(154, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Category Type :";
             // 
             // CatNameTxt1
             // 
@@ -216,7 +205,18 @@
             ErrorMessage.Size = new Size(0, 41);
             ErrorMessage.TabIndex = 24;
             // 
-            // Category
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(33, 42, 81);
+            label2.Location = new Point(463, 468);
+            label2.Name = "label2";
+            label2.Size = new Size(154, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Category Type :";
+            // 
+            // CategoryPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -240,7 +240,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Category";
+            Name = "CategoryPanel";
             Text = "Catgory";
             Load += Category_Load;
             ((System.ComponentModel.ISupportInitialize)CategoryDGV).EndInit();
@@ -251,7 +251,6 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private TextBox CatNameTxt1;
         private TextBox CatTybetxt1;
         private Button AddCategory;
@@ -267,5 +266,6 @@
         private Button UpdateBTN;
         private Button DeleteBtn;
         private Label ErrorMessage;
+        private Label label2;
     }
 }

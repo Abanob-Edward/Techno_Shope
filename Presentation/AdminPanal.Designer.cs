@@ -112,11 +112,11 @@
             // 
             sideBar.BackColor = Color.Black;
             sideBar.Controls.Add(panel4);
-            sideBar.Controls.Add(panel2);
-            sideBar.Controls.Add(CategoryMenu);
-            sideBar.Controls.Add(OrderMenu);
             sideBar.Controls.Add(panel6);
             sideBar.Controls.Add(panel3);
+            sideBar.Controls.Add(OrderMenu);
+            sideBar.Controls.Add(CategoryMenu);
+            sideBar.Controls.Add(panel2);
             sideBar.Dock = DockStyle.Left;
             sideBar.FlowDirection = FlowDirection.TopDown;
             sideBar.Location = new Point(0, 60);
@@ -157,7 +157,7 @@
             OrderMenu.Controls.Add(panel9);
             OrderMenu.Controls.Add(panel10);
             OrderMenu.Controls.Add(panel11);
-            OrderMenu.Location = new Point(3, 247);
+            OrderMenu.Location = new Point(3, 242);
             OrderMenu.Name = "OrderMenu";
             OrderMenu.Size = new Size(277, 68);
             OrderMenu.TabIndex = 8;
@@ -245,7 +245,7 @@
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.Controls.Add(CategoryBTN);
-            panel2.Location = new Point(3, 96);
+            panel2.Location = new Point(3, 394);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(0, 25, 0, 0);
             panel2.Size = new Size(277, 67);
@@ -274,7 +274,7 @@
             CategoryMenu.Controls.Add(panel5);
             CategoryMenu.Controls.Add(panel7);
             CategoryMenu.Controls.Add(panel8);
-            CategoryMenu.Location = new Point(3, 169);
+            CategoryMenu.Location = new Point(3, 316);
             CategoryMenu.Name = "CategoryMenu";
             CategoryMenu.Size = new Size(277, 72);
             CategoryMenu.TabIndex = 7;
@@ -362,7 +362,7 @@
             // 
             panel3.BackColor = SystemColors.ActiveCaptionText;
             panel3.Controls.Add(LogoutBTN);
-            panel3.Location = new Point(3, 394);
+            panel3.Location = new Point(3, 169);
             panel3.Name = "panel3";
             panel3.Padding = new Padding(0, 25, 0, 0);
             panel3.Size = new Size(277, 67);
@@ -420,7 +420,7 @@
             // 
             panel6.BackColor = SystemColors.ActiveCaptionText;
             panel6.Controls.Add(BestSeller);
-            panel6.Location = new Point(3, 321);
+            panel6.Location = new Point(3, 96);
             panel6.Name = "panel6";
             panel6.Padding = new Padding(0, 25, 0, 0);
             panel6.Size = new Size(277, 67);
