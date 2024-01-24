@@ -21,7 +21,9 @@ namespace Presentation
             StudentService = new StudentService(new StudentRepository(new _Context()));
 
             /* StudentService.Addstudent(new Student() { Name = " Abanob ", Age = 22 });
-            var StdbYID = StudentService.GetStudentbyID(1);*/
+            var StdbYID = StudentService.GetStudentbyID(1);
+            
+             */
 
 
             Application.Run(new AdminPanal());
