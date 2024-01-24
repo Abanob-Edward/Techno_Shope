@@ -37,10 +37,10 @@ namespace Appliaction.Services
             
         }
          public IQueryable<Category> GetByName(string? Name)
-            {
+         {
                 return categoryRepository.SearchByName(Name);
             
-            }
+         }
 
 
 

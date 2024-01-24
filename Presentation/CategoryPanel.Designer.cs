@@ -52,15 +52,27 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(33, 42, 81);
+            label1.ForeColor = Color.FromArgb(238, 238, 238);
             label1.Location = new Point(70, 467);
             label1.Name = "label1";
             label1.Size = new Size(164, 28);
             label1.TabIndex = 0;
             label1.Text = "Catagory Name :";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(238, 238, 238);
+            label2.Location = new Point(463, 468);
+            label2.Name = "label2";
+            label2.Size = new Size(154, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Category Type :";
+            // 
             // CatNameTxt1
             // 
+            CatNameTxt1.BackColor = Color.FromArgb(238, 238, 238);
             CatNameTxt1.Location = new Point(240, 468);
             CatNameTxt1.Margin = new Padding(3, 4, 3, 4);
             CatNameTxt1.Name = "CatNameTxt1";
@@ -69,6 +81,7 @@
             // 
             // CatTybetxt1
             // 
+            CatTybetxt1.BackColor = Color.FromArgb(238, 238, 238);
             CatTybetxt1.Location = new Point(638, 468);
             CatTybetxt1.Margin = new Padding(3, 4, 3, 4);
             CatTybetxt1.Name = "CatTybetxt1";
@@ -77,7 +90,7 @@
             // 
             // AddCategory
             // 
-            AddCategory.BackColor = Color.FromArgb(255, 198, 75);
+            AddCategory.BackColor = Color.FromArgb(214, 90, 49);
             AddCategory.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddCategory.ForeColor = Color.Transparent;
             AddCategory.Location = new Point(26, 401);
@@ -92,7 +105,9 @@
             // CategoryDGV
             // 
             CategoryDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CategoryDGV.BackgroundColor = Color.FromArgb(238, 238, 238);
             CategoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CategoryDGV.GridColor = Color.FromArgb(238, 238, 238);
             CategoryDGV.Location = new Point(26, 113);
             CategoryDGV.Name = "CategoryDGV";
             CategoryDGV.RowHeadersWidth = 51;
@@ -104,7 +119,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(33, 42, 81);
+            label4.ForeColor = Color.FromArgb(214, 90, 49);
             label4.Location = new Point(469, 9);
             label4.Name = "label4";
             label4.Size = new Size(166, 38);
@@ -115,6 +130,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(214, 90, 49);
             label5.Location = new Point(44, 59);
             label5.Name = "label5";
             label5.Size = new Size(208, 31);
@@ -123,6 +139,7 @@
             // 
             // textBox4
             // 
+            textBox4.BackColor = Color.FromArgb(238, 238, 238);
             textBox4.Location = new Point(273, 63);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(801, 27);
@@ -131,6 +148,7 @@
             // 
             // CatTybetxt2
             // 
+            CatTybetxt2.BackColor = Color.FromArgb(238, 238, 238);
             CatTybetxt2.Location = new Point(638, 576);
             CatTybetxt2.Margin = new Padding(3, 4, 3, 4);
             CatTybetxt2.Name = "CatTybetxt2";
@@ -139,6 +157,7 @@
             // 
             // CatNameTxt2
             // 
+            CatNameTxt2.BackColor = Color.FromArgb(238, 238, 238);
             CatNameTxt2.Location = new Point(240, 576);
             CatNameTxt2.Margin = new Padding(3, 4, 3, 4);
             CatNameTxt2.Name = "CatNameTxt2";
@@ -149,7 +168,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label6.ForeColor = Color.FromArgb(33, 42, 81);
+            label6.ForeColor = Color.FromArgb(238, 238, 238);
             label6.Location = new Point(463, 576);
             label6.Name = "label6";
             label6.Size = new Size(154, 28);
@@ -160,7 +179,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(33, 42, 81);
+            label7.ForeColor = Color.FromArgb(238, 238, 238);
             label7.Location = new Point(70, 575);
             label7.Name = "label7";
             label7.Size = new Size(164, 28);
@@ -169,7 +188,7 @@
             // 
             // UpdateBTN
             // 
-            UpdateBTN.BackColor = Color.FromArgb(255, 198, 75);
+            UpdateBTN.BackColor = Color.FromArgb(214, 90, 49);
             UpdateBTN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UpdateBTN.ForeColor = Color.Transparent;
             UpdateBTN.Location = new Point(26, 508);
@@ -183,9 +202,9 @@
             // 
             // DeleteBtn
             // 
-            DeleteBtn.BackColor = Color.FromArgb(255, 198, 75);
+            DeleteBtn.BackColor = Color.FromArgb(214, 90, 49);
             DeleteBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DeleteBtn.ForeColor = Color.Red;
+            DeleteBtn.ForeColor = Color.White;
             DeleteBtn.Location = new Point(26, 617);
             DeleteBtn.Margin = new Padding(3, 4, 3, 4);
             DeleteBtn.Name = "DeleteBtn";
@@ -217,10 +236,11 @@
             label2.Text = "Category Type :";
             // 
             // CategoryPanel
+            // CategoryPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(189, 172, 148);
+            BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1102, 690);
             Controls.Add(ErrorMessage);
             Controls.Add(DeleteBtn);

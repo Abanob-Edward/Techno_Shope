@@ -107,7 +107,7 @@ namespace Presentation
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
 
-            if (CatNameTxt2.Text != null && CatNameTxt2.Text != "")
+            if (CatNameTxt1.Text != null && CatNameTxt2.Text != "")
             {
 
                 var Result = MessageBox.Show("Are you shure  to delete ", "Delete Confirem", MessageBoxButtons.YesNo);

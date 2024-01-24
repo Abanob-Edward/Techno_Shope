@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -238,14 +239,24 @@ namespace Presentation
             }
         }
 
-        private void Email_Click(object sender, EventArgs e)
+        private void ValidateEmail(string email)
         {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            Regex regex = new Regex(pattern);
 
+            if (regex.IsMatch(email))
+            {
+                label_ErrorMas.Text = "";
+            }
+            else
+            {
+
+                label_ErrorMas.Text = "Invalid email address. Please enter a valid email.";
+            }
         }
-
         private void textBox1_eimal_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateEmail(textBox_eimal.Text);
         }
 
         private void ErrorMas_Click(object sender, EventArgs e)
