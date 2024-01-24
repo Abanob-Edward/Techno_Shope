@@ -208,7 +208,7 @@ namespace Presentation
             }
         }
 
-        
+
         private void ProOutOfStock_Click(object sender, EventArgs e)
         {
             if (editProductPanel == null)
@@ -221,7 +221,7 @@ namespace Presentation
             }
             else
             {
-                categoryPanel.Activate();
+                editProductPanel.Activate();
             }
         }
 
@@ -241,6 +241,8 @@ namespace Presentation
                 allOrdersPanal.Activate();
             }
         }
+
+        
     }
 }
 

@@ -9,69 +9,14 @@ using System.Xml.Linq;
 namespace Appliaction.Services
 {
     ///IG_Services to 
-    //public class ProductService : IG_Services<Product, int>
-    //{
-    //    private readonly IG_Repo2<Product, int> _productRepository;
 
-    //    public ProductService(IG_Repo2<Product, int> productRepository)
-    //    {
-    //        _productRepository = productRepository;
-    //    }
-
-    //    public IQueryable<Product> GetAlltech()
-    //    {
-    //        return _productRepository.getAll();
-    //    }
-
-    //    public Product GettechById(int id)
-    //    {
-    //        return _productRepository.getByID(id);
-    //    }
-
-    //    public void Deletetech(int id)
-    //    {
-    //        _productRepository.delete(id);
-    //        _productRepository.Save();
-    //    }
-
-
-
-    //    public Product Addtech(int entityId)
-    //    {
-    //        var newProduct = new Product { Id = entityId };
-    //        var addedProduct = _productRepository.add(newProduct);
-    //        _productRepository.Save();
-    //        return addedProduct;
-    //    }
-
-    //    public Product Updatetech(int entityId)
-    //    {
-    //        var existingProduct = _productRepository.getByID(entityId);
-    //        if (existingProduct != null)
-    //        {
-
-    //            _productRepository.update(existingProduct);
-    //            _productRepository.Save();
-    //        }
-    //        return existingProduct;
-    //    }
-
-
-
-    //    public IQueryable<Product> SearchtechByName(string Name)
-    //    {
-
-    //        return _productRepository.getAll().Where(p => p.Name.Contains(Name)).AsQueryable();
-    //    }
-
-
-    //}
 
     public class ProductService : IProductService
     {
-        private readonly IG_Repo<Product, int> _productRepository;
+        //private readonly IG_Repo<Product, int> _productRepository;
+        private readonly IProudectRepository _productRepository;
 
-        public ProductService(IG_Repo<Product, int> productRepository)
+        public ProductService(IProudectRepository productRepository)
         {
             _productRepository = productRepository;
         }
@@ -80,7 +25,7 @@ namespace Appliaction.Services
         {
             _productRepository.add(entity);
 
-          
+
         }
 
         public void Deletetech(int id)
@@ -93,6 +38,12 @@ namespace Appliaction.Services
             return _productRepository.getAll();
         }
 
+        public IQueryable<Product> GetByName(string? Name)
+        {
+            
+            return _productRepository.SearchByName(Name);
+        }
+
         public Product? GettechById(int id)
         {
             return _productRepository.getByID(id);
@@ -103,6 +54,9 @@ namespace Appliaction.Services
             return _productRepository.update(entity);
         }
     }
+
+
+
 }
 
 

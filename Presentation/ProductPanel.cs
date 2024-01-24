@@ -1,6 +1,8 @@
 ﻿using Appliaction.Services;
 using Context;
 using Infrastructure.Repositores;
+using Microsoft.EntityFrameworkCore;
+using Model.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,67 +12,117 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentation
 {
     public partial class ProductPanel : Form
     {
+        //private string currentsearchname = " ";
         IProductService ProductService;
+        ICategoryService categoryService;
+        string selectedProduct = " ";
         public ProductPanel()
         {
             InitializeComponent();
             ProductService = new ProductService(new ProudectRepository(new _Context()));
+            categoryService = new CategoryService(new CatgoryRepositry(new _Context()));
+            loadtabel();
+
         }
 
         public void loadtabel()
         {
-            //IQueryable<Model.Models.Product> products = ProductService.GetAlltech().ToList();
+            var products = ProductService.GetAlltech()
+                .Include(p => p.User)       // Eager load the User navigation property
+                .Include(p => p.category)   // Eager load the category navigation property
+                .ToList();
 
-            var products = ProductService.GetAlltech().ToList();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = products;
+
+            dataGridView1.DataSource = products.Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Description,
+                p.Price,
+                p.Title,
+                p.Code,
+                AdmineName = p.User != null ? p.User.FirstName : "No Admin",
+                CategoryName = p.category != null ? p.category.Name : "No Category"
+            }).ToList();
+
+            LoadCategories();
         }
 
-
+        private void LoadCategories()
+        {
+            List<string> categoryNames = categoryService.GetCategory().Select(c => c.Name).ToList();
+            comboBox1.DataSource = categoryNames;
+        }
         private void Product_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
             loadtabel();
-        }
+            ;
 
+        }
 
         private void Add_Product(object sender, EventArgs e)
         {
+
             string productName = textBox1.Text;
             int productcode = int.Parse(textBox2.Text);
             string prouductTitle = textBox3.Text;
             Decimal productPrice = Decimal.Parse(textBox4.Text);
             string prouductDescraption = textBox5.Text;
             string prouductImage = textBox6.Text;
+            //Category  selectedProduct= comboBox1.SelectedValue.ToString(); ;
+        
+            int selectedCategory = categoryService.GetCategory().FirstOrDefault(c => c.Name.ToLower() == selectedProduct.ToLower()).ID;
 
             ProductService.Addtech(new Model.Models.Product
             {
-                Name = productName
-                ,
+                Name = productName,
                 Price = productPrice,
                 Code = productcode,
                 Title = prouductTitle,
                 Description = prouductDescraption,
-                Image = prouductImage
+                Image = prouductImage,
+               CatID = selectedCategory,
+               
+            }) ;
 
-            });
-
-
+            DataGridViewRow lastRow = dataGridView1.Rows[dataGridView1.Rows.Count - 1];
+            //lastRow.Cells["CategoryName"].Value = selectedCategory != null ? selectedCategory.Name : "No Category";
+            LoadCategories();
+            loadtabel();
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
-            loadtabel();
+
+
+
         }
 
-       
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            var list = ProductService.GetByName(textBox8.Text).ToList();
+            dataGridView1.DataSource = list;
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedProduct = comboBox1.SelectedValue.ToString();
+
+        }
     }
+
+
 }
+
 

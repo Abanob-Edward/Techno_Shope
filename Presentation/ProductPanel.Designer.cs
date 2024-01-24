@@ -43,6 +43,13 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             button2 = new Button();
+            comboBox1 = new ComboBox();
+            label7 = new Label();
+            label8 = new Label();
+            textBox7 = new TextBox();
+            textBox8 = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -53,20 +60,21 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = Color.Thistle;
+            dataGridView1.BackgroundColor = Color.FromArgb(238, 238, 238);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 36);
+            dataGridView1.Location = new Point(49, 112);
             dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1363, 314);
+            dataGridView1.Size = new Size(993, 266);
             dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label1.Location = new Point(4, 417);
+            label1.ForeColor = Color.FromArgb(214, 90, 49);
+            label1.Location = new Point(13, 441);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(72, 28);
@@ -77,7 +85,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.Location = new Point(16, 515);
+            label2.ForeColor = Color.FromArgb(214, 90, 49);
+            label2.Location = new Point(13, 541);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(59, 28);
@@ -88,7 +97,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(439, 417);
+            label3.ForeColor = Color.FromArgb(214, 90, 49);
+            label3.Location = new Point(377, 435);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(63, 28);
@@ -98,7 +108,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(447, 505);
+            label4.ForeColor = Color.FromArgb(214, 90, 49);
+            label4.Location = new Point(384, 541);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(56, 28);
@@ -108,7 +119,8 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(887, 417);
+            label5.ForeColor = Color.FromArgb(214, 90, 49);
+            label5.Location = new Point(681, 432);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(115, 28);
@@ -118,7 +130,8 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(914, 521);
+            label6.ForeColor = Color.FromArgb(214, 90, 49);
+            label6.Location = new Point(707, 517);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(69, 28);
@@ -127,62 +140,64 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.Thistle;
-            textBox1.Location = new Point(122, 417);
+            textBox1.BackColor = Color.FromArgb(238, 238, 238);
+            textBox1.Location = new Point(122, 435);
             textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 34);
+            textBox1.Size = new Size(188, 34);
             textBox1.TabIndex = 8;
             // 
             // textBox2
             // 
-            textBox2.BackColor = Color.Thistle;
-            textBox2.Location = new Point(122, 511);
+            textBox2.BackColor = Color.FromArgb(238, 238, 238);
+            textBox2.Location = new Point(122, 541);
             textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(284, 34);
+            textBox2.Size = new Size(199, 34);
             textBox2.TabIndex = 9;
             // 
             // textBox3
             // 
-            textBox3.BackColor = Color.Thistle;
-            textBox3.Location = new Point(554, 407);
+            textBox3.BackColor = Color.FromArgb(238, 238, 238);
+            textBox3.Location = new Point(474, 429);
             textBox3.Margin = new Padding(4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(309, 34);
+            textBox3.Size = new Size(166, 34);
             textBox3.TabIndex = 10;
             // 
             // textBox4
             // 
-            textBox4.BackColor = Color.Thistle;
-            textBox4.Location = new Point(554, 505);
+            textBox4.BackColor = Color.FromArgb(238, 238, 238);
+            textBox4.Location = new Point(474, 535);
             textBox4.Margin = new Padding(4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(309, 34);
+            textBox4.Size = new Size(172, 34);
             textBox4.TabIndex = 11;
             // 
             // textBox5
             // 
-            textBox5.BackColor = Color.Thistle;
-            textBox5.Location = new Point(1027, 407);
+            textBox5.BackColor = Color.FromArgb(238, 238, 238);
+            textBox5.Location = new Point(846, 426);
             textBox5.Margin = new Padding(4);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(363, 34);
+            textBox5.Size = new Size(148, 34);
             textBox5.TabIndex = 12;
             // 
             // textBox6
             // 
-            textBox6.BackColor = Color.Thistle;
-            textBox6.Location = new Point(1027, 511);
+            textBox6.BackColor = Color.FromArgb(238, 238, 238);
+            textBox6.Location = new Point(846, 512);
             textBox6.Margin = new Padding(4);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(363, 34);
+            textBox6.Size = new Size(148, 34);
             textBox6.TabIndex = 13;
             // 
             // button2
             // 
-            button2.BackColor = Color.MediumOrchid;
-            button2.Location = new Point(657, 613);
+            button2.BackColor = Color.FromArgb(214, 90, 49);
+            button2.BackgroundImageLayout = ImageLayout.Center;
+            button2.ForeColor = Color.FromArgb(238, 238, 238);
+            button2.Location = new Point(607, 602);
             button2.Margin = new Padding(4);
             button2.Name = "button2";
             button2.Size = new Size(157, 77);
@@ -191,12 +206,91 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += Add_Product;
             // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.FromArgb(238, 238, 238);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(189, 623);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(284, 36);
+            comboBox1.TabIndex = 15;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.FromArgb(214, 90, 49);
+            label7.Location = new Point(12, 623);
+            label7.Name = "label7";
+            label7.Size = new Size(167, 28);
+            label7.TabIndex = 16;
+            label7.Text = "Choese Category";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(76, 714);
+            label8.Name = "label8";
+            label8.Size = new Size(66, 28);
+            label8.TabIndex = 17;
+            label8.Text = "label8";
+            // 
+            // textBox7
+            // 
+            textBox7.BackColor = Color.Thistle;
+            textBox7.Location = new Point(204, 711);
+            textBox7.Margin = new Padding(4);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(917, 34);
+            textBox7.TabIndex = 18;
+            // 
+            // textBox8
+            // 
+            textBox8.BackColor = Color.FromArgb(238, 238, 238);
+            textBox8.Location = new Point(409, 56);
+            textBox8.Margin = new Padding(4);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(531, 34);
+            textBox8.TabIndex = 19;
+            textBox8.TextChanged += textBox8_TextChanged;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.FromArgb(214, 90, 49);
+            label9.Location = new Point(176, 56);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(206, 27);
+            label9.TabIndex = 20;
+            label9.Text = "Search in prouduct :";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Wide Latin", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.FromArgb(214, 90, 49);
+            label10.Location = new Point(538, 9);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(205, 24);
+            label10.TabIndex = 21;
+            label10.Text = " Prouducts";
+            // 
             // ProductPanel
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Purple;
-            ClientSize = new Size(1869, 762);
+            BackColor = Color.FromArgb(57, 62, 70);
+            ClientSize = new Size(1102, 690);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(textBox8);
+            Controls.Add(textBox7);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(comboBox1);
             Controls.Add(button2);
             Controls.Add(textBox6);
             Controls.Add(textBox5);
@@ -241,5 +335,12 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private Button button2;
+        private ComboBox comboBox1;
+        private Label label7;
+        private Label label8;
+        private TextBox textBox7;
+        private TextBox textBox8;
+        private Label label9;
+        private Label label10;
     }
 }
