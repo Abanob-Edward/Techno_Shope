@@ -104,9 +104,9 @@ namespace Presentation
             panel_login.Controls.Add(label_Pass_login);
             panel_login.Controls.Add(textBox_UName_Login);
             panel_login.Controls.Add(label_UName_login);
-            panel_login.Location = new Point(7, 112);
+            panel_login.Location = new Point(7, 123);
             panel_login.Name = "panel_login";
-            panel_login.Size = new Size(573, 528);
+            panel_login.Size = new Size(573, 517);
             panel_login.TabIndex = 2;
             panel_login.Paint += panel_login_Paint;
             // 
@@ -424,7 +424,7 @@ namespace Presentation
             Controls.Add(panel_login);
             Name = "LoginAndRegister";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Registration";
             Load += Form1_Load;
             panel_login.ResumeLayout(false);
             panel_login.PerformLayout();

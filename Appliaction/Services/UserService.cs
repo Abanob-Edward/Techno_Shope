@@ -50,6 +50,10 @@ namespace Appliaction.Services
             return USerRepository.update(user);
         }
 
+        public string GetUserRole(User user)
+        {
+            return  USerRepository.GetUserRole(user).ToLower();
+        }
         User IUserService.GetUserByUsername(string username)
         {
             return USerRepository.GetUserByUsername(username);

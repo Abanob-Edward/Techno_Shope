@@ -1,4 +1,6 @@
-﻿using Autofac;
+﻿using Appliaction.Services;
+using Autofac;
+using Infrastructure.Repositores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +16,8 @@ namespace Presentation
         public static IContainer Inject()
         {
             var builder = new ContainerBuilder();
-            ///builder.RegisterType<>().As<>;
-            ///
+           // builder.RegisterType<ICategoryService>().As<CategoryService>;
+            
             return builder.Build();
         }
     }

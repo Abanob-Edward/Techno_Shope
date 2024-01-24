@@ -30,5 +30,14 @@ namespace Appliaction.Contract
              }
          }*/
         public int AddtoUserRole(User _user);
+
+        public string GetUserRole(User user);
+        
+
+
     }
+
+
 }
+
+

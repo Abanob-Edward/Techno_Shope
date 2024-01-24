@@ -14,16 +14,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Presentation
 {
     public partial class LoginAndRegister : Form
     {
+        AdminPanal adminPanal;
+
+        public string NameofAdmin { get; set; }
 
 
-
-
-        IUserService userService;
+        private readonly    IUserService userService;
         public LoginAndRegister()
         {
             InitializeComponent();
@@ -82,7 +84,6 @@ namespace Presentation
             {
                 // Username is available, add the user to the database
 
-                //if
                 if (password == confirmPassword)
                 {
 
@@ -145,6 +146,15 @@ namespace Presentation
 
                 label_log_suc.Text = ("Login successful!");
                 label_error_mas_log.Text = (" ");
+                //  Logic to handle  Role
+                if (userService.GetUserRole(user) == "admin")
+                {
+                    NameofAdmin = user.FirstName + "  " + user.LastName;
+                    adminPanal = new AdminPanal(NameofAdmin);
+                    this.Hide();
+                    adminPanal.Show();
+                    
+                }
 
             }
             else

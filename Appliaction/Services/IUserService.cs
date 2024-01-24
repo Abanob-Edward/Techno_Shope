@@ -15,7 +15,7 @@ namespace Appliaction.Services
         IQueryable<User> GetUser();
         public User UpdateUser(User user);
         public void DeleteUser(int id);
-
+        public string GetUserRole(User user);
         //new function for the user
         bool IsUsernameAvailable(string username);
         User GetUserByUsername(string username);

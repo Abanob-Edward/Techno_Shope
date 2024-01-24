@@ -31,18 +31,12 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanal));
             panel1 = new Panel();
+            AdminName = new Label();
             label1 = new Label();
             BtnSideBar = new PictureBox();
             sideBar = new FlowLayoutPanel();
             panel4 = new Panel();
             HomeBTN = new Button();
-            OrderMenu = new FlowLayoutPanel();
-            panel9 = new Panel();
-            OrderBTN = new Button();
-            panel10 = new Panel();
-            OrderStatusBTN = new Button();
-            panel11 = new Panel();
-            AllOrders = new Button();
             panel2 = new Panel();
             CategoryBTN = new Button();
             CategoryMenu = new FlowLayoutPanel();
@@ -52,33 +46,41 @@
             ShowALLProduct = new Button();
             panel8 = new Panel();
             EditProduct = new Button();
+            OrderMenu = new FlowLayoutPanel();
+            panel9 = new Panel();
+            OrderBTN = new Button();
+            panel10 = new Panel();
+            OrderStatusBTN = new Button();
+            panel11 = new Panel();
+            AllOrders = new Button();
+            panel6 = new Panel();
+            BestSeller = new Button();
             panel3 = new Panel();
             LogoutBTN = new Button();
             CategoryTransition = new System.Windows.Forms.Timer(components);
             SideBarTransition = new System.Windows.Forms.Timer(components);
             OrderTransition = new System.Windows.Forms.Timer(components);
-            BestSeller = new Button();
-            panel6 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)BtnSideBar).BeginInit();
             sideBar.SuspendLayout();
             panel4.SuspendLayout();
-            OrderMenu.SuspendLayout();
-            panel9.SuspendLayout();
-            panel10.SuspendLayout();
-            panel11.SuspendLayout();
             panel2.SuspendLayout();
             CategoryMenu.SuspendLayout();
             panel5.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
-            panel3.SuspendLayout();
+            OrderMenu.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
+            panel11.SuspendLayout();
             panel6.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(AdminName);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(BtnSideBar);
             panel1.Dock = DockStyle.Top;
@@ -86,6 +88,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1531, 60);
             panel1.TabIndex = 0;
+            // 
+            // AdminName
+            // 
+            AdminName.AutoSize = true;
+            AdminName.BackColor = Color.White;
+            AdminName.Font = new Font("Stencil", 19.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            AdminName.ForeColor = Color.Navy;
+            AdminName.Location = new Point(1002, 9);
+            AdminName.Name = "AdminName";
+            AdminName.Size = new Size(0, 40);
+            AdminName.TabIndex = 2;
             // 
             // label1
             // 
@@ -112,11 +125,11 @@
             // 
             sideBar.BackColor = Color.Black;
             sideBar.Controls.Add(panel4);
+            sideBar.Controls.Add(panel2);
+            sideBar.Controls.Add(CategoryMenu);
+            sideBar.Controls.Add(OrderMenu);
             sideBar.Controls.Add(panel6);
             sideBar.Controls.Add(panel3);
-            sideBar.Controls.Add(OrderMenu);
-            sideBar.Controls.Add(CategoryMenu);
-            sideBar.Controls.Add(panel2);
             sideBar.Dock = DockStyle.Left;
             sideBar.FlowDirection = FlowDirection.TopDown;
             sideBar.Location = new Point(0, 60);
@@ -151,101 +164,11 @@
             HomeBTN.TextAlign = ContentAlignment.MiddleLeft;
             HomeBTN.UseVisualStyleBackColor = false;
             // 
-            // OrderMenu
-            // 
-            OrderMenu.BackColor = Color.Black;
-            OrderMenu.Controls.Add(panel9);
-            OrderMenu.Controls.Add(panel10);
-            OrderMenu.Controls.Add(panel11);
-            OrderMenu.Location = new Point(3, 242);
-            OrderMenu.Name = "OrderMenu";
-            OrderMenu.Size = new Size(277, 68);
-            OrderMenu.TabIndex = 8;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = SystemColors.ActiveCaptionText;
-            panel9.Controls.Add(OrderBTN);
-            panel9.Location = new Point(3, 3);
-            panel9.Name = "panel9";
-            panel9.Padding = new Padding(0, 25, 0, 0);
-            panel9.Size = new Size(280, 70);
-            panel9.TabIndex = 6;
-            // 
-            // OrderBTN
-            // 
-            OrderBTN.BackColor = SystemColors.ActiveCaptionText;
-            OrderBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            OrderBTN.ForeColor = SystemColors.ControlLightLight;
-            OrderBTN.Image = (Image)resources.GetObject("OrderBTN.Image");
-            OrderBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            OrderBTN.Location = new Point(-11, -16);
-            OrderBTN.Name = "OrderBTN";
-            OrderBTN.Padding = new Padding(10, 0, 0, 0);
-            OrderBTN.Size = new Size(328, 100);
-            OrderBTN.TabIndex = 2;
-            OrderBTN.Text = "        Orders";
-            OrderBTN.TextAlign = ContentAlignment.MiddleLeft;
-            OrderBTN.UseVisualStyleBackColor = false;
-            OrderBTN.Click += OrderBTN_Click;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(64, 64, 64);
-            panel10.Controls.Add(OrderStatusBTN);
-            panel10.Location = new Point(3, 79);
-            panel10.Name = "panel10";
-            panel10.Padding = new Padding(0, 25, 0, 0);
-            panel10.Size = new Size(280, 55);
-            panel10.TabIndex = 8;
-            // 
-            // OrderStatusBTN
-            // 
-            OrderStatusBTN.BackColor = Color.FromArgb(64, 64, 64);
-            OrderStatusBTN.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            OrderStatusBTN.ForeColor = SystemColors.ControlLightLight;
-            OrderStatusBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            OrderStatusBTN.Location = new Point(-8, -18);
-            OrderStatusBTN.Name = "OrderStatusBTN";
-            OrderStatusBTN.Padding = new Padding(10, 0, 0, 0);
-            OrderStatusBTN.Size = new Size(321, 100);
-            OrderStatusBTN.TabIndex = 2;
-            OrderStatusBTN.Text = "Order status";
-            OrderStatusBTN.TextAlign = ContentAlignment.MiddleLeft;
-            OrderStatusBTN.UseVisualStyleBackColor = false;
-            OrderStatusBTN.Click += OrderStatusBTN_Click;
-            // 
-            // panel11
-            // 
-            panel11.BackColor = SystemColors.ActiveCaptionText;
-            panel11.Controls.Add(AllOrders);
-            panel11.Location = new Point(3, 140);
-            panel11.Name = "panel11";
-            panel11.Padding = new Padding(0, 25, 0, 0);
-            panel11.Size = new Size(280, 55);
-            panel11.TabIndex = 9;
-            // 
-            // AllOrders
-            // 
-            AllOrders.BackColor = Color.FromArgb(64, 64, 64);
-            AllOrders.Font = new Font("Tahoma", 10.2F, FontStyle.Bold);
-            AllOrders.ForeColor = SystemColors.ControlLightLight;
-            AllOrders.ImageAlign = ContentAlignment.MiddleLeft;
-            AllOrders.Location = new Point(-8, -18);
-            AllOrders.Name = "AllOrders";
-            AllOrders.Padding = new Padding(10, 0, 0, 0);
-            AllOrders.Size = new Size(321, 100);
-            AllOrders.TabIndex = 2;
-            AllOrders.Text = "All Orders";
-            AllOrders.TextAlign = ContentAlignment.MiddleLeft;
-            AllOrders.UseVisualStyleBackColor = false;
-            AllOrders.Click += AllOrders_Click;
-            // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaptionText;
             panel2.Controls.Add(CategoryBTN);
-            panel2.Location = new Point(3, 394);
+            panel2.Location = new Point(3, 96);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(0, 25, 0, 0);
             panel2.Size = new Size(277, 67);
@@ -274,7 +197,7 @@
             CategoryMenu.Controls.Add(panel5);
             CategoryMenu.Controls.Add(panel7);
             CategoryMenu.Controls.Add(panel8);
-            CategoryMenu.Location = new Point(3, 316);
+            CategoryMenu.Location = new Point(3, 169);
             CategoryMenu.Name = "CategoryMenu";
             CategoryMenu.Size = new Size(277, 72);
             CategoryMenu.TabIndex = 7;
@@ -358,11 +281,128 @@
             EditProduct.UseVisualStyleBackColor = false;
             EditProduct.Click += ProOutOfStock_Click;
             // 
+            // OrderMenu
+            // 
+            OrderMenu.BackColor = Color.Black;
+            OrderMenu.Controls.Add(panel9);
+            OrderMenu.Controls.Add(panel10);
+            OrderMenu.Controls.Add(panel11);
+            OrderMenu.Location = new Point(3, 247);
+            OrderMenu.Name = "OrderMenu";
+            OrderMenu.Size = new Size(277, 68);
+            OrderMenu.TabIndex = 8;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = SystemColors.ActiveCaptionText;
+            panel9.Controls.Add(OrderBTN);
+            panel9.Location = new Point(3, 3);
+            panel9.Name = "panel9";
+            panel9.Padding = new Padding(0, 25, 0, 0);
+            panel9.Size = new Size(280, 70);
+            panel9.TabIndex = 6;
+            // 
+            // OrderBTN
+            // 
+            OrderBTN.BackColor = SystemColors.ActiveCaptionText;
+            OrderBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            OrderBTN.ForeColor = SystemColors.ControlLightLight;
+            OrderBTN.Image = (Image)resources.GetObject("OrderBTN.Image");
+            OrderBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            OrderBTN.Location = new Point(-11, -16);
+            OrderBTN.Name = "OrderBTN";
+            OrderBTN.Padding = new Padding(10, 0, 0, 0);
+            OrderBTN.Size = new Size(328, 100);
+            OrderBTN.TabIndex = 2;
+            OrderBTN.Text = "        Orders";
+            OrderBTN.TextAlign = ContentAlignment.MiddleLeft;
+            OrderBTN.UseVisualStyleBackColor = false;
+            OrderBTN.Click += OrderBTN_Click;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(64, 64, 64);
+            panel10.Controls.Add(OrderStatusBTN);
+            panel10.Location = new Point(3, 79);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(0, 25, 0, 0);
+            panel10.Size = new Size(280, 55);
+            panel10.TabIndex = 8;
+            // 
+            // OrderStatusBTN
+            // 
+            OrderStatusBTN.BackColor = Color.FromArgb(64, 64, 64);
+            OrderStatusBTN.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OrderStatusBTN.ForeColor = SystemColors.ControlLightLight;
+            OrderStatusBTN.ImageAlign = ContentAlignment.MiddleLeft;
+            OrderStatusBTN.Location = new Point(-8, -18);
+            OrderStatusBTN.Name = "OrderStatusBTN";
+            OrderStatusBTN.Padding = new Padding(10, 0, 0, 0);
+            OrderStatusBTN.Size = new Size(321, 100);
+            OrderStatusBTN.TabIndex = 2;
+            OrderStatusBTN.Text = "Order status";
+            OrderStatusBTN.TextAlign = ContentAlignment.MiddleLeft;
+            OrderStatusBTN.UseVisualStyleBackColor = false;
+            OrderStatusBTN.Click += OrderStatusBTN_Click;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = SystemColors.ActiveCaptionText;
+            panel11.Controls.Add(AllOrders);
+            panel11.Location = new Point(3, 140);
+            panel11.Name = "panel11";
+            panel11.Padding = new Padding(0, 25, 0, 0);
+            panel11.Size = new Size(280, 55);
+            panel11.TabIndex = 9;
+            // 
+            // AllOrders
+            // 
+            AllOrders.BackColor = Color.FromArgb(64, 64, 64);
+            AllOrders.Font = new Font("Tahoma", 10.2F, FontStyle.Bold);
+            AllOrders.ForeColor = SystemColors.ControlLightLight;
+            AllOrders.ImageAlign = ContentAlignment.MiddleLeft;
+            AllOrders.Location = new Point(-8, -18);
+            AllOrders.Name = "AllOrders";
+            AllOrders.Padding = new Padding(10, 0, 0, 0);
+            AllOrders.Size = new Size(321, 100);
+            AllOrders.TabIndex = 2;
+            AllOrders.Text = "All Orders";
+            AllOrders.TextAlign = ContentAlignment.MiddleLeft;
+            AllOrders.UseVisualStyleBackColor = false;
+            AllOrders.Click += AllOrders_Click;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = SystemColors.ActiveCaptionText;
+            panel6.Controls.Add(BestSeller);
+            panel6.Location = new Point(3, 321);
+            panel6.Name = "panel6";
+            panel6.Padding = new Padding(0, 25, 0, 0);
+            panel6.Size = new Size(277, 67);
+            panel6.TabIndex = 6;
+            // 
+            // BestSeller
+            // 
+            BestSeller.BackColor = SystemColors.ActiveCaptionText;
+            BestSeller.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            BestSeller.ForeColor = SystemColors.ControlLightLight;
+            BestSeller.Image = (Image)resources.GetObject("BestSeller.Image");
+            BestSeller.ImageAlign = ContentAlignment.MiddleLeft;
+            BestSeller.Location = new Point(-11, -18);
+            BestSeller.Name = "BestSeller";
+            BestSeller.Padding = new Padding(10, 0, 0, 0);
+            BestSeller.Size = new Size(321, 100);
+            BestSeller.TabIndex = 2;
+            BestSeller.Text = "        Best Seller";
+            BestSeller.TextAlign = ContentAlignment.MiddleLeft;
+            BestSeller.UseVisualStyleBackColor = false;
+            BestSeller.Click += BestSeller_Click;
+            // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ActiveCaptionText;
             panel3.Controls.Add(LogoutBTN);
-            panel3.Location = new Point(3, 169);
+            panel3.Location = new Point(3, 394);
             panel3.Name = "panel3";
             panel3.Padding = new Padding(0, 25, 0, 0);
             panel3.Size = new Size(277, 67);
@@ -375,7 +415,7 @@
             LogoutBTN.ForeColor = SystemColors.ControlLightLight;
             LogoutBTN.Image = (Image)resources.GetObject("LogoutBTN.Image");
             LogoutBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            LogoutBTN.Location = new Point(-11, -17);
+            LogoutBTN.Location = new Point(-8, -17);
             LogoutBTN.Name = "LogoutBTN";
             LogoutBTN.Padding = new Padding(10, 0, 0, 0);
             LogoutBTN.Size = new Size(321, 100);
@@ -399,33 +439,6 @@
             OrderTransition.Interval = 10;
             OrderTransition.Tick += OrderTransition_Tick;
             // 
-            // BestSeller
-            // 
-            BestSeller.BackColor = SystemColors.ActiveCaptionText;
-            BestSeller.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            BestSeller.ForeColor = SystemColors.ControlLightLight;
-            BestSeller.Image = (Image)resources.GetObject("BestSeller.Image");
-            BestSeller.ImageAlign = ContentAlignment.MiddleLeft;
-            BestSeller.Location = new Point(-11, -18);
-            BestSeller.Name = "BestSeller";
-            BestSeller.Padding = new Padding(10, 0, 0, 0);
-            BestSeller.Size = new Size(321, 100);
-            BestSeller.TabIndex = 2;
-            BestSeller.Text = "        Best Seller";
-            BestSeller.TextAlign = ContentAlignment.MiddleLeft;
-            BestSeller.UseVisualStyleBackColor = false;
-            BestSeller.Click += BestSeller_Click;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = SystemColors.ActiveCaptionText;
-            panel6.Controls.Add(BestSeller);
-            panel6.Location = new Point(3, 96);
-            panel6.Name = "panel6";
-            panel6.Padding = new Padding(0, 25, 0, 0);
-            panel6.Size = new Size(277, 67);
-            panel6.TabIndex = 6;
-            // 
             // AdminPanal
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -440,17 +453,17 @@
             ((System.ComponentModel.ISupportInitialize)BtnSideBar).EndInit();
             sideBar.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            OrderMenu.ResumeLayout(false);
-            panel9.ResumeLayout(false);
-            panel10.ResumeLayout(false);
-            panel11.ResumeLayout(false);
             panel2.ResumeLayout(false);
             CategoryMenu.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
-            panel3.ResumeLayout(false);
+            OrderMenu.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel11.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -486,5 +499,6 @@
         private System.Windows.Forms.Timer OrderTransition;
         private Button BestSeller;
         private Panel panel6;
+        private Label AdminName;
     }
 }

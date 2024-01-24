@@ -1,4 +1,5 @@
 using Model.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Presentation
 {
@@ -10,15 +11,17 @@ namespace Presentation
         BestSellerPanel BestSellerPanel;
         OrderStatusPanel OrderStatusPanel;
         AllOrdersPanal allOrdersPanal;
-        public AdminPanal()
+       // LoginAndRegister loginAndRegister = 
+        public AdminPanal(string? name ="Admin Name")
         {
             InitializeComponent();
+            AdminName.Text= "Welcome  "+ name;
         }
 
         bool CatMenuExpand = false;
         bool OrderMenuExpand = false;
 
-
+        
 
         private void CategoryTransition_Tick(object sender, EventArgs e)
         {
@@ -81,7 +84,7 @@ namespace Presentation
 
         private void Category_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            Category = null;
+            categoryPanel = null;
         }
 
         private void BestSellerClosed(object? sender, FormClosedEventArgs e)
