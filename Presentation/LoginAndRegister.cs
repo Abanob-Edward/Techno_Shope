@@ -235,7 +235,7 @@ namespace Presentation
 
         private void textBox1_eimal_TextChanged(object sender, EventArgs e)
         {
-
+            //  
         }
 
         private void ErrorMas_Click(object sender, EventArgs e)
