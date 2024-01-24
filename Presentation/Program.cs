@@ -26,7 +26,7 @@ namespace Presentation
              */
 
 
-            Application.Run(new AdminPanal());
+            Application.Run(new LoginAndRegister());
             //Application.Run(new LoginAndRegister());
         }
     }

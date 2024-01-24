@@ -259,19 +259,18 @@ namespace Presentation
             label_Eimal.AutoSize = true;
             label_Eimal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_Eimal.ForeColor = Color.FromArgb(214, 90, 49);
-            label_Eimal.Location = new Point(122, 259);
+            label_Eimal.Location = new Point(19, 259);
             label_Eimal.Name = "label_Eimal";
             label_Eimal.Size = new Size(78, 28);
             label_Eimal.TabIndex = 14;
             label_Eimal.Text = "Eimal  : ";
-            label_Eimal.Click += Email_Click;
             // 
             // label_PNmber
             // 
             label_PNmber.AutoSize = true;
             label_PNmber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_PNmber.ForeColor = Color.FromArgb(214, 90, 49);
-            label_PNmber.Location = new Point(41, 209);
+            label_PNmber.Location = new Point(19, 209);
             label_PNmber.Name = "label_PNmber";
             label_PNmber.Size = new Size(158, 28);
             label_PNmber.TabIndex = 13;
@@ -281,7 +280,7 @@ namespace Presentation
             // textBox_Phone_Number
             // 
             textBox_Phone_Number.BackColor = Color.FromArgb(238, 238, 238);
-            textBox_Phone_Number.Location = new Point(209, 210);
+            textBox_Phone_Number.Location = new Point(206, 210);
             textBox_Phone_Number.Name = "textBox_Phone_Number";
             textBox_Phone_Number.Size = new Size(334, 27);
             textBox_Phone_Number.TabIndex = 12;
@@ -292,7 +291,7 @@ namespace Presentation
             label_UName.AutoSize = true;
             label_UName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_UName.ForeColor = Color.FromArgb(214, 90, 49);
-            label_UName.Location = new Point(86, 163);
+            label_UName.Location = new Point(19, 163);
             label_UName.Name = "label_UName";
             label_UName.Size = new Size(117, 28);
             label_UName.TabIndex = 11;
@@ -302,7 +301,7 @@ namespace Presentation
             // textBox_FName
             // 
             textBox_FName.BackColor = Color.FromArgb(238, 238, 238);
-            textBox_FName.Location = new Point(205, 67);
+            textBox_FName.Location = new Point(206, 67);
             textBox_FName.Name = "textBox_FName";
             textBox_FName.Size = new Size(334, 27);
             textBox_FName.TabIndex = 10;
@@ -313,7 +312,7 @@ namespace Presentation
             label_FName.AutoSize = true;
             label_FName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_FName.ForeColor = Color.FromArgb(214, 90, 49);
-            label_FName.Location = new Point(68, 66);
+            label_FName.Location = new Point(19, 66);
             label_FName.Name = "label_FName";
             label_FName.Size = new Size(125, 28);
             label_FName.TabIndex = 9;
@@ -323,7 +322,7 @@ namespace Presentation
             // textBox_Confirm_Pass
             // 
             textBox_Confirm_Pass.BackColor = Color.FromArgb(238, 238, 238);
-            textBox_Confirm_Pass.Location = new Point(209, 351);
+            textBox_Confirm_Pass.Location = new Point(206, 351);
             textBox_Confirm_Pass.Name = "textBox_Confirm_Pass";
             textBox_Confirm_Pass.Size = new Size(334, 27);
             textBox_Confirm_Pass.TabIndex = 8;
@@ -335,7 +334,7 @@ namespace Presentation
             label_Confirm_Pass.AutoSize = true;
             label_Confirm_Pass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_Confirm_Pass.ForeColor = Color.FromArgb(214, 90, 49);
-            label_Confirm_Pass.Location = new Point(13, 350);
+            label_Confirm_Pass.Location = new Point(19, 350);
             label_Confirm_Pass.Name = "label_Confirm_Pass";
             label_Confirm_Pass.Size = new Size(182, 28);
             label_Confirm_Pass.TabIndex = 7;
@@ -357,7 +356,7 @@ namespace Presentation
             label_Pass.AutoSize = true;
             label_Pass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_Pass.ForeColor = Color.FromArgb(214, 90, 49);
-            label_Pass.Location = new Point(92, 306);
+            label_Pass.Location = new Point(19, 306);
             label_Pass.Name = "label_Pass";
             label_Pass.Size = new Size(107, 28);
             label_Pass.TabIndex = 5;
@@ -369,7 +368,7 @@ namespace Presentation
             button_Register.FlatStyle = FlatStyle.Flat;
             button_Register.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button_Register.ForeColor = Color.FromArgb(214, 90, 49);
-            button_Register.Location = new Point(86, 431);
+            button_Register.Location = new Point(60, 433);
             button_Register.Name = "button_Register";
             button_Register.Size = new Size(443, 40);
             button_Register.TabIndex = 4;
@@ -380,7 +379,7 @@ namespace Presentation
             // textBox_UName
             // 
             textBox_UName.BackColor = Color.FromArgb(238, 238, 238);
-            textBox_UName.Location = new Point(209, 167);
+            textBox_UName.Location = new Point(206, 167);
             textBox_UName.Name = "textBox_UName";
             textBox_UName.Size = new Size(334, 27);
             textBox_UName.TabIndex = 3;
@@ -391,7 +390,7 @@ namespace Presentation
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(134, 181);
+            label11.Location = new Point(19, 181);
             label11.Name = "label11";
             label11.Size = new Size(17, 28);
             label11.TabIndex = 2;
@@ -400,7 +399,7 @@ namespace Presentation
             // textBox_LName
             // 
             textBox_LName.BackColor = Color.FromArgb(238, 238, 238);
-            textBox_LName.Location = new Point(209, 118);
+            textBox_LName.Location = new Point(206, 118);
             textBox_LName.Name = "textBox_LName";
             textBox_LName.Size = new Size(334, 27);
             textBox_LName.TabIndex = 1;
@@ -411,7 +410,7 @@ namespace Presentation
             label_LName.AutoSize = true;
             label_LName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label_LName.ForeColor = Color.FromArgb(214, 90, 49);
-            label_LName.Location = new Point(78, 114);
+            label_LName.Location = new Point(19, 114);
             label_LName.Name = "label_LName";
             label_LName.Size = new Size(122, 28);
             label_LName.TabIndex = 0;
