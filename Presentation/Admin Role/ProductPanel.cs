@@ -68,10 +68,10 @@ namespace Presentation
             ;
 
         }
-
+        string newImageName = "";
         private void Add_Product(object sender, EventArgs e)
         {
-
+           
             string productName = textBox1.Text;
             int productcode = int.Parse(textBox2.Text);
             string prouductTitle = textBox3.Text;
@@ -85,8 +85,11 @@ namespace Presentation
             // try to add image 
             try
             {
-              
-                File.Copy(ProductImageSelction,Path.Combine( @"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images",Path.GetFileName(ProductImageSelction)), true);
+                 newImageName =   DateTime.Now.ToString() +Path.GetFileName(ProductImageSelction);
+
+
+                File.Copy(ProductImageSelction,Path.Combine( @"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images",
+                    Path.GetFileName(ProductImageSelction)), true);
                 
             }
             catch (Exception ex)
@@ -101,7 +104,7 @@ namespace Presentation
                 Code = productcode,
                 Title = prouductTitle,
                 Description = prouductDescraption,
-                Image = Path.GetFileName(ProductImageSelction)+ DateTime.Now.ToString(),
+                Image = newImageName,
                 CatID = selectedCategory,
 
             });
