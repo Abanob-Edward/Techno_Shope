@@ -24,19 +24,17 @@ namespace Infrastructure.Repositores
         public User GetUserByUsername(string username)
         {
 
-            using (var dbContext = new _Context())
-            {
-                return dbContext.Users.FirstOrDefault(u => u.UserName == username);
-            }
+           
+                return Context.Users.FirstOrDefault(u => u.UserName == username);
+           
         }
 
         public bool IsUsernameAvailable(string username)
         {
 
-            using (var dbContext = new _Context())
-            {
-                return dbContext.Users.Any(u => u.UserName == username);
-            }
+          
+                return Context.Users.Any(u => u.UserName == username);
+            
         }
 
         public int AddtoUserRole(User _user)

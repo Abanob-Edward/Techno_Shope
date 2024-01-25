@@ -79,7 +79,6 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(34, 40, 49);
             panel1.BackColor = Color.White;
             panel1.Controls.Add(AdminName);
             panel1.Controls.Add(label1);
@@ -165,6 +164,7 @@
             HomeBTN.Text = "        Home";
             HomeBTN.TextAlign = ContentAlignment.MiddleLeft;
             HomeBTN.UseVisualStyleBackColor = false;
+            HomeBTN.Click += HomeBTN_Click;
             // 
             // panel2
             // 
@@ -183,7 +183,7 @@
             CategoryBTN.ForeColor = SystemColors.ControlLightLight;
             CategoryBTN.Image = (Image)resources.GetObject("CategoryBTN.Image");
             CategoryBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            CategoryBTN.Location = new Point(-11, -15);
+            CategoryBTN.Location = new Point(-5, -16);
             CategoryBTN.Name = "CategoryBTN";
             CategoryBTN.Padding = new Padding(10, 0, 0, 0);
             CategoryBTN.Size = new Size(321, 100);
@@ -195,7 +195,7 @@
             // 
             // CategoryMenu
             // 
-            CategoryMenu.BackColor = Color.Black;
+            CategoryMenu.BackColor = SystemColors.ActiveCaptionText;
             CategoryMenu.Controls.Add(panel5);
             CategoryMenu.Controls.Add(panel7);
             CategoryMenu.Controls.Add(panel8);
@@ -221,10 +221,10 @@
             ProMenuBtn.ForeColor = SystemColors.ControlLightLight;
             ProMenuBtn.Image = (Image)resources.GetObject("ProMenuBtn.Image");
             ProMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            ProMenuBtn.Location = new Point(-11, -16);
+            ProMenuBtn.Location = new Point(-17, -17);
             ProMenuBtn.Name = "ProMenuBtn";
             ProMenuBtn.Padding = new Padding(10, 0, 0, 0);
-            ProMenuBtn.Size = new Size(328, 100);
+            ProMenuBtn.Size = new Size(326, 100);
             ProMenuBtn.TabIndex = 2;
             ProMenuBtn.Text = "        Product";
             ProMenuBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -285,7 +285,7 @@
             // 
             // OrderMenu
             // 
-            OrderMenu.BackColor = Color.Black;
+            OrderMenu.BackColor = SystemColors.ActiveCaptionText;
             OrderMenu.Controls.Add(panel9);
             OrderMenu.Controls.Add(panel10);
             OrderMenu.Controls.Add(panel11);
@@ -311,7 +311,7 @@
             OrderBTN.ForeColor = SystemColors.ControlLightLight;
             OrderBTN.Image = (Image)resources.GetObject("OrderBTN.Image");
             OrderBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            OrderBTN.Location = new Point(-11, -16);
+            OrderBTN.Location = new Point(-11, -19);
             OrderBTN.Name = "OrderBTN";
             OrderBTN.Padding = new Padding(10, 0, 0, 0);
             OrderBTN.Size = new Size(328, 100);
@@ -400,123 +400,6 @@
             BestSeller.UseVisualStyleBackColor = false;
             BestSeller.Click += BestSeller_Click;
             // 
-            // OrderMenu
-            // 
-            OrderMenu.BackColor = Color.Black;
-            OrderMenu.Controls.Add(panel9);
-            OrderMenu.Controls.Add(panel10);
-            OrderMenu.Controls.Add(panel11);
-            OrderMenu.Location = new Point(3, 247);
-            OrderMenu.Name = "OrderMenu";
-            OrderMenu.Size = new Size(277, 68);
-            OrderMenu.TabIndex = 8;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = SystemColors.ActiveCaptionText;
-            panel9.Controls.Add(OrderBTN);
-            panel9.Location = new Point(3, 3);
-            panel9.Name = "panel9";
-            panel9.Padding = new Padding(0, 25, 0, 0);
-            panel9.Size = new Size(280, 70);
-            panel9.TabIndex = 6;
-            // 
-            // OrderBTN
-            // 
-            OrderBTN.BackColor = SystemColors.ActiveCaptionText;
-            OrderBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            OrderBTN.ForeColor = SystemColors.ControlLightLight;
-            OrderBTN.Image = (Image)resources.GetObject("OrderBTN.Image");
-            OrderBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            OrderBTN.Location = new Point(-11, -16);
-            OrderBTN.Name = "OrderBTN";
-            OrderBTN.Padding = new Padding(10, 0, 0, 0);
-            OrderBTN.Size = new Size(328, 100);
-            OrderBTN.TabIndex = 2;
-            OrderBTN.Text = "        Orders";
-            OrderBTN.TextAlign = ContentAlignment.MiddleLeft;
-            OrderBTN.UseVisualStyleBackColor = false;
-            OrderBTN.Click += OrderBTN_Click;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(64, 64, 64);
-            panel10.Controls.Add(OrderStatusBTN);
-            panel10.Location = new Point(3, 79);
-            panel10.Name = "panel10";
-            panel10.Padding = new Padding(0, 25, 0, 0);
-            panel10.Size = new Size(280, 55);
-            panel10.TabIndex = 8;
-            // 
-            // OrderStatusBTN
-            // 
-            OrderStatusBTN.BackColor = Color.FromArgb(64, 64, 64);
-            OrderStatusBTN.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            OrderStatusBTN.ForeColor = SystemColors.ControlLightLight;
-            OrderStatusBTN.ImageAlign = ContentAlignment.MiddleLeft;
-            OrderStatusBTN.Location = new Point(-8, -18);
-            OrderStatusBTN.Name = "OrderStatusBTN";
-            OrderStatusBTN.Padding = new Padding(10, 0, 0, 0);
-            OrderStatusBTN.Size = new Size(321, 100);
-            OrderStatusBTN.TabIndex = 2;
-            OrderStatusBTN.Text = "Order status";
-            OrderStatusBTN.TextAlign = ContentAlignment.MiddleLeft;
-            OrderStatusBTN.UseVisualStyleBackColor = false;
-            OrderStatusBTN.Click += OrderStatusBTN_Click;
-            // 
-            // panel11
-            // 
-            panel11.BackColor = SystemColors.ActiveCaptionText;
-            panel11.Controls.Add(AllOrders);
-            panel11.Location = new Point(3, 140);
-            panel11.Name = "panel11";
-            panel11.Padding = new Padding(0, 25, 0, 0);
-            panel11.Size = new Size(280, 55);
-            panel11.TabIndex = 9;
-            // 
-            // AllOrders
-            // 
-            AllOrders.BackColor = Color.FromArgb(64, 64, 64);
-            AllOrders.Font = new Font("Tahoma", 10.2F, FontStyle.Bold);
-            AllOrders.ForeColor = SystemColors.ControlLightLight;
-            AllOrders.ImageAlign = ContentAlignment.MiddleLeft;
-            AllOrders.Location = new Point(-8, -18);
-            AllOrders.Name = "AllOrders";
-            AllOrders.Padding = new Padding(10, 0, 0, 0);
-            AllOrders.Size = new Size(321, 100);
-            AllOrders.TabIndex = 2;
-            AllOrders.Text = "All Orders";
-            AllOrders.TextAlign = ContentAlignment.MiddleLeft;
-            AllOrders.UseVisualStyleBackColor = false;
-            AllOrders.Click += AllOrders_Click;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = SystemColors.ActiveCaptionText;
-            panel6.Controls.Add(BestSeller);
-            panel6.Location = new Point(3, 321);
-            panel6.Name = "panel6";
-            panel6.Padding = new Padding(0, 25, 0, 0);
-            panel6.Size = new Size(277, 67);
-            panel6.TabIndex = 6;
-            // 
-            // BestSeller
-            // 
-            BestSeller.BackColor = SystemColors.ActiveCaptionText;
-            BestSeller.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            BestSeller.ForeColor = SystemColors.ControlLightLight;
-            BestSeller.Image = (Image)resources.GetObject("BestSeller.Image");
-            BestSeller.ImageAlign = ContentAlignment.MiddleLeft;
-            BestSeller.Location = new Point(-11, -18);
-            BestSeller.Name = "BestSeller";
-            BestSeller.Padding = new Padding(10, 0, 0, 0);
-            BestSeller.Size = new Size(321, 100);
-            BestSeller.TabIndex = 2;
-            BestSeller.Text = "        Best Seller";
-            BestSeller.TextAlign = ContentAlignment.MiddleLeft;
-            BestSeller.UseVisualStyleBackColor = false;
-            BestSeller.Click += BestSeller_Click;
-            // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ActiveCaptionText;
@@ -542,6 +425,7 @@
             LogoutBTN.Text = "        Logout";
             LogoutBTN.TextAlign = ContentAlignment.MiddleLeft;
             LogoutBTN.UseVisualStyleBackColor = false;
+            LogoutBTN.Click += LogoutBTN_Click;
             // 
             // CategoryTransition
             // 

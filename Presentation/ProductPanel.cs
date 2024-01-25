@@ -22,6 +22,7 @@ namespace Presentation
         IProductService ProductService;
         ICategoryService categoryService;
         string selectedProduct = " ";
+        string ProductImageSelction = "";
         public ProductPanel()
         {
             InitializeComponent();
@@ -76,11 +77,23 @@ namespace Presentation
             string prouductTitle = textBox3.Text;
             Decimal productPrice = Decimal.Parse(textBox4.Text);
             string prouductDescraption = textBox5.Text;
-            string prouductImage = textBox6.Text;
+            
             //Category  selectedProduct= comboBox1.SelectedValue.ToString(); ;
-        
+
             int selectedCategory = categoryService.GetCategory().FirstOrDefault(c => c.Name.ToLower() == selectedProduct.ToLower()).ID;
 
+            // try to add image 
+            try
+            {
+              
+                File.Copy(ProductImageSelction,Path.Combine( @"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images",Path.GetFileName(ProductImageSelction)), true);
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Can't Upload Image", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             ProductService.Addtech(new Model.Models.Product
             {
                 Name = productName,
@@ -88,12 +101,14 @@ namespace Presentation
                 Code = productcode,
                 Title = prouductTitle,
                 Description = prouductDescraption,
-                Image = prouductImage,
-               CatID = selectedCategory,
-               
-            }) ;
+                Image = Path.GetFileName(ProductImageSelction)+ DateTime.Now.ToString(),
+                CatID = selectedCategory,
+
+            });
 
             DataGridViewRow lastRow = dataGridView1.Rows[dataGridView1.Rows.Count - 1];
+           
+
             //lastRow.Cells["CategoryName"].Value = selectedCategory != null ? selectedCategory.Name : "No Category";
             LoadCategories();
             loadtabel();
@@ -102,8 +117,8 @@ namespace Presentation
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
-            textBox6.Clear();
 
+            ProductpictureBox.Image = null;
 
 
         }
@@ -120,7 +135,28 @@ namespace Presentation
             selectedProduct = comboBox1.SelectedValue.ToString();
 
         }
-    }
+
+        private void ProductpictureBox_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "jpg files (*.jpg)| *.jpg| PNG files(*.png)|*.png| All files(*.*)|*.*";
+                if(dialog.ShowDialog() == DialogResult.OK)
+                {
+                    ProductpictureBox.Image = new Bitmap(dialog.FileName);
+                  
+                    ProductImageSelction = dialog.FileName;
+                   
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Can't Upload Image",ex.Message,MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        } 
+   }
 
 
 }

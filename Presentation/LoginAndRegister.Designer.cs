@@ -429,6 +429,7 @@ namespace Presentation
             Controls.Add(panel_register);
             Controls.Add(panel_login);
             ForeColor = Color.FromArgb(34, 40, 49);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "LoginAndRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductPanel));
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             dataGridView1 = new DataGridView();
             label1 = new Label();
@@ -41,7 +42,6 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
-            textBox6 = new TextBox();
             button2 = new Button();
             comboBox1 = new ComboBox();
             label7 = new Label();
@@ -50,7 +50,9 @@
             textBox8 = new TextBox();
             label9 = new Label();
             label10 = new Label();
+            ProductpictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ProductpictureBox).BeginInit();
             SuspendLayout();
             // 
             // sqlCommand1
@@ -131,7 +133,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.FromArgb(214, 90, 49);
-            label6.Location = new Point(707, 517);
+            label6.Location = new Point(746, 547);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(69, 28);
@@ -183,21 +185,12 @@
             textBox5.Size = new Size(148, 34);
             textBox5.TabIndex = 12;
             // 
-            // textBox6
-            // 
-            textBox6.BackColor = Color.FromArgb(238, 238, 238);
-            textBox6.Location = new Point(846, 512);
-            textBox6.Margin = new Padding(4);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(148, 34);
-            textBox6.TabIndex = 13;
-            // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(214, 90, 49);
             button2.BackgroundImageLayout = ImageLayout.Center;
             button2.ForeColor = Color.FromArgb(238, 238, 238);
-            button2.Location = new Point(607, 602);
+            button2.Location = new Point(538, 599);
             button2.Margin = new Padding(4);
             button2.Name = "button2";
             button2.Size = new Size(157, 77);
@@ -278,12 +271,26 @@
             label10.TabIndex = 21;
             label10.Text = " Prouducts";
             // 
+            // ProductpictureBox
+            // 
+            ProductpictureBox.BackColor = Color.FromArgb(57, 62, 70);
+            ProductpictureBox.BorderStyle = BorderStyle.FixedSingle;
+            ProductpictureBox.Image = (Image)resources.GetObject("ProductpictureBox.Image");
+            ProductpictureBox.Location = new Point(846, 518);
+            ProductpictureBox.Name = "ProductpictureBox";
+            ProductpictureBox.Size = new Size(180, 160);
+            ProductpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            ProductpictureBox.TabIndex = 22;
+            ProductpictureBox.TabStop = false;
+            ProductpictureBox.Click += ProductpictureBox_Click;
+            // 
             // ProductPanel
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1102, 690);
+            Controls.Add(ProductpictureBox);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(textBox8);
@@ -292,7 +299,6 @@
             Controls.Add(label7);
             Controls.Add(comboBox1);
             Controls.Add(button2);
-            Controls.Add(textBox6);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
@@ -313,6 +319,7 @@
             Text = "Product";
             Load += Product_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ProductpictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,7 +340,6 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
-        private TextBox textBox6;
         private Button button2;
         private ComboBox comboBox1;
         private Label label7;
@@ -342,5 +348,6 @@
         private TextBox textBox8;
         private Label label9;
         private Label label10;
+        private PictureBox ProductpictureBox;
     }
 }

@@ -11,17 +11,18 @@ namespace Presentation
         BestSellerPanel BestSellerPanel;
         OrderStatusPanel OrderStatusPanel;
         AllOrdersPanal allOrdersPanal;
-       // LoginAndRegister loginAndRegister = 
-        public AdminPanal(string? name ="Admin Name")
+        LoginAndRegister loginAndRegister;
+        // LoginAndRegister loginAndRegister = 
+        public AdminPanal(string? name = "Admin Name")
         {
             InitializeComponent();
-            AdminName.Text= "Welcome  "+ name;
+            AdminName.Text = "Welcome  " + name;
         }
 
         bool CatMenuExpand = false;
         bool OrderMenuExpand = false;
 
-        
+
 
         private void CategoryTransition_Tick(object sender, EventArgs e)
         {
@@ -245,7 +246,17 @@ namespace Presentation
             }
         }
 
-        
+        private void HomeBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoutBTN_Click(object sender, EventArgs e)
+        {
+            loginAndRegister = new LoginAndRegister();
+            this.Hide();
+            loginAndRegister.Show();
+        }
     }
 }
 
