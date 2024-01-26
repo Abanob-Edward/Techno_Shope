@@ -32,7 +32,6 @@
             CatNameTxt1 = new TextBox();
             CatTybetxt1 = new TextBox();
             AddCategory = new Button();
-            CategoryDGV = new DataGridView();
             label4 = new Label();
             label5 = new Label();
             textBox4 = new TextBox();
@@ -45,6 +44,7 @@
             DeleteBtn = new Button();
             ErrorMessage = new Label();
             label2 = new Label();
+            CategoryDGV = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)CategoryDGV).BeginInit();
             SuspendLayout();
             // 
@@ -58,17 +58,6 @@
             label1.Size = new Size(164, 28);
             label1.TabIndex = 0;
             label1.Text = "Catagory Name :";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(463, 468);
-            label2.Name = "label2";
-            label2.Size = new Size(154, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Category Type :";
             // 
             // CatNameTxt1
             // 
@@ -101,19 +90,6 @@
             AddCategory.Text = "Add";
             AddCategory.UseVisualStyleBackColor = false;
             AddCategory.Click += AddCategory_Click;
-            // 
-            // CategoryDGV
-            // 
-            CategoryDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            CategoryDGV.BackgroundColor = Color.FromArgb(238, 238, 238);
-            CategoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CategoryDGV.GridColor = Color.FromArgb(238, 238, 238);
-            CategoryDGV.Location = new Point(26, 113);
-            CategoryDGV.Name = "CategoryDGV";
-            CategoryDGV.RowHeadersWidth = 51;
-            CategoryDGV.Size = new Size(1048, 270);
-            CategoryDGV.TabIndex = 14;
-            CategoryDGV.RowHeaderMouseClick += CategoryDGV_RowHeaderMouseClick;
             // 
             // label4
             // 
@@ -228,20 +204,32 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(33, 42, 81);
+            label2.ForeColor = Color.FromArgb(238, 238, 238);
             label2.Location = new Point(463, 468);
             label2.Name = "label2";
             label2.Size = new Size(154, 28);
             label2.TabIndex = 1;
             label2.Text = "Category Type :";
             // 
-            // CategoryPanel
+            // CategoryDGV
+            // 
+            CategoryDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CategoryDGV.BackgroundColor = Color.FromArgb(238, 238, 238);
+            CategoryDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CategoryDGV.Location = new Point(107, 104);
+            CategoryDGV.Name = "CategoryDGV";
+            CategoryDGV.RowHeadersWidth = 51;
+            CategoryDGV.Size = new Size(903, 290);
+            CategoryDGV.TabIndex = 25;
+            //CategoryDGV.RowHeaderMouseClick += CategoryDGV_RowHeaderMouseClick;
+            // 
             // CategoryPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1102, 690);
+            Controls.Add(CategoryDGV);
             Controls.Add(ErrorMessage);
             Controls.Add(DeleteBtn);
             Controls.Add(UpdateBTN);
@@ -252,7 +240,6 @@
             Controls.Add(textBox4);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(CategoryDGV);
             Controls.Add(AddCategory);
             Controls.Add(CatTybetxt1);
             Controls.Add(CatNameTxt1);
@@ -262,7 +249,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "CategoryPanel";
             Text = "Catgory";
-            Load += Category_Load;
+            Load += CategoryPanel_Load;
             ((System.ComponentModel.ISupportInitialize)CategoryDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -274,7 +261,6 @@
         private TextBox CatNameTxt1;
         private TextBox CatTybetxt1;
         private Button AddCategory;
-        private DataGridView CategoryDGV;
         private Label label4;
         private Label label5;
         private TextBox textBox4;
@@ -287,5 +273,6 @@
         private Button DeleteBtn;
         private Label ErrorMessage;
         private Label label2;
+        private DataGridView CategoryDGV;
     }
 }

@@ -20,8 +20,8 @@ namespace Presentation
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new LoginAndRegister());
-            //Application.Run(new AdminPanal());
+            //Application.Run(new LoginAndRegister());
+            Application.Run(new AdminPanal());
         }
     }
 }

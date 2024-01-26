@@ -1,4 +1,6 @@
-﻿namespace Presentation
+﻿using Presentation.Properties;
+
+namespace Presentation
 {
     partial class EditProductPanel
     {
@@ -36,7 +38,6 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
-            textBox6 = new TextBox();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -44,13 +45,18 @@
             textBox7 = new TextBox();
             label7 = new Label();
             Error = new Label();
+            comboBox1 = new ComboBox();
+            Cat = new Label();
+            ProductpictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ProductpictureBox).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(238, 238, 238);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(68, 25);
+            dataGridView1.Location = new Point(77, 25);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(903, 290);
@@ -63,9 +69,9 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(238, 238, 238);
-            button1.Location = new Point(367, 581);
+            button1.Location = new Point(286, 629);
             button1.Name = "button1";
-            button1.Size = new Size(120, 49);
+            button1.Size = new Size(123, 49);
             button1.TabIndex = 1;
             button1.Text = "Delete";
             button1.UseVisualStyleBackColor = false;
@@ -77,7 +83,7 @@
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(238, 238, 238);
-            button2.Location = new Point(616, 581);
+            button2.Location = new Point(552, 629);
             button2.Name = "button2";
             button2.Size = new Size(128, 49);
             button2.TabIndex = 2;
@@ -87,7 +93,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(122, 374);
+            textBox2.Location = new Point(159, 387);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(194, 27);
             textBox2.TabIndex = 5;
@@ -97,7 +103,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(214, 90, 49);
-            label2.Location = new Point(25, 377);
+            label2.Location = new Point(0, 377);
             label2.Name = "label2";
             label2.Size = new Size(65, 25);
             label2.TabIndex = 6;
@@ -105,38 +111,31 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(417, 374);
+            textBox3.Location = new Point(460, 388);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(208, 27);
             textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(417, 470);
+            textBox4.Location = new Point(472, 477);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(208, 27);
             textBox4.TabIndex = 8;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(741, 377);
+            textBox5.Location = new Point(832, 387);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(221, 27);
             textBox5.TabIndex = 9;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(750, 473);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(221, 27);
-            textBox6.TabIndex = 10;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(214, 90, 49);
-            label3.Location = new Point(333, 374);
+            label3.Location = new Point(376, 387);
             label3.Name = "label3";
             label3.Size = new Size(64, 25);
             label3.TabIndex = 11;
@@ -147,7 +146,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(214, 90, 49);
-            label4.Location = new Point(333, 466);
+            label4.Location = new Point(376, 479);
             label4.Name = "label4";
             label4.Size = new Size(58, 25);
             label4.TabIndex = 12;
@@ -158,7 +157,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(214, 90, 49);
-            label5.Location = new Point(660, 380);
+            label5.Location = new Point(711, 384);
             label5.Name = "label5";
             label5.Size = new Size(67, 28);
             label5.TabIndex = 13;
@@ -169,7 +168,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(214, 90, 49);
-            label6.Location = new Point(650, 473);
+            label6.Location = new Point(711, 476);
             label6.Name = "label6";
             label6.Size = new Size(79, 28);
             label6.TabIndex = 14;
@@ -177,7 +176,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(122, 464);
+            textBox7.Location = new Point(159, 480);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(194, 27);
             textBox7.TabIndex = 15;
@@ -204,12 +203,47 @@
             Error.TabIndex = 17;
             Error.Text = " ";
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(159, 541);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(194, 28);
+            comboBox1.TabIndex = 18;
+            // 
+            // Cat
+            // 
+            Cat.AutoSize = true;
+            Cat.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            Cat.ForeColor = Color.FromArgb(214, 90, 49);
+            Cat.Location = new Point(0, 541);
+            Cat.Name = "Cat";
+            Cat.Size = new Size(153, 25);
+            Cat.TabIndex = 19;
+            Cat.Text = "Choese Category";
+            // 
+            // ProductpictureBox
+            // 
+            ProductpictureBox.BackColor = Color.FromArgb(57, 62, 70);
+            ProductpictureBox.BorderStyle = BorderStyle.FixedSingle;
+            ProductpictureBox.Image = Resources._4211763;
+            ProductpictureBox.Location = new Point(844, 454);
+            ProductpictureBox.Name = "ProductpictureBox";
+            ProductpictureBox.Size = new Size(180, 160);
+            ProductpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            ProductpictureBox.TabIndex = 22;
+            ProductpictureBox.TabStop = false;
+            ProductpictureBox.Click += ProductpictureBox_Click_2;
+            // 
             // EditProductPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1102, 690);
+            Controls.Add(ProductpictureBox);
+            Controls.Add(Cat);
+            Controls.Add(comboBox1);
             Controls.Add(Error);
             Controls.Add(label7);
             Controls.Add(textBox7);
@@ -217,7 +251,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox6);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
@@ -231,6 +264,7 @@
             Text = "ProductOutOfStocK";
             Load += Product_load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ProductpictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,7 +279,6 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
-        private TextBox textBox6;
         private Label label3;
         private Label label4;
         private Label label5;
@@ -253,5 +286,9 @@
         private TextBox textBox7;
         private Label label7;
         private Label Error;
+        private ComboBox comboBox1;
+        private Label Cat;
+        private PictureBox ProductpictureBox_Click;
+        private PictureBox ProductpictureBox;
     }
 }

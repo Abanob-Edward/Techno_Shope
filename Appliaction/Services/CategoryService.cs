@@ -54,6 +54,12 @@ namespace Appliaction.Services
             return categoryRepository.update(category);
         }
 
+        public int GetProductCountByCategoryId(int categoryId)
+        {
+          
+            return categoryRepository.GetProductCountByCategoryId(categoryId);
+        }
+
 
 
 

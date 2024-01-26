@@ -34,5 +34,11 @@ namespace Infrastructure.Repositores
            // return context.Products.Where(p => p.Name.Contains(Name)).AsQueryable();
             return context.Products.Where(x => x.Name.Contains(Name));
         }
+
+        public int GetProductCountByCategoryId(int categoryId)
+        {
+            // Assuming you have a 'Products' table with a 'CategoryId' column
+            return context.Products.Count(p => p.Id == categoryId);
+        }
     }
 }
