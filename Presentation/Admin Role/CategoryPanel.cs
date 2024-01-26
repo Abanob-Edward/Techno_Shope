@@ -1,5 +1,6 @@
 ﻿using Appliaction.Contract;
 using Appliaction.Services;
+using Autofac;
 using Context;
 using Infrastructure.Repositores;
 using Microsoft.EntityFrameworkCore;
@@ -22,8 +23,10 @@ namespace Presentation
 
         public CategoryPanel()
         {
-            InitializeComponent(); 
-            categoryService = new CategoryService(new CatgoryRepositry(new _Context()));
+
+            InitializeComponent();
+            var inject = AutoFact.Inject();
+            categoryService = inject.Resolve<ICategoryService>();
         }
 
         public void loadtabel()

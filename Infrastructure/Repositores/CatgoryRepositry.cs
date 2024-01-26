@@ -16,6 +16,8 @@ namespace Infrastructure.Repositores
         public CatgoryRepositry(_Context _context) : base(_context)
         {
             this.context = _context;
+
+           
         }
 
         public IQueryable<Category> SearchByName(string Name)

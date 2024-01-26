@@ -2,6 +2,8 @@ using Appliaction.Services;
 using Context;
 using Infrastructure.Repositores;
 using Model.Models;
+using Presentation.User_Role;
+
 
 namespace Presentation
 {
@@ -20,8 +22,8 @@ namespace Presentation
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new LoginAndRegister());
-            //Application.Run(new AdminPanal());
+          //  Application.Run(new UserPanel());
+            Application.Run(new AdminPanal());
         }
     }
 }

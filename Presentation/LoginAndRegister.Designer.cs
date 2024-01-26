@@ -152,7 +152,6 @@ namespace Presentation
             textBox_Pss_login.Size = new Size(334, 27);
             textBox_Pss_login.TabIndex = 3;
             textBox_Pss_login.UseSystemPasswordChar = true;
-            textBox_Pss_login.TextChanged += textBox_Pass_login_TextChanged;
             // 
             // label_Pass_login
             // 
@@ -171,7 +170,6 @@ namespace Presentation
             textBox_UName_Login.Name = "textBox_UName_Login";
             textBox_UName_Login.Size = new Size(334, 27);
             textBox_UName_Login.TabIndex = 1;
-            textBox_UName_Login.TextChanged += textBox_UName_Login_TextChanged;
             // 
             // label_UName_login
             // 
@@ -220,7 +218,7 @@ namespace Presentation
             panel_register.Name = "panel_register";
             panel_register.Size = new Size(573, 528);
             panel_register.TabIndex = 6;
-            panel_register.Paint += panel_register_Paint_1;
+            panel_register.Paint += panel_register_Paint;
             // 
             // label_User_regis
             // 
@@ -243,7 +241,6 @@ namespace Presentation
             label_ErrorMas.Name = "label_ErrorMas";
             label_ErrorMas.Size = new Size(0, 23);
             label_ErrorMas.TabIndex = 16;
-            label_ErrorMas.Click += ErrorMas_Click;
             // 
             // textBox_eimal
             // 
@@ -275,7 +272,6 @@ namespace Presentation
             label_PNmber.Size = new Size(158, 28);
             label_PNmber.TabIndex = 13;
             label_PNmber.Text = "Phone Number : ";
-            label_PNmber.Click += PNumber_Click;
             // 
             // textBox_Phone_Number
             // 
@@ -296,7 +292,6 @@ namespace Presentation
             label_UName.Size = new Size(117, 28);
             label_UName.TabIndex = 11;
             label_UName.Text = "UserName : ";
-            label_UName.Click += label_UName_Click;
             // 
             // textBox_FName
             // 
@@ -305,7 +300,6 @@ namespace Presentation
             textBox_FName.Name = "textBox_FName";
             textBox_FName.Size = new Size(334, 27);
             textBox_FName.TabIndex = 10;
-            textBox_FName.TextChanged += textBox_FName_TextChanged;
             // 
             // label_FName
             // 
@@ -327,7 +321,6 @@ namespace Presentation
             textBox_Confirm_Pass.Size = new Size(334, 27);
             textBox_Confirm_Pass.TabIndex = 8;
             textBox_Confirm_Pass.UseSystemPasswordChar = true;
-            textBox_Confirm_Pass.TextChanged += textBox_Confirm_Pass_TextChanged;
             // 
             // label_Confirm_Pass
             // 
@@ -339,7 +332,6 @@ namespace Presentation
             label_Confirm_Pass.Size = new Size(182, 28);
             label_Confirm_Pass.TabIndex = 7;
             label_Confirm_Pass.Text = "Confirm Password : ";
-            label_Confirm_Pass.Click += label_Confirm_Pass_Click;
             // 
             // textBox_Pass
             // 
@@ -349,7 +341,6 @@ namespace Presentation
             textBox_Pass.Size = new Size(334, 27);
             textBox_Pass.TabIndex = 6;
             textBox_Pass.UseSystemPasswordChar = true;
-            textBox_Pass.TextChanged += textBox_Pass_TextChanged;
             // 
             // label_Pass
             // 
@@ -361,7 +352,6 @@ namespace Presentation
             label_Pass.Size = new Size(107, 28);
             label_Pass.TabIndex = 5;
             label_Pass.Text = "Password : ";
-            label_Pass.Click += label_Pass_Click;
             // 
             // button_Register
             // 
@@ -383,7 +373,6 @@ namespace Presentation
             textBox_UName.Name = "textBox_UName";
             textBox_UName.Size = new Size(334, 27);
             textBox_UName.TabIndex = 3;
-            textBox_UName.TextChanged += textBox_UName_TextChanged;
             // 
             // label11
             // 
@@ -403,7 +392,6 @@ namespace Presentation
             textBox_LName.Name = "textBox_LName";
             textBox_LName.Size = new Size(334, 27);
             textBox_LName.TabIndex = 1;
-            textBox_LName.TextChanged += textBox_LName_TextChanged;
             // 
             // label_LName
             // 
@@ -415,7 +403,6 @@ namespace Presentation
             label_LName.Size = new Size(122, 28);
             label_LName.TabIndex = 0;
             label_LName.Text = "Last Name  : ";
-            label_LName.Click += label_LName_Click;
             // 
             // LoginAndRegister
             // 
@@ -433,7 +420,6 @@ namespace Presentation
             Name = "LoginAndRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registration";
-            Load += Form1_Load;
             panel_login.ResumeLayout(false);
             panel_login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1_close).EndInit();
