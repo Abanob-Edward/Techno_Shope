@@ -3,6 +3,7 @@ using Appliaction.Services;
 using Context;
 using Infrastructure.Repositores;
 using Model.Models;
+using Presentation.User_Role;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,11 +23,12 @@ namespace Presentation
     public partial class LoginAndRegister : Form
     {
         AdminPanal adminPanal;
+        UserPanel userPanel;
 
-        public string NameofAdmin { get; set; }
+        public string NameofUser { get; set; }
 
 
-        private readonly    IUserService userService;
+        private readonly IUserService userService;
         public LoginAndRegister()
         {
             InitializeComponent();
@@ -35,15 +37,7 @@ namespace Presentation
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void panel_register_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button_GoToLogin_Click(object sender, EventArgs e)
         {
@@ -65,10 +59,7 @@ namespace Presentation
             this.Close();
         }
 
-        private void textBox_FName_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void buttonٌُ_ٌRegister_Click(object sender, EventArgs e)
         {
@@ -110,7 +101,7 @@ namespace Presentation
                 }
                 else
                 {
-                    
+
                     label_ErrorMas.Text = ("Error password Please enter correct password");
                     label_User_regis.Text = ("");
                 }
@@ -150,80 +141,29 @@ namespace Presentation
                 //  Logic to handle  Role
                 if (userService.GetUserRole(user) == "admin")
                 {
-                    NameofAdmin = user.FirstName + "  " + user.LastName;
-                    adminPanal = new AdminPanal(NameofAdmin);
+                    NameofUser = user.FirstName + "  " + user.LastName;
+                    adminPanal = new AdminPanal(NameofUser);
                     this.Hide();
                     adminPanal.Show();
-                    
+
+                }
+                else
+                {
+                    NameofUser = user.FirstName + "  " + user.LastName;
+                    userPanel = new UserPanel(NameofUser);
+                    this.Hide();
+                    userPanel.Show();
                 }
 
             }
             else
             {
                 label_error_mas_log.Text = ("Login failed. Please check the username and password.");
-                label_log_suc.Text=(" ");
+                label_log_suc.Text = (" ");
             }
         }
 
-        private void textBox_LName_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox_UName_Login_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_Pass_login_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_UName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_Pass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_Confirm_Pass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_Confirm_Pass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_Pass_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_UName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_LName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_register_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PNumber_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Phone_Number_TextChanged(object sender, EventArgs e)
         {
@@ -259,12 +199,13 @@ namespace Presentation
             ValidateEmail(textBox_eimal.Text);
         }
 
-        private void ErrorMas_Click(object sender, EventArgs e)
+
+        private void panel_login_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel_login_Paint(object sender, PaintEventArgs e)
+        private void panel_register_Paint(object sender, PaintEventArgs e)
         {
 
         }
