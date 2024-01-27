@@ -40,5 +40,8 @@ namespace Infrastructure.Repositores
             // Assuming you have a 'Products' table with a 'CategoryId' column
             return context.Products.Count(p => p.Id == categoryId);
         }
+
+  
+
     }
 }

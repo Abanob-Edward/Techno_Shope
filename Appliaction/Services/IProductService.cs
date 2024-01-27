@@ -18,9 +18,7 @@ namespace Appliaction.Services
         public Product Updatetech(Product entity);
         ///newwwwwwwwwwwwwwwwww
         IQueryable<Product> GetByName(string? Name);
-
-
-
+        List<Product> GetAllPagination(int v, int pageSize);
     }
 }
 
