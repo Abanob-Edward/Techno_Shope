@@ -33,11 +33,23 @@ namespace Appliaction.Services
 
         ProductCartItem ICartService.addproductToCart(int ProID, int CartID)
         {
-            ProductCartItem productCart = new ProductCartItem() { CartId = CartID , Pro_Id= ProID  };
+
             // قبل ما يشيف ي شيك بال  productID and cartID  
             // عشان لو البرودكت مضاف قبل كدا يزود واحد ف الكونتيتي 
+             (bool, ProductCartItem) result  = cartproudect.CheckExeistProduct(ProID, CartID);
 
-            return cartproudect.add(productCart);
+            if(result.Item1 == true)
+            {
+                result.Item2.Quantity += 1;
+              return  cartproudect.update(result.Item2);
+            }
+            else
+            {
+                ProductCartItem productCart = new ProductCartItem() { CartId = CartID, Pro_Id = ProID };
+                return cartproudect.add(productCart);
+            }
+
+           
         }
     }
 }

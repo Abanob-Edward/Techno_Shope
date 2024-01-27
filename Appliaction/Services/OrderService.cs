@@ -19,7 +19,7 @@ namespace Appliaction.Services
 
         public IQueryable<Order> GetAllOrders()
         {
-
+            
             return orderRepository.getAllwithUser();
         }
 

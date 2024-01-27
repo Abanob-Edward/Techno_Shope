@@ -18,6 +18,10 @@ namespace Presentation.User_Role
 {
     public partial class uHomePanel : Form
     {
+        ProductDetails productDetails;
+        UserPanel UserPanel;
+
+
         int CurrentUserID;
         IProductService ProductService;
         ICartService cartService;
@@ -32,8 +36,21 @@ namespace Presentation.User_Role
             cartService = inject.Resolve<ICartService>();
             cartproudectRepository= new CartproudectRepository(new _Context());
             CurrentUserID= currentUserID;
+        }  
+        
+        public uHomePanel(UserPanel userPanel ,int currentUserID= 0)
+        {
+
+            InitializeComponent();
+            var inject = AutoFact.Inject();
+            ProductService = inject.Resolve<IProductService>();
+            cartService = inject.Resolve<ICartService>();
+            cartproudectRepository= new CartproudectRepository(new _Context());
+            CurrentUserID= currentUserID;
+            UserPanel= userPanel;
         }
         DataGridViewButtonColumn addToCart = new DataGridViewButtonColumn();
+        DataGridViewButtonColumn ProductDetails = new DataGridViewButtonColumn();
         
         private void uHomePanel_Load(object sender, EventArgs e)
         {
@@ -70,6 +87,13 @@ namespace Presentation.User_Role
             addToCart.HeaderText = "Cart Item";
             addToCart.UseColumnTextForButtonValue = true;
             ProductsDGV.Columns.Add(addToCart);
+            
+            ProductDetails.Text = "Details";
+            ProductDetails.Name = "ProductDetailsBtn";
+            ProductDetails.HeaderText = "Product Details";
+            ProductDetails.UseColumnTextForButtonValue = true;
+            ProductsDGV.Columns.Add(ProductDetails);
+
         }
     /*    private void ProductsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -85,9 +109,10 @@ namespace Presentation.User_Role
         }*/
         private void ProductsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex== 4)
+            var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
+            if (e.ColumnIndex== 4)
             {
-                var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                
                 // ProductsDGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
                 int cartID = cartService.GetCartByUserID(CurrentUserID).Id;
                 cartService.addproductToCart(ProductID, cartID);
@@ -95,9 +120,25 @@ namespace Presentation.User_Role
                 Success.Text = "Success ADD to cart item " + ProductID.ToString();
                 //MessageBox.Show(yarab);
             }
+
+            if(e.ColumnIndex== 5)
+            {
+               
+                    productDetails = new ProductDetails(ProductID);
+                    productDetails.FormClosed += productDetailslClosed;
+                    productDetails.MdiParent = UserPanel;
+                    productDetails.Dock = DockStyle.Fill;
+                    productDetails.Show();
+              
+               
+
+            }
         }
 
-
-
+        private void productDetailslClosed(object? sender, FormClosedEventArgs e)
+        {
+           // productDetails.Close();
+            
+        }
     }
 }
