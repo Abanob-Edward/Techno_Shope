@@ -20,6 +20,16 @@ namespace Infrastructure.Repositores
            
         }
 
+        public int GetProductCountByCategoryId(int categoryId)
+        {
+            var x = context.Products.ToList();
+            //ontext.Categories.Where(p.Id == categoryId).Select(p => p.Name).ToList();
+            return context.Products.Count(p => p.Id == categoryId);
+            //return 5;
+            
+        }
+
+
         public IQueryable<Category> SearchByName(string Name)
         {
             return context.Categories.Where(x => x.Name.Contains(Name));

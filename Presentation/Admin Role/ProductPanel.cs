@@ -49,7 +49,8 @@ namespace Presentation
                 p.Price,
                 p.Title,
                 p.Code,
-                AdmineName = p.User != null ? p.User.FirstName : "No Admin",
+                p.Image,
+               // AdmineName = p.User != null ? p.User.FirstName : "No Admin",
                 CategoryName = p.category != null ? p.category.Name : "No Category"
             }).ToList();
 
@@ -71,13 +72,13 @@ namespace Presentation
         string newImageName = "";
         private void Add_Product(object sender, EventArgs e)
         {
-           
+
             string productName = textBox1.Text;
             int productcode = int.Parse(textBox2.Text);
             string prouductTitle = textBox3.Text;
             Decimal productPrice = Decimal.Parse(textBox4.Text);
             string prouductDescraption = textBox5.Text;
-            
+
             //Category  selectedProduct= comboBox1.SelectedValue.ToString(); ;
 
             int selectedCategory = categoryService.GetCategory().FirstOrDefault(c => c.Name.ToLower() == selectedProduct.ToLower()).ID;
@@ -85,12 +86,12 @@ namespace Presentation
             // try to add image 
             try
             {
-                 newImageName =   DateTime.Now.ToString() +Path.GetFileName(ProductImageSelction);
+                newImageName = DateTime.Now.ToString() + Path.GetFileName(ProductImageSelction);
 
 
-                File.Copy(ProductImageSelction,Path.Combine( @"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images",
+                File.Copy(ProductImageSelction, Path.Combine(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images",
                     Path.GetFileName(ProductImageSelction)), true);
-                
+
             }
             catch (Exception ex)
             {
@@ -110,7 +111,7 @@ namespace Presentation
             });
 
             DataGridViewRow lastRow = dataGridView1.Rows[dataGridView1.Rows.Count - 1];
-           
+
 
             //lastRow.Cells["CategoryName"].Value = selectedCategory != null ? selectedCategory.Name : "No Category";
             LoadCategories();
@@ -141,25 +142,27 @@ namespace Presentation
 
         private void ProductpictureBox_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
                 dialog.Filter = "jpg files (*.jpg)| *.jpg| PNG files(*.png)|*.png| All files(*.*)|*.*";
-                if(dialog.ShowDialog() == DialogResult.OK)
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     ProductpictureBox.Image = new Bitmap(dialog.FileName);
-                  
+
                     ProductImageSelction = dialog.FileName;
-                   
+
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Can't Upload Image",ex.Message,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Can't Upload Image", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } 
-   }
+        }
+
+        
+    }
 
 
 }

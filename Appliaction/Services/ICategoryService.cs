@@ -15,5 +15,6 @@ namespace Appliaction.Services
         IQueryable<Category> GetByName(string? Name);
         public Category UpdateCategory(Category category);
         public void DeleteCategory(int id);
+        int GetProductCountByCategoryId(int categoryId);
     }
 }

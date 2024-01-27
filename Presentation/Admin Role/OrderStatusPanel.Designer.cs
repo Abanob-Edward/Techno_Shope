@@ -64,9 +64,9 @@
             // processingradio
             // 
             processingradio.AutoSize = true;
-            processingradio.BackColor = SystemColors.ActiveCaption;
+            processingradio.BackColor = Color.FromArgb(214, 90, 49);
             processingradio.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            processingradio.ForeColor = Color.Yellow;
+            processingradio.ForeColor = Color.FromArgb(238, 238, 238);
             processingradio.Location = new Point(235, 149);
             processingradio.Name = "processingradio";
             processingradio.Padding = new Padding(5);
@@ -80,9 +80,9 @@
             // shippedradio
             // 
             shippedradio.AutoSize = true;
-            shippedradio.BackColor = SystemColors.ActiveCaption;
+            shippedradio.BackColor = Color.FromArgb(214, 90, 49);
             shippedradio.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            shippedradio.ForeColor = Color.Yellow;
+            shippedradio.ForeColor = Color.FromArgb(238, 238, 238);
             shippedradio.Location = new Point(438, 149);
             shippedradio.Name = "shippedradio";
             shippedradio.Padding = new Padding(5);
@@ -96,9 +96,9 @@
             // deliveredradio
             // 
             deliveredradio.AutoSize = true;
-            deliveredradio.BackColor = SystemColors.ActiveCaption;
+            deliveredradio.BackColor = Color.FromArgb(214, 90, 49);
             deliveredradio.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            deliveredradio.ForeColor = Color.Yellow;
+            deliveredradio.ForeColor = Color.FromArgb(238, 238, 238);
             deliveredradio.Location = new Point(615, 149);
             deliveredradio.Name = "deliveredradio";
             deliveredradio.Padding = new Padding(5);
@@ -124,8 +124,8 @@
             // 
             IDMessage.AutoSize = true;
             IDMessage.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            IDMessage.ForeColor = Color.Red;
-            IDMessage.Location = new Point(191, 76);
+            IDMessage.ForeColor = Color.FromArgb(214, 90, 49);
+            IDMessage.Location = new Point(687, 76);
             IDMessage.Name = "IDMessage";
             IDMessage.Size = new Size(379, 41);
             IDMessage.TabIndex = 26;

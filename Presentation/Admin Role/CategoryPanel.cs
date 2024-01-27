@@ -1,9 +1,9 @@
 ﻿using Appliaction.Contract;
 using Appliaction.Services;
-using Autofac;
 using Context;
 using Infrastructure.Repositores;
 using Microsoft.EntityFrameworkCore;
+using Model.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,21 +21,58 @@ namespace Presentation
     {
         ICategoryService categoryService;
 
+
         public CategoryPanel()
         {
-
             InitializeComponent();
-            var inject = AutoFact.Inject();
-            categoryService = inject.Resolve<ICategoryService>();
+
+            categoryService = new CategoryService(new CatgoryRepositry(new _Context()));
+            // loadtabel();
+
         }
 
+        //public void loadtabel()
+        //{
+        //    //var count = categoryService.GetProductCountByCategoryId(2);
+        //    var categories = categoryService.GetCategory()
+        //        .Include(p => p.Products);
+        //    //CategoryDGV.DataSource = categories.Select(p => new
+        //    //{
+        //    //    p.Name,
+        //    //    p.Type,
+        //    //    ProducatCount = p.Products.Count()
+        //    //}).ToList();
+        //    CategoryDGV.DataSource = null;
+
+        //    CategoryDGV.DataSource = categories;
+        //}
         public void loadtabel()
         {
-            var categories = categoryService.GetCategory().ToList();
+            var categories = categoryService.GetCategory()?.Include(p => p.Products).ToList();
 
-            CategoryDGV.DataSource = categories;
+            if (categories != null)
+            {
+                var categoryData = new List<object>();
 
+                foreach (var category in categories)
+                {
+                    var count = category.Products.Count;
 
+                    categoryData.Add(new
+                    {
+                        category.Name,
+                        category.Type,
+                        ProductCount = count,
+                    });
+                }
+
+                CategoryDGV.DataSource = null;
+                CategoryDGV.DataSource = categoryData;
+            }
+            else
+            {
+                Console.WriteLine("Categories is null");
+            }
         }
 
 
@@ -59,21 +96,13 @@ namespace Presentation
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var categories = categoryService.GetCategory().ToList();
+            //    var categories = categoryService.GetCategory().ToList();
 
-            CategoryDGV.DataSource = categories;
-            loadtabel();
-
+            //    CategoryDGV.DataSource = categories;
+            //    loadtabel();
 
         }
 
-        private void Category_Load(object sender, EventArgs e)
-        {
-
-            loadtabel();
-
-            this.ControlBox = false;
-        }
 
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -84,7 +113,41 @@ namespace Presentation
 
         }
 
+        private void ProdactDGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+          
+            CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[0].Value.ToString();
+            CatNameTxt2.Text = CategoryDGV.CurrentRow.Cells[CategoryDGV.ColumnCount - 1].Value.ToString();
+        }
 
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+
+            if (CategoryDGV.SelectedRows.Count > 0)
+            {
+
+                int Id = int.Parse(CategoryDGV.CurrentRow.Cells[0].Value.ToString());
+                var obj = categoryService.GetCategorybyID(Id);
+
+                var Result = MessageBox.Show("Are you shure  to delete ", "Delete Confirem", MessageBoxButtons.YesNo);
+                categoryService.DeleteCategory(1);
+                if (Result == DialogResult.Yes)
+                {
+                    categoryService.DeleteCategory(Id);
+                    loadtabel();
+                }
+
+
+
+
+            }
+            else
+            {
+                ErrorMessage.Text = "Please Select Row to delete";
+            }
+
+
+        }
         private void UpdateBTN_Click(object sender, EventArgs e)
         {
             if (CatNameTxt2.Text != null && CatNameTxt2.Text != "")
@@ -107,31 +170,6 @@ namespace Presentation
 
         }
 
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
-
-            if (CatNameTxt1.Text != null && CatNameTxt2.Text != "")
-            {
-
-                var Result = MessageBox.Show("Are you shure  to delete ", "Delete Confirem", MessageBoxButtons.YesNo);
-
-                if (Result == DialogResult.Yes)
-                {
-                    int Id = int.Parse(CategoryDGV.CurrentRow.Cells[0].Value.ToString());
-                    var obj = categoryService.GetCategorybyID(Id);
-                    categoryService.DeleteCategory(1);
-                    loadtabel();
-                }
-
-
-            }
-            else
-            {
-                ErrorMessage.Text = "Please Select Row to delete";
-            }
-
-
-        }
 
         private void AddCategory_Click(object sender, EventArgs e)
         {
@@ -145,13 +183,20 @@ namespace Presentation
             loadtabel();
         }
 
-        private void CategoryDGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //private void CategoryDGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    CatNameTxt2.Text = CategoryDGV.CurrentRow.Cells[0].Value.ToString();
+        //    CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[1].Value.ToString();
+        //    ErrorMessage.Text = "";
+        //}
+
+        private void CategoryPanel_Load(object sender, EventArgs e)
         {
-            CatNameTxt2.Text = CategoryDGV.CurrentRow.Cells[1].Value.ToString();
-            CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[2].Value.ToString();
-            ErrorMessage.Text = "";
+            loadtabel();
+            this.ControlBox = false;
+
         }
 
-       
+  
     }
 }

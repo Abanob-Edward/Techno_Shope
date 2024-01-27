@@ -70,7 +70,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(993, 266);
             dataGridView1.TabIndex = 0;
-            // 
+           //
             // label1
             // 
             label1.AutoSize = true;
