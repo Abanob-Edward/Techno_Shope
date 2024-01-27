@@ -12,9 +12,12 @@ namespace Presentation.User_Role
 {
     public partial class CartItemPanel : Form
     {
-        public CartItemPanel()
+        public int? UserCurrenID;
+        public CartItemPanel(int ? userid=0)
         {
+            UserCurrenID = userid;
             InitializeComponent();
+            
         }
     }
 }

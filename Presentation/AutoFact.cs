@@ -2,6 +2,7 @@
 using Appliaction.Services;
 using Autofac;
 using Context;
+using Infrastructure.Contract;
 using Infrastructure.Repositores;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,13 @@ namespace Presentation
             var builder = new ContainerBuilder();
             builder.RegisterType<CategoryService>().As<ICategoryService>();
             builder.RegisterType<CatgoryRepositry>().As<ICategoryRepository>();
+
+            builder.RegisterType<ProductService>().As<IProductService>();
+            builder.RegisterType<ProudectRepository>().As<IProudectRepository>();
+           
+            builder.RegisterType<CartService>().As<ICartService>();
+            builder.RegisterType<CartRepository>().As<ICartRepository>();
+            builder.RegisterType<CartproudectRepository>().As<ICartproudectRepository>();
 
             builder.RegisterType<_Context>().As<_Context>();
             

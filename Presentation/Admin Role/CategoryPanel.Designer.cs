@@ -59,17 +59,6 @@
             label1.TabIndex = 0;
             label1.Text = "Catagory Name :";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(238, 238, 238);
-            label2.Location = new Point(463, 468);
-            label2.Name = "label2";
-            label2.Size = new Size(154, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Category Type :";
-            // 
             // CatNameTxt1
             // 
             CatNameTxt1.BackColor = Color.FromArgb(238, 238, 238);
@@ -228,14 +217,13 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.FromArgb(33, 42, 81);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(463, 468);
             label2.Name = "label2";
             label2.Size = new Size(154, 28);
             label2.TabIndex = 1;
             label2.Text = "Category Type :";
             // 
-            // CategoryPanel
             // CategoryPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);

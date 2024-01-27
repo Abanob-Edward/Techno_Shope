@@ -214,9 +214,9 @@ namespace Presentation
             panel_register.Controls.Add(label11);
             panel_register.Controls.Add(textBox_LName);
             panel_register.Controls.Add(label_LName);
-            panel_register.Location = new Point(7, 112);
+            panel_register.Location = new Point(25, 136);
             panel_register.Name = "panel_register";
-            panel_register.Size = new Size(573, 528);
+            panel_register.Size = new Size(547, 504);
             panel_register.TabIndex = 6;
             panel_register.Paint += panel_register_Paint;
             // 

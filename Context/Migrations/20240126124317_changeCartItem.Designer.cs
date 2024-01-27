@@ -4,6 +4,7 @@ using Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Context.Migrations
 {
     [DbContext(typeof(_Context))]
-    partial class _ContextModelSnapshot : ModelSnapshot
+    [Migration("20240126124317_changeCartItem")]
+    partial class changeCartItem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -175,7 +178,7 @@ namespace Context.Migrations
                     b.Property<int>("CartId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ItemID")
+                    b.Property<int>("ItemID")
                         .HasColumnType("int");
 
                     b.Property<int>("Pro_Id")
@@ -209,7 +212,7 @@ namespace Context.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("itemID")
+                    b.Property<int>("itemID")
                         .HasColumnType("int");
 
                     b.Property<int>("productId")
@@ -313,14 +316,14 @@ namespace Context.Migrations
                     b.Property<int>("RoleID")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserID")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RoleID");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserId");
 
                     b.ToTable("UserRoles");
                 });
@@ -383,7 +386,9 @@ namespace Context.Migrations
 
                     b.HasOne("Model.Models.Item", "Item")
                         .WithMany()
-                        .HasForeignKey("ItemID");
+                        .HasForeignKey("ItemID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Model.Models.Product", "Product")
                         .WithMany("productCartItems")
@@ -408,7 +413,9 @@ namespace Context.Migrations
 
                     b.HasOne("Model.Models.Item", "item")
                         .WithMany()
-                        .HasForeignKey("itemID");
+                        .HasForeignKey("itemID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Model.Models.Product", "Product")
                         .WithMany("ProductInOrders")
@@ -433,7 +440,7 @@ namespace Context.Migrations
 
                     b.HasOne("Model.Models.User", "User")
                         .WithMany("userRoles")
-                        .HasForeignKey("UserID")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -21,9 +21,9 @@ namespace Presentation
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-
-          //  Application.Run(new UserPanel());
-            Application.Run(new AdminPanal());
+             Application.Run(new LoginAndRegister());
+           //Application.Run(new UserPanel());
+         //   Application.Run(new AdminPanal());
         }
     }
 }
