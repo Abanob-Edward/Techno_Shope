@@ -14,11 +14,13 @@ namespace Appliaction.Services
         
 
         private readonly IUserRepository USerRepository;
+       
 
         public UserService(IUserRepository _IUserRepository)
         {
 
             USerRepository = _IUserRepository;
+           
         }
 
         public void AddUser(User user)
@@ -63,6 +65,8 @@ namespace Appliaction.Services
         {
             return USerRepository.IsUsernameAvailable(username);
         }
+
+       
     }
 
 }

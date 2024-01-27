@@ -44,9 +44,10 @@ namespace Infrastructure.Repositores
             return Context.SaveChanges();
         }
 
-        public string GetUserRole(User user) {
+        public string GetUserRole(User user) 
+        {
         
-          var roleID =  Context.UserRoles.FirstOrDefault(x=>x.Id == user.Id).Id;
+          var roleID =  Context.UserRoles.FirstOrDefault(x=>x.Id == user.Id).RoleID;
 
           return  Context.Roles.FirstOrDefault(x => x.ID == roleID).Name;
         }

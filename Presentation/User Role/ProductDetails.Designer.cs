@@ -1,6 +1,6 @@
 ﻿namespace Presentation.User_Role
 {
-    partial class uHomePanel
+    partial class ProductDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -29,54 +29,41 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            ProductsDGV = new DataGridView();
-            Success = new Label();
-            ((System.ComponentModel.ISupportInitialize)ProductsDGV).BeginInit();
+            Idlabel = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Variable Display Semib", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(414, 9);
+            label1.Location = new Point(443, 25);
             label1.Name = "label1";
-            label1.Size = new Size(243, 31);
+            label1.Size = new Size(175, 31);
             label1.TabIndex = 0;
-            label1.Text = "Customer Home page";
+            label1.Text = "Product Detiles";
             // 
-            // ProductsDGV
+            // Idlabel
             // 
-            ProductsDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            ProductsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsDGV.Location = new Point(25, 117);
-            ProductsDGV.Name = "ProductsDGV";
-            ProductsDGV.RowHeadersWidth = 51;
-            ProductsDGV.Size = new Size(1087, 293);
-            ProductsDGV.TabIndex = 1;
-            ProductsDGV.CellClick += ProductsDGV_CellClick;
+            Idlabel.AutoSize = true;
+            Idlabel.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Idlabel.ForeColor = Color.IndianRed;
+            Idlabel.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Polite;
+            Idlabel.Location = new Point(463, 271);
+            Idlabel.Name = "Idlabel";
+            Idlabel.Size = new Size(56, 20);
+            Idlabel.TabIndex = 1;
+            Idlabel.Text = "label2";
             // 
-            // Success
-            // 
-            Success.AutoSize = true;
-            Success.Font = new Font("Showcard Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Success.Location = new Point(288, 70);
-            Success.Name = "Success";
-            Success.Size = new Size(0, 35);
-            Success.TabIndex = 2;
-            // 
-            // uHomePanel
+            // ProductDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1201, 736);
-            Controls.Add(Success);
-            Controls.Add(ProductsDGV);
+            Controls.Add(Idlabel);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "uHomePanel";
-            Text = "uHomePanel";
-            Load += uHomePanel_Load;
-            ((System.ComponentModel.ISupportInitialize)ProductsDGV).EndInit();
+            Name = "ProductDetails";
+            Text = "userPrfielPanel";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -84,7 +71,6 @@
         #endregion
 
         private Label label1;
-        private DataGridView ProductsDGV;
-        private Label Success;
+        private Label Idlabel;
     }
 }

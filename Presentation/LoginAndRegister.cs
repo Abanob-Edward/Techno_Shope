@@ -1,7 +1,9 @@
 ﻿using Appliaction.Contract;
 using Appliaction.Services;
 using Context;
+using Infrastructure.Contract;
 using Infrastructure.Repositores;
+using Microsoft.VisualBasic.ApplicationServices;
 using Model.Models;
 using Presentation.User_Role;
 using System;
@@ -17,6 +19,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using User = Model.Models.User;
 
 namespace Presentation
 {
@@ -29,12 +32,12 @@ namespace Presentation
 
 
         private readonly IUserService userService;
+        private readonly ICartService cartService;
         public LoginAndRegister()
         {
             InitializeComponent();
-
+            cartService = new CartService(new CartRepository(new _Context()) , new CartproudectRepository(new _Context()));
             userService = new UserService(new UserRepository(new _Context()));
-
         }
 
 
@@ -95,6 +98,14 @@ namespace Presentation
                     userService.AddUser(newUser);
 
 
+                    cartService.addNewCart(newUser.Id);
+
+                    NameofUser = newUser.FirstName + "  " + newUser.LastName;
+                    userPanel = new UserPanel(NameofUser);
+                    userPanel.currentUserId = newUser.Id;
+                    this.Hide();
+                    userPanel.Show();
+
                     // MessageBox.Show("User registered successfully!");
                     label_User_regis.Text = "User registered successfully!";
 
@@ -143,6 +154,7 @@ namespace Presentation
                 {
                     NameofUser = user.FirstName + "  " + user.LastName;
                     adminPanal = new AdminPanal(NameofUser);
+                    //userPanel.currentUserId = user.Id;
                     this.Hide();
                     adminPanal.Show();
 
@@ -150,7 +162,9 @@ namespace Presentation
                 else
                 {
                     NameofUser = user.FirstName + "  " + user.LastName;
-                    userPanel = new UserPanel(NameofUser);
+                    
+                    userPanel = new UserPanel(NameofUser, user.Id);
+                    userPanel.currentUserId = user.Id;
                     this.Hide();
                     userPanel.Show();
                 }

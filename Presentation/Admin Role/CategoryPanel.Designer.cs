@@ -221,7 +221,7 @@
             CategoryDGV.RowHeadersWidth = 51;
             CategoryDGV.Size = new Size(903, 290);
             CategoryDGV.TabIndex = 25;
-            //CategoryDGV.RowHeaderMouseClick += CategoryDGV_RowHeaderMouseClick;
+            CategoryDGV.RowHeaderMouseClick += CategoryDGV_RowHeaderMouseClick_1;
             // 
             // CategoryPanel
             // 

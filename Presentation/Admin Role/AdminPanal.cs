@@ -57,7 +57,7 @@ namespace Presentation
             if (SideBarExpand)
             {
                 sideBar.Width -= 10;
-                if (sideBar.Width <= 66)
+                if (sideBar.Width <= 85)
                 {
                     SideBarExpand = false;
                     SideBarTransition.Stop();

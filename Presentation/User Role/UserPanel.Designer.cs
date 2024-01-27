@@ -317,6 +317,7 @@
             IsMdiContainer = true;
             Name = "UserPanel";
             Text = "Customer";
+            Load += UserPanel_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel7.ResumeLayout(false);

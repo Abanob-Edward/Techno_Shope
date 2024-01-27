@@ -19,6 +19,7 @@ namespace Appliaction.Services
         //new function for the user
         bool IsUsernameAvailable(string username);
         User GetUserByUsername(string username);
+       
 
         
     }

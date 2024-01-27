@@ -14,19 +14,20 @@ namespace Presentation.User_Role
 {
     public partial class UserPanel : Form
     {
+        public int currentUserId { get; set; }
         uHomePanel? uHomePanel;
         OrderPanel? orderPanel;
         CartItemPanel? cartItemPanel;
         userProfielPanel? userProfielPanel;
 
-        public UserPanel(string? username= " Costomer" )
+        public UserPanel(string? username = " Costomer", int USerid = 0)
         {
-            
+
             InitializeComponent();
             UserName.Text = "Welcome " + username;
-            LoadHome();
+            // LoadHome(USerid);
         }
-       
+
         private void BtnSideBar_Click(object sender, EventArgs e)
         {
             SideBarTransition.Start();
@@ -82,7 +83,7 @@ namespace Presentation.User_Role
         {
             if (uHomePanel == null)
             {
-                uHomePanel = new uHomePanel();
+                uHomePanel = new uHomePanel(this, currentUserId);
                 uHomePanel.FormClosed += uHomePanelClosed;
                 uHomePanel.MdiParent = this;
                 uHomePanel.Dock = DockStyle.Fill;
@@ -95,11 +96,11 @@ namespace Presentation.User_Role
         }
 
 
-        private void LoadHome()
+        private void LoadHome(int userID)
         {
             if (uHomePanel == null)
             {
-                uHomePanel = new uHomePanel();
+                uHomePanel = new uHomePanel(this,userID);
                 uHomePanel.FormClosed += uHomePanelClosed;
                 uHomePanel.MdiParent = this;
                 uHomePanel.Dock = DockStyle.Fill;
@@ -113,9 +114,10 @@ namespace Presentation.User_Role
 
         private void CartItemsBTN_Click(object sender, EventArgs e)
         {
+
             if (cartItemPanel == null)
             {
-                cartItemPanel = new CartItemPanel();
+                cartItemPanel = new CartItemPanel(currentUserId);
                 cartItemPanel.FormClosed += cartItemPanellClosed;
                 cartItemPanel.MdiParent = this;
                 cartItemPanel.Dock = DockStyle.Fill;
@@ -150,7 +152,7 @@ namespace Presentation.User_Role
             LoginAndRegister loginAndRegister = new LoginAndRegister();
             this.Hide();
             loginAndRegister.Show();
-          //  this.Close();
+            //  this.Close();
         }
 
         private void ProfileBTN_Click(object sender, EventArgs e)
@@ -169,6 +171,9 @@ namespace Presentation.User_Role
             }
         }
 
-      
+        private void UserPanel_Load(object sender, EventArgs e)
+        {
+            LoadHome(currentUserId);
+        }
     }
 }

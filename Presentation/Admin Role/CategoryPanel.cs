@@ -60,6 +60,7 @@ namespace Presentation
 
                     categoryData.Add(new
                     {
+                        category.ID,
                         category.Name,
                         category.Type,
                         ProductCount = count,
@@ -115,7 +116,7 @@ namespace Presentation
 
         private void ProdactDGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-          
+
             CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[0].Value.ToString();
             CatNameTxt2.Text = CategoryDGV.CurrentRow.Cells[CategoryDGV.ColumnCount - 1].Value.ToString();
         }
@@ -183,12 +184,7 @@ namespace Presentation
             loadtabel();
         }
 
-        //private void CategoryDGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{
-        //    CatNameTxt2.Text = CategoryDGV.CurrentRow.Cells[0].Value.ToString();
-        //    CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[1].Value.ToString();
-        //    ErrorMessage.Text = "";
-        //}
+      
 
         private void CategoryPanel_Load(object sender, EventArgs e)
         {
@@ -197,6 +193,11 @@ namespace Presentation
 
         }
 
-  
+        private void CategoryDGV_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            CatNameTxt2.Text = CategoryDGV.CurrentRow.Cells[1].Value.ToString();
+            CatTybetxt2.Text = CategoryDGV.CurrentRow.Cells[2].Value.ToString();
+            ErrorMessage.Text = "";
+        }
     }
 }

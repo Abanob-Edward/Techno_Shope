@@ -15,8 +15,8 @@ namespace Model.Models
         public int ID { get; set; }
         public int Quantity { get; set; }
         [ForeignKey("item")]
-        public int itemID { get; set; }
-        public Item item { get; set; }
+        public int? itemID { get; set; }
+        public Item? item { get; set; }
         /*
         public string? Color { get; set; }
         public float? Inch { get; set; }
