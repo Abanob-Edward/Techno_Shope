@@ -61,6 +61,7 @@ namespace Presentation
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(903, 290);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.RowHeaderMouseClick += ProdactDGV_RowHeaderMouseClick;
             // 
             // button1

@@ -56,6 +56,7 @@
             ProductsDGV.Size = new Size(1087, 293);
             ProductsDGV.TabIndex = 1;
             ProductsDGV.CellClick += ProductsDGV_CellClick;
+            ProductsDGV.CellContentClick += ProductsDGV_CellContentClick;
             // 
             // Success
             // 
