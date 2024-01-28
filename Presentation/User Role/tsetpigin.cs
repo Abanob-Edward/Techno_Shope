@@ -35,8 +35,8 @@ namespace Presentation.User_Role
 
             List<Product> products = ProductService.GetAllPagination(skipCount, takeCount);
             var product= ProductService.GetAlltech()
-               .Include(p => p.User)       // Eager load the User navigation property
-               .Include(p => p.category)   // Eager load the category navigation property
+               .Include(p => p.User)       
+               .Include(p => p.category)   
                .ToList();
 
             dataGridView1.DataSource = null;
@@ -58,18 +58,68 @@ namespace Presentation.User_Role
            
             }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Next_Click(object sender, EventArgs e)
         {
-            currentPage++;
-            LoadData();
+            try
+            {
+                int nextPage = currentPage + 1;
 
+                if (HasDataOnPage(nextPage))
+                {
+                    currentPage = nextPage;
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("No more data available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void previous_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int previousPage = currentPage - 1;
+
+                if (previousPage >= 1)
+                {
+                    if (HasDataOnPage(previousPage))
+                    {
+                        currentPage = previousPage;
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No more data available on the previous page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You are already on the first page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            currentPage--;
-            LoadData();
 
+        private bool HasDataOnPage(int page)
+        {
+            int skipCount = (page - 1) * PageSize;
+            int takeCount = PageSize;
+
+            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount);
+
+            return products.Any(); // Check if there is any data on the specified page
         }
+
+
+
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
+            next = new Button();
+            previou = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -43,33 +43,33 @@
             dataGridView1.Size = new Size(776, 251);
             dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // next
             // 
-            button1.Location = new Point(202, 390);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "<";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            next.Location = new Point(202, 390);
+            next.Name = "next";
+            next.Size = new Size(94, 29);
+            next.TabIndex = 1;
+            next.Text = "next";
+            next.UseVisualStyleBackColor = true;
+            next.Click += Next_Click;
             // 
-            // button2
+            // previou
             // 
-            button2.Location = new Point(450, 390);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 2;
-            button2.Text = ">";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            previou.Location = new Point(450, 390);
+            previou.Name = "previou";
+            previou.Size = new Size(94, 29);
+            previou.TabIndex = 2;
+            previou.Text = "previous";
+            previou.UseVisualStyleBackColor = true;
+            previou.Click += previous_Click;
             // 
             // tsetpigin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(previou);
+            Controls.Add(next);
             Controls.Add(dataGridView1);
             Name = "tsetpigin";
             Text = "tsetpigin";
@@ -80,7 +80,7 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
+        private Button next;
+        private Button previou;
     }
 }

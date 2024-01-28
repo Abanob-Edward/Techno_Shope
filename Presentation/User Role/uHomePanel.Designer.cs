@@ -31,6 +31,8 @@
             label1 = new Label();
             ProductsDGV = new DataGridView();
             Success = new Label();
+            NextBtn = new Button();
+            previousBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)ProductsDGV).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // 
             ProductsDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ProductsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsDGV.Location = new Point(25, 117);
+            ProductsDGV.Location = new Point(32, 57);
             ProductsDGV.Name = "ProductsDGV";
             ProductsDGV.RowHeadersWidth = 51;
             ProductsDGV.Size = new Size(1087, 293);
@@ -64,11 +66,33 @@
             Success.Size = new Size(0, 35);
             Success.TabIndex = 2;
             // 
+            // NextBtn
+            // 
+            NextBtn.Location = new Point(288, 389);
+            NextBtn.Name = "NextBtn";
+            NextBtn.Size = new Size(147, 54);
+            NextBtn.TabIndex = 3;
+            NextBtn.Text = "Next";
+            NextBtn.UseVisualStyleBackColor = true;
+            NextBtn.Click += NextBtn_Click;
+            // 
+            // previousBtn
+            // 
+            previousBtn.Location = new Point(563, 389);
+            previousBtn.Name = "previousBtn";
+            previousBtn.Size = new Size(138, 54);
+            previousBtn.TabIndex = 4;
+            previousBtn.Text = "Previou";
+            previousBtn.UseVisualStyleBackColor = true;
+            previousBtn.Click += previousBtn_Click;
+            // 
             // uHomePanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1201, 736);
+            Controls.Add(previousBtn);
+            Controls.Add(NextBtn);
             Controls.Add(Success);
             Controls.Add(ProductsDGV);
             Controls.Add(label1);
@@ -86,5 +110,7 @@
         private Label label1;
         private DataGridView ProductsDGV;
         private Label Success;
+        private Button NextBtn;
+        private Button previousBtn;
     }
 }
