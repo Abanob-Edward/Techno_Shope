@@ -159,7 +159,7 @@ namespace Presentation.User_Role
         {
             if (userProfielPanel == null)
             {
-                userProfielPanel = new userProfielPanel();
+                userProfielPanel = new userProfielPanel(currentUserId);
                 userProfielPanel.FormClosed += userProfielPanellClosed;
                 userProfielPanel.MdiParent = this;
                 userProfielPanel.Dock = DockStyle.Fill;

@@ -12,9 +12,17 @@ namespace Presentation.User_Role
 {
     public partial class userProfielPanel : Form
     {
-        public userProfielPanel()
+        public int? UserCurrenID;
+        public userProfielPanel(int? userCurrenID)
         {
             InitializeComponent();
+            UserCurrenID = userCurrenID;
+
+        }
+
+        private void userProfielPanel_Load(object sender, EventArgs e)
+        {
+            label1.Text = "test";
         }
     }
 }

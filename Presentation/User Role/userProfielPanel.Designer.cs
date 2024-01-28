@@ -41,15 +41,16 @@
             label1.TabIndex = 0;
             label1.Text = "Proffile ";
             // 
-            // userPrfielPanel
+            // userProfielPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1201, 736);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "userPrfielPanel";
+            Name = "userProfielPanel";
             Text = "userPrfielPanel";
+            Load += userProfielPanel_Load;
             ResumeLayout(false);
             PerformLayout();
         }

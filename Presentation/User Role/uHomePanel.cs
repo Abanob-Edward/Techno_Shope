@@ -61,8 +61,10 @@ namespace Presentation.User_Role
                 Price = p.Price,
                 Image = p.Image
             })*/
+
+             var listOfproduct = ProductService.GetAlltech();
             // ID  -  Name   - price    - image --   add to cart 
-        
+
             ProductsDGV.ColumnCount = 4;
             ProductsDGV.Columns[0].Name = "ID";
             ProductsDGV.Columns[1].Name = "Name ";
@@ -71,7 +73,7 @@ namespace Presentation.User_Role
             //  ProductsDGV.Columns[4].Name = "ID";
 
             ArrayList list;
-            var listOfproduct = ProductService.GetAlltech();
+           
 
             foreach (var item in listOfproduct)
             {
