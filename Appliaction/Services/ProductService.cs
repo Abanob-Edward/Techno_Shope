@@ -53,6 +53,11 @@ namespace Appliaction.Services
         {
             return _productRepository.update(entity);
         }
+        public List<Product> GetAllPagination(int skipCount, int takeCount)
+        {
+            var products = _productRepository.getAll().Skip(skipCount).Take(takeCount).ToList();
+            return products;
+        }
     }
 
 
