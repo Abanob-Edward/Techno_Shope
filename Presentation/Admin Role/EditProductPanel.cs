@@ -48,7 +48,7 @@ namespace Presentation
                 p.Price,
                 p.Title,
                 p.Code,
-               // AdmineName = p.User != null ? p.User.FirstName : "No Admin",
+                // AdmineName = p.User != null ? p.User.FirstName : "No Admin",
                 CategoryName = p.category != null ? p.category.Name : "No Category"
             }).ToList();
 
@@ -77,7 +77,7 @@ namespace Presentation
                 p.Image,
                 CategoryName = p.category != null ? p.category.Name : "No Category",
                 AdmineName = p.User != null ? p.User.FirstName : "No Admin"
-               
+
             }).ToList();
         }
         private bool isRowSelected = true;
@@ -201,6 +201,11 @@ namespace Presentation
             {
                 MessageBox.Show("Can't Upload Image", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 
