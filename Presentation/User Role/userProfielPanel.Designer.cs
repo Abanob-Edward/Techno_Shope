@@ -49,7 +49,7 @@
             Prof_Name.FlatStyle = FlatStyle.Flat;
             Prof_Name.Font = new Font("Microsoft Sans Serif", 13.8F);
             Prof_Name.ForeColor = Color.Black;
-            Prof_Name.Location = new Point(544, 219);
+            Prof_Name.Location = new Point(433, 394);
             Prof_Name.Margin = new Padding(5, 0, 5, 0);
             Prof_Name.Name = "Prof_Name";
             Prof_Name.Size = new Size(78, 29);
@@ -60,7 +60,7 @@
             // text_prof_name
             // 
             text_prof_name.Font = new Font("Segoe UI", 12F);
-            text_prof_name.Location = new Point(734, 219);
+            text_prof_name.Location = new Point(623, 394);
             text_prof_name.Margin = new Padding(5);
             text_prof_name.Name = "text_prof_name";
             text_prof_name.Size = new Size(522, 34);
@@ -70,7 +70,7 @@
             // text_Number
             // 
             text_Number.Font = new Font("Segoe UI", 12F);
-            text_Number.Location = new Point(734, 500);
+            text_Number.Location = new Point(623, 675);
             text_Number.Margin = new Padding(5);
             text_Number.Name = "text_Number";
             text_Number.Size = new Size(522, 34);
@@ -80,7 +80,7 @@
             // text_email_prof
             // 
             text_email_prof.Font = new Font("Segoe UI", 12F);
-            text_email_prof.Location = new Point(734, 403);
+            text_email_prof.Location = new Point(623, 578);
             text_email_prof.Margin = new Padding(5);
             text_email_prof.Name = "text_email_prof";
             text_email_prof.Size = new Size(522, 34);
@@ -94,7 +94,7 @@
             email_prof.FlatStyle = FlatStyle.Flat;
             email_prof.Font = new Font("Microsoft Sans Serif", 13.8F);
             email_prof.ForeColor = Color.Black;
-            email_prof.Location = new Point(544, 408);
+            email_prof.Location = new Point(433, 583);
             email_prof.Margin = new Padding(5, 0, 5, 0);
             email_prof.Name = "email_prof";
             email_prof.Size = new Size(74, 29);
@@ -109,7 +109,7 @@
             Phone_num_prof.FlatStyle = FlatStyle.Flat;
             Phone_num_prof.Font = new Font("Microsoft Sans Serif", 13.8F);
             Phone_num_prof.ForeColor = Color.Black;
-            Phone_num_prof.Location = new Point(544, 503);
+            Phone_num_prof.Location = new Point(433, 678);
             Phone_num_prof.Margin = new Padding(5, 0, 5, 0);
             Phone_num_prof.Name = "Phone_num_prof";
             Phone_num_prof.Size = new Size(180, 29);
@@ -121,12 +121,11 @@
             // Text_UserName
             // 
             Text_UserName.Font = new Font("Segoe UI", 12F);
-            Text_UserName.Location = new Point(733, 308);
+            Text_UserName.Location = new Point(622, 483);
             Text_UserName.Margin = new Padding(5);
             Text_UserName.Name = "Text_UserName";
             Text_UserName.Size = new Size(522, 34);
             Text_UserName.TabIndex = 10;
-            Text_UserName.TextChanged += Text_UserName_TextChanged;
             // 
             // label_UserName
             // 
@@ -135,7 +134,7 @@
             label_UserName.FlatStyle = FlatStyle.Flat;
             label_UserName.Font = new Font("Microsoft Sans Serif", 13.8F);
             label_UserName.ForeColor = Color.Black;
-            label_UserName.Location = new Point(544, 313);
+            label_UserName.Location = new Point(433, 488);
             label_UserName.Margin = new Padding(5, 0, 5, 0);
             label_UserName.Name = "label_UserName";
             label_UserName.Size = new Size(139, 29);

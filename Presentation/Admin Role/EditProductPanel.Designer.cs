@@ -70,7 +70,7 @@ namespace Presentation
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(238, 238, 238);
-            button1.Location = new Point(286, 629);
+            button1.Location = new Point(286, 614);
             button1.Name = "button1";
             button1.Size = new Size(123, 49);
             button1.TabIndex = 1;
@@ -84,7 +84,7 @@ namespace Presentation
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(238, 238, 238);
-            button2.Location = new Point(552, 629);
+            button2.Location = new Point(552, 614);
             button2.Name = "button2";
             button2.Size = new Size(128, 49);
             button2.TabIndex = 2;

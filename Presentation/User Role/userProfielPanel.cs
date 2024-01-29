@@ -12,11 +12,10 @@ namespace Presentation.User_Role
         private readonly IUserService userService;
         public int? UserCurrentID;
 
-        public userProfielPanel(int userCurrentID)
-        public int? UserCurrenID;
+       
         public userProfielPanel(int? userCurrenID)
         {
-            UserCurrentID = userCurrentID;
+            UserCurrentID = userCurrenID;
             InitializeComponent();
             userService = new UserService(new UserRepository(new _Context()));
         }
@@ -72,15 +71,12 @@ namespace Presentation.User_Role
         {
         }
 
-        private void Text_UserName_TextChanged(object sender, EventArgs e)
+    /*    private void Text_UserName_TextChanged(object sender, EventArgs e)
         {
             UserCurrenID = userCurrenID;
 
         }
-
-        private void userProfielPanel_Load(object sender, EventArgs e)
-        {
-            label1.Text = "test";
-        }
+*/
+       
     }
 }
