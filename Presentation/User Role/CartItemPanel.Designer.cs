@@ -30,6 +30,8 @@
         {
             label1 = new Label();
             CartItemDGV = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)CartItemDGV).BeginInit();
             SuspendLayout();
             // 
@@ -46,17 +48,40 @@
             // CartItemDGV
             // 
             CartItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CartItemDGV.Location = new Point(57, 67);
+            CartItemDGV.Location = new Point(12, 55);
             CartItemDGV.Name = "CartItemDGV";
             CartItemDGV.RowHeadersWidth = 51;
-            CartItemDGV.Size = new Size(1083, 609);
+            CartItemDGV.Size = new Size(1038, 480);
             CartItemDGV.TabIndex = 1;
+           
+            // 
+            // button1
+            // 
+            button1.Location = new Point(330, 650);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 53);
+            button1.TabIndex = 2;
+            button1.Text = "NextBtn";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(531, 650);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 53);
+            button2.TabIndex = 3;
+            button2.Text = "previousBtn";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // CartItemPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1201, 736);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(CartItemDGV);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -72,5 +97,7 @@
 
         private Label label1;
         private DataGridView CartItemDGV;
+        private Button button1;
+        private Button button2;
     }
 }

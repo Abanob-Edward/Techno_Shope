@@ -4,6 +4,7 @@ using Infrastructure.Repositores;
 using Model.Models;
 using Presentation.User_Role;
 
+
 namespace Presentation
 {
     internal static class Program
@@ -20,9 +21,15 @@ namespace Presentation
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-          //   Application.Run(new LoginAndRegister());
-           Application.Run(new UserPanel());
-         //   Application.Run(new AdminPanal());
+
+
+            Application.Run(new LoginAndRegister());
+            //Application.Run(new CartItemPanel());
+            // Application.Run(new UserPanel());
+
+            // Application.Run(new AdminPanal());
+            //Application.Run(new tsetpigin());
+            //Application.Run(new userProfielPanel());
         }
     }
 }
