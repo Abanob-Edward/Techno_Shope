@@ -20,18 +20,18 @@ namespace Appliaction.Services
         }
 
 
-        CartItem ICartService.GetCartByUserID(int USerID)
+        public CartItem GetCartByUserID(int USerID)
         {
             return cartRepository.GetCartByUserID(USerID);
         }
-        CartItem ICartService.addNewCart(int UserID)
+        public CartItem addNewCart(int UserID)
         {
             CartItem cartItem = new CartItem() { User_Id = UserID, };
           return  cartRepository.add(cartItem);
             
         }
 
-        ProductCartItem ICartService.addproductToCart(int ProID, int CartID)
+        public ProductCartItem addproductToCart(int ProID, int CartID)
         {
 
             // قبل ما يشيف ي شيك بال  productID and cartID  

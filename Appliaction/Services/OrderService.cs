@@ -29,5 +29,10 @@ namespace Appliaction.Services
             order.OrderStatus = status;
            return   orderRepository.update(order);
         }
+
+        public Order addOrder(Order order)
+        {
+           return orderRepository.add(order);
+        }
     }
 }

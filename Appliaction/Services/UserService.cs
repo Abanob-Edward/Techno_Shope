@@ -56,12 +56,12 @@ namespace Appliaction.Services
         {
             return  USerRepository.GetUserRole(user).ToLower();
         }
-        User IUserService.GetUserByUsername(string username)
+        public User GetUserByUsername(string username)
         {
             return USerRepository.GetUserByUsername(username);
         }
 
-        bool IUserService.IsUsernameAvailable(string username)
+        public bool IsUsernameAvailable(string username)
         {
             return USerRepository.IsUsernameAvailable(username);
         }

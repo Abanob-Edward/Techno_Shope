@@ -32,6 +32,9 @@
             CartItemDGV = new DataGridView();
             button1 = new Button();
             button2 = new Button();
+            OrderAll = new Button();
+            label2 = new Label();
+            OrderTotalprice = new Label();
             ((System.ComponentModel.ISupportInitialize)CartItemDGV).BeginInit();
             SuspendLayout();
             // 
@@ -47,17 +50,18 @@
             // 
             // CartItemDGV
             // 
+            CartItemDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CartItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CartItemDGV.Location = new Point(12, 55);
+            CartItemDGV.Location = new Point(35, 54);
             CartItemDGV.Name = "CartItemDGV";
             CartItemDGV.RowHeadersWidth = 51;
-            CartItemDGV.Size = new Size(1038, 480);
+            CartItemDGV.Size = new Size(1127, 480);
             CartItemDGV.TabIndex = 1;
-           
+            CartItemDGV.CellContentClick += CartItemDGV_CellContentClick;
             // 
             // button1
             // 
-            button1.Location = new Point(330, 650);
+            button1.Location = new Point(721, 555);
             button1.Name = "button1";
             button1.Size = new Size(112, 53);
             button1.TabIndex = 2;
@@ -67,7 +71,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(531, 650);
+            button2.Location = new Point(351, 555);
             button2.Name = "button2";
             button2.Size = new Size(115, 53);
             button2.TabIndex = 3;
@@ -75,11 +79,44 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // OrderAll
+            // 
+            OrderAll.Location = new Point(35, 649);
+            OrderAll.Name = "OrderAll";
+            OrderAll.Size = new Size(112, 53);
+            OrderAll.TabIndex = 4;
+            OrderAll.Text = "Order now";
+            OrderAll.UseVisualStyleBackColor = true;
+            OrderAll.Click += OrderAll_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Symbol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Blue;
+            label2.Location = new Point(169, 656);
+            label2.Name = "label2";
+            label2.Size = new Size(217, 31);
+            label2.TabIndex = 5;
+            label2.Text = "Order Total price :";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // OrderTotalprice
+            // 
+            OrderTotalprice.AutoSize = true;
+            OrderTotalprice.Location = new Point(392, 665);
+            OrderTotalprice.Name = "OrderTotalprice";
+            OrderTotalprice.Size = new Size(0, 20);
+            OrderTotalprice.TabIndex = 6;
+            // 
             // CartItemPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1201, 736);
+            Controls.Add(OrderTotalprice);
+            Controls.Add(label2);
+            Controls.Add(OrderAll);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(CartItemDGV);
@@ -99,5 +136,8 @@
         private DataGridView CartItemDGV;
         private Button button1;
         private Button button2;
+        private Button OrderAll;
+        private Label label2;
+        private Label OrderTotalprice;
     }
 }

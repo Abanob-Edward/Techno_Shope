@@ -131,7 +131,7 @@ namespace Presentation
                 var obj = categoryService.GetCategorybyID(Id);
 
                 var Result = MessageBox.Show("Are you shure  to delete ", "Delete Confirem", MessageBoxButtons.YesNo);
-                categoryService.DeleteCategory(1);
+               
                 if (Result == DialogResult.Yes)
                 {
                     categoryService.DeleteCategory(Id);

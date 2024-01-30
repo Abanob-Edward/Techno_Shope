@@ -128,6 +128,7 @@ namespace Presentation.User_Role
 
             if (e.ColumnIndex == 5)
             {
+                // Details
 
                 productDetails = new ProductDetails(ProductID);
                 productDetails.FormClosed += productDetailslClosed;

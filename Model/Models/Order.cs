@@ -17,7 +17,9 @@ namespace Model.Models
           public decimal totalprice { get; set; }
 
          public ICollection<ProductInOrder> ProductInOrders { get; set; }
-         public User User { get; set; }
+        [ForeignKey("User")]
+        public int? User_ID { get; set; }
+        public User? User { get; set; }
     }
 
     //[NotMapped]

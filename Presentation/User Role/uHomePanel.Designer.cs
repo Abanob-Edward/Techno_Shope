@@ -53,10 +53,9 @@
             ProductsDGV.Location = new Point(32, 57);
             ProductsDGV.Name = "ProductsDGV";
             ProductsDGV.RowHeadersWidth = 51;
-            ProductsDGV.Size = new Size(1087, 293);
+            ProductsDGV.Size = new Size(1087, 447);
             ProductsDGV.TabIndex = 1;
             ProductsDGV.CellClick += ProductsDGV_CellClick;
-            ProductsDGV.CellContentClick += ProductsDGV_CellContentClick;
             // 
             // Success
             // 
@@ -69,7 +68,7 @@
             // 
             // NextBtn
             // 
-            NextBtn.Location = new Point(288, 389);
+            NextBtn.Location = new Point(641, 588);
             NextBtn.Name = "NextBtn";
             NextBtn.Size = new Size(147, 54);
             NextBtn.TabIndex = 3;
@@ -79,7 +78,7 @@
             // 
             // previousBtn
             // 
-            previousBtn.Location = new Point(563, 389);
+            previousBtn.Location = new Point(375, 588);
             previousBtn.Name = "previousBtn";
             previousBtn.Size = new Size(138, 54);
             previousBtn.TabIndex = 4;

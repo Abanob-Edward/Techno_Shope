@@ -29,6 +29,9 @@ namespace Presentation
             builder.RegisterType<CartRepository>().As<ICartRepository>();
             builder.RegisterType<CartproudectRepository>().As<ICartproudectRepository>();
 
+            builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<OrderRepository>().As<IOrderRepository>();
+
             builder.RegisterType<_Context>().As<_Context>();
             
             return builder.Build();
