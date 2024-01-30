@@ -9,7 +9,7 @@ namespace Context
         {
             optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=TECHNOSHOPE;Integrated Security=True;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true");
         }
-        public virtual DbSet<Student> Students { get; set; }
+       
         public virtual DbSet<CartItem> CartItems { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Item> Items { get; set; }

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Context\Context.csproj" />
+    <ProjectReference Include="..\DTOs\DTOs.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 

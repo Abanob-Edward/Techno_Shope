@@ -13,7 +13,7 @@ namespace Presentation
         ///  The main entry point for the application.
         /// </summary>
     
-        static IStudentService? StudentService;
+       
         [STAThread]
         static void Main()
         {

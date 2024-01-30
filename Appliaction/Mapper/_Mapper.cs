@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Appliaction.Mapper
 {
-    internal class _Mapper: Profile
+    public class _Mapper: Profile
     {
         public _Mapper()
         {
-            CreateMap<Student,StudentDTO>().ReverseMap();
+         //  CreateMap<Student,StudentDTO>().ReverseMap();
         }
 
        

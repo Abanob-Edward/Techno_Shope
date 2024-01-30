@@ -34,5 +34,10 @@ namespace Appliaction.Services
         {
            return orderRepository.add(order);
         }
+
+        public ProductInOrder AddListOfProducts(List<int> productsID, int orderID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
