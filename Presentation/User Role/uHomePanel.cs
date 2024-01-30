@@ -164,6 +164,11 @@ namespace Presentation.User_Role
 
         }
 
+        private void ProductsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void NextBtn_Click(object sender, EventArgs e)
         {
             try
