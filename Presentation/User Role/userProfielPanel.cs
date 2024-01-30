@@ -23,14 +23,13 @@ namespace Presentation.User_Role
         {
             try
             {
-                if (text_prof_name != null && text_email_prof != null && text_Number != null && Text_UserName != null)
+                if (UserName != null && Emial != null && Mobile != null && UserN != null)
                 {
                     User user = userService.GetUserbyID(UserCurrentID.Value);
-
-                    text_prof_name.Text = user?.FirstName + " " + user?.LastName;
-                    text_email_prof.Text = user?.Email;
-                    text_Number.Text = user?.PhoneNumber != null ? user.PhoneNumber.ToString() : string.Empty;
-                    Text_UserName.Text = user?.UserName;
+                    UserName.Text = user?.FirstName + " " + user?.LastName;
+                    Emial.Text = user?.Email;
+                    Mobile.Text = user?.PhoneNumber != null ? user.PhoneNumber.ToString() : string.Empty;
+                    UserN.Text = user?.UserName;
                 }
             }
             catch (Exception ex)
