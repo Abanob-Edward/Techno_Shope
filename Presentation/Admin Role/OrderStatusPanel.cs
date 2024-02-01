@@ -1,4 +1,5 @@
 ﻿using Appliaction.Services;
+using Autofac;
 using Context;
 using Infrastructure.Repositores;
 using Model.Models;
@@ -16,14 +17,16 @@ namespace Presentation
 {
     public partial class OrderStatusPanel : Form
     {
-        private readonly OrderService orderService;
+        private readonly IOrderService orderService;
         OrderStatus OrderStatus = new OrderStatus();
 
         int ID = 0;
         public OrderStatusPanel()
         {
-            orderService = new OrderService(new OrderRepository(new _Context()));
+           
             InitializeComponent();
+            var inject = AutoFact.Inject();
+            orderService= inject.Resolve<IOrderService>();
             loadData();
 
         }

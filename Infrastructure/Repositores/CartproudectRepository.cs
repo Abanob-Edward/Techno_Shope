@@ -1,5 +1,6 @@
 ﻿using Context;
 using Infrastructure.Contract;
+using Microsoft.EntityFrameworkCore;
 using Model.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,32 @@ namespace Infrastructure.Repositores
         public CartproudectRepository(_Context _context) : base(_context)
         {
             this.context = _context;
+
+        }
+
+        public void DeleteProductFromCart(List<int> proids)
+        {
+
+           
+           
+           var listOfproductIdToDelete = context.ProductCartItems.Where(x=> proids.Contains(x.Pro_Id)).ToList();
+         //  var listOfproductIdToDelete = context.ProductCartItems.Where(x => x.Pro_Id == proid).ToList();
+            foreach (var product in listOfproductIdToDelete)
+            {
+                context.ProductCartItems.Remove(product);
+                context.SaveChanges();
+            }
+           
+        }
+        public void DeleteOneProductFromCart(int proid)
+        {
+
+            var product = context.ProductCartItems.FirstOrDefault(x => x.Pro_Id == proid);
+            if(product != null) {
+                context.ProductCartItems.Remove(product);
+                context.SaveChanges();
+            }
+         
 
         }
         public (bool, ProductCartItem) CheckExeistProduct(int proID, int CartID)

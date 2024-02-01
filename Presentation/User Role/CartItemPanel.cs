@@ -1,6 +1,8 @@
 ﻿using Appliaction.Services;
 using Autofac;
 using Context;
+using Context.Migrations;
+using DTOs.Orders;
 using Infrastructure.Repositores;
 using Microsoft.EntityFrameworkCore;
 using Model.Models;
@@ -23,23 +25,26 @@ namespace Presentation.User_Role
 
     public partial class CartItemPanel : Form
     {
-        public int? UserCurrenID;
+        public int UserCurrenID;
         IProductService ProductService;
         ICartService cartService;
         IOrderService orderService;
-        CartproudectRepository cartproudectRepository;
+       // CartproudectRepository cartproudectRepository;
+
         private int currentPage = 1;
         private const int PageSize = 10;
         double totalPrice = 0;
-        public CartItemPanel(int? userid = 0)
+        public CartItemPanel(int userid = 0)
         {
             UserCurrenID = userid;
             InitializeComponent();
             var inject = AutoFact.Inject();
             ProductService = inject.Resolve<IProductService>();
+
+
             cartService = inject.Resolve<ICartService>();
             orderService = inject.Resolve<IOrderService>();
-            cartproudectRepository = new CartproudectRepository(new _Context());
+           // cartproudectRepository = new CartproudectRepository(new _Context());
 
 
         }
@@ -71,12 +76,14 @@ namespace Presentation.User_Role
             int skipCount = (currentPage - 1) * PageSize;
             int takeCount = PageSize;
 
+            // get the current cartid for current user 
 
+            var cartID = cartService.GetCartByUserID(UserCurrenID).Id;
             // Get product list for a specific User ID 
-            var cartiteampro = cartproudectRepository.getAll().Include(p => p.Product).ToList();
+            var cartiteampro = cartService.GetAllProductInCartItems(cartID).ToList();
             var newList = cartiteampro.Select(p => new
             {
-                p.ID,
+                p.Product.Id,
                 p.Product.Image,
                 p.Product.Price,
                 p.Product.Title,
@@ -165,12 +172,14 @@ namespace Presentation.User_Role
             }
         }
         List<int> ProductIDlist = new List<int>();
+        List<orderProductDTO> ProductIdWithQuantitylist = new List<orderProductDTO>();
         private void CartItemDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
             var ProductID = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[2].Value.ToString());
              var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[8].Value.ToString());
+             var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[7].Value.ToString());
 
             //check box
             if (e.ColumnIndex == 0)
@@ -181,19 +190,23 @@ namespace Presentation.User_Role
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn &&
                     e.RowIndex >= 0)
                 {
-
+                  
                     bool isChecked = (bool)CartItemDGV[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
                     if (isChecked)
                     {
-                        ProductIDlist.Add(ProductID);
+                        // ProductIDlist.Add(ProductID);
+                      
+                        ProductIdWithQuantitylist.Add(new orderProductDTO() { product_Id = ProductID, Quantity = Quantaty });
                         totalPrice += total;
                       
                     }
                     else
                     {
-                       
-                        ProductIDlist.Remove(ProductID);
-                        totalPrice -= total;
+
+                        // ProductIDlist.Remove(ProductID);
+                       var item = ProductIdWithQuantitylist.FirstOrDefault(c => c.product_Id == ProductID && c.Quantity == Quantaty);
+                        ProductIdWithQuantitylist.Remove(item);
+                         totalPrice -= total;
                       
                     }
                     OrderTotalprice.Text = totalPrice.ToString();
@@ -205,7 +218,7 @@ namespace Presentation.User_Role
             {
                 try
                 {
-                    cartproudectRepository.delete(ProductID);
+                    cartService.DeleteOneProductFromCart(ProductID);
                 }
                 catch (Exception ex)
                 {
@@ -242,15 +255,14 @@ namespace Presentation.User_Role
 
                     var inctanceOrder = orderService.addOrder(newOrder);
                     // function to take list of product id's and add it list to order 
-                    foreach (var item in ProductIDlist)
-                    {
-
-                    }
+                    orderService.AddListOfProducts(ProductIdWithQuantitylist, inctanceOrder.Id);
+                    // function to take list of product id's and Delete the products from product cart item
+                    cartService.DeleteListOfProductFromCart(ProductIdWithQuantitylist.Select(c=>c.product_Id).ToList());
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    throw;
                 }
             }
             

@@ -52,13 +52,12 @@ namespace Presentation.User_Role
             Prof_Name.FlatStyle = FlatStyle.Flat;
             Prof_Name.Font = new Font("Microsoft Sans Serif", 13.8F);
             Prof_Name.ForeColor = Color.Black;
-            Prof_Name.Location = new Point(433, 394);
+            Prof_Name.Location = new Point(223, 225);
             Prof_Name.Margin = new Padding(5, 0, 5, 0);
             Prof_Name.Name = "Prof_Name";
             Prof_Name.Size = new Size(96, 29);
             Prof_Name.TabIndex = 0;
             Prof_Name.Text = "Name : ";
-            Prof_Name.Click += Prof_Name_Click;
             // 
             // email_prof
             // 
@@ -67,13 +66,12 @@ namespace Presentation.User_Role
             email_prof.FlatStyle = FlatStyle.Flat;
             email_prof.Font = new Font("Microsoft Sans Serif", 13.8F);
             email_prof.ForeColor = Color.Black;
-            email_prof.Location = new Point(433, 583);
+            email_prof.Location = new Point(223, 414);
             email_prof.Margin = new Padding(5, 0, 5, 0);
             email_prof.Name = "email_prof";
             email_prof.Size = new Size(86, 29);
             email_prof.TabIndex = 6;
             email_prof.Text = "Email :";
-            email_prof.Click += email_prof_Click;
             // 
             // Phone_num_prof
             // 
@@ -82,14 +80,13 @@ namespace Presentation.User_Role
             Phone_num_prof.FlatStyle = FlatStyle.Flat;
             Phone_num_prof.Font = new Font("Microsoft Sans Serif", 13.8F);
             Phone_num_prof.ForeColor = Color.Black;
-            Phone_num_prof.Location = new Point(433, 678);
+            Phone_num_prof.Location = new Point(223, 509);
             Phone_num_prof.Margin = new Padding(5, 0, 5, 0);
             Phone_num_prof.Name = "Phone_num_prof";
             Phone_num_prof.Size = new Size(192, 29);
             Phone_num_prof.TabIndex = 2;
             Phone_num_prof.Text = "Mobile Number :";
-            Phone_num_prof.FontChanged += text_Number_TextChanged;
-            Phone_num_prof.Click += Phone_num_prof_Click;
+           
             // 
             // label_UserName
             // 
@@ -98,18 +95,17 @@ namespace Presentation.User_Role
             label_UserName.FlatStyle = FlatStyle.Flat;
             label_UserName.Font = new Font("Microsoft Sans Serif", 13.8F);
             label_UserName.ForeColor = Color.Black;
-            label_UserName.Location = new Point(433, 488);
+            label_UserName.Location = new Point(223, 319);
             label_UserName.Margin = new Padding(5, 0, 5, 0);
             label_UserName.Name = "label_UserName";
             label_UserName.Size = new Size(153, 29);
             label_UserName.TabIndex = 9;
             label_UserName.Text = "User Name : ";
-            label_UserName.Click += label_UserName_Click;
             // 
             // UserName
             // 
             UserName.AutoSize = true;
-            UserName.Location = new Point(844, 219);
+            UserName.Location = new Point(474, 225);
             UserName.Name = "UserName";
             UserName.Size = new Size(19, 29);
             UserName.TabIndex = 11;
@@ -118,7 +114,7 @@ namespace Presentation.User_Role
             // UserN
             // 
             UserN.AutoSize = true;
-            UserN.Location = new Point(844, 313);
+            UserN.Location = new Point(474, 319);
             UserN.Name = "UserN";
             UserN.Size = new Size(25, 29);
             UserN.TabIndex = 12;
@@ -127,7 +123,7 @@ namespace Presentation.User_Role
             // Emial
             // 
             Emial.AutoSize = true;
-            Emial.Location = new Point(844, 408);
+            Emial.Location = new Point(474, 414);
             Emial.Name = "Emial";
             Emial.Size = new Size(19, 29);
             Emial.TabIndex = 13;
@@ -136,7 +132,7 @@ namespace Presentation.User_Role
             // Mobile
             // 
             Mobile.AutoSize = true;
-            Mobile.Location = new Point(844, 503);
+            Mobile.Location = new Point(474, 509);
             Mobile.Name = "Mobile";
             Mobile.Size = new Size(19, 29);
             Mobile.TabIndex = 14;

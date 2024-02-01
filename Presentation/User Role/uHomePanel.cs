@@ -114,10 +114,10 @@ namespace Presentation.User_Role
             }*/
         private void ProductsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
-            if (e.ColumnIndex == 4)
+           
+            if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
-
+                var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
                 // ProductsDGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
                 int cartID = cartService.GetCartByUserID(CurrentUserID).Id;
                 cartService.addproductToCart(ProductID, cartID);
@@ -126,10 +126,10 @@ namespace Presentation.User_Role
                 //MessageBox.Show(yarab);
             }
 
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 5 && e.RowIndex != -1)
             {
                 // Details
-
+                var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
                 productDetails = new ProductDetails(ProductID);
                 productDetails.FormClosed += productDetailslClosed;
                 productDetails.MdiParent = UserPanel;

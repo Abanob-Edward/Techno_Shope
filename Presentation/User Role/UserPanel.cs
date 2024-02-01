@@ -14,17 +14,18 @@ namespace Presentation.User_Role
 {
     public partial class UserPanel : Form
     {
-        public int currentUserId { get; set; }
+        public int currentUserId;
         uHomePanel? uHomePanel;
         OrderPanel? orderPanel;
         CartItemPanel? cartItemPanel;
         userProfielPanel? userProfielPanel;
 
-        public UserPanel(string? username = " Costomer", int USerid = 0)
+        public UserPanel(string? username = " Costomer", int USerid = 1)
         {
 
             InitializeComponent();
             UserName.Text = "Welcome " + username;
+            currentUserId= USerid;
             // LoadHome(USerid);
         }
 

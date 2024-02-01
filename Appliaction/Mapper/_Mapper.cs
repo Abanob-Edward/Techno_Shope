@@ -1,5 +1,6 @@
-﻿using Appliaction.Dtos;
+﻿
 using AutoMapper;
+using DTOs.Orders;
 using Model.Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Appliaction.Mapper
     {
         public _Mapper()
         {
-         //  CreateMap<Student,StudentDTO>().ReverseMap();
+          CreateMap<orderProductDTO ,ProductInOrder>().ReverseMap();
         }
 
        

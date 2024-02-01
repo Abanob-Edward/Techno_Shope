@@ -1,5 +1,7 @@
 ﻿using Appliaction.Contract;
+using AutoMapper;
 using Infrastructure.Contract;
+using Microsoft.EntityFrameworkCore;
 using Model.Models;
 using System;
 using System.Collections.Generic;
@@ -11,15 +13,24 @@ namespace Appliaction.Services
 {
     public class CartService : ICartService
     {
+        private readonly IMapper mapper;
         private readonly ICartRepository cartRepository;
-        private readonly ICartproudectRepository cartproudect;
-        public CartService(ICartRepository _cartRepository, ICartproudectRepository _cartproudect)
+        private readonly ICartproudectRepository cartproudectRepository;
+        public CartService(ICartRepository _cartRepository, IMapper _mapper, ICartproudectRepository _cartproudect)
         {
             cartRepository = _cartRepository;
-            cartproudect = _cartproudect;
+            cartproudectRepository = _cartproudect;
+            mapper    =_mapper;
         }
 
-
+        public int GetCartIdforCurrentUSer(int UserId)
+        {
+          return    cartRepository.GetCartByUserID(UserId).Id;
+        }
+       public IQueryable<ProductCartItem> GetAllProductInCartItems(int cartId)
+        {
+          return  cartproudectRepository.getAll().Where(c=>c.CartId == cartId).Include(p => p.Product);
+        }
         public CartItem GetCartByUserID(int USerID)
         {
             return cartRepository.GetCartByUserID(USerID);
@@ -36,20 +47,33 @@ namespace Appliaction.Services
 
             // قبل ما يشيف ي شيك بال  productID and cartID  
             // عشان لو البرودكت مضاف قبل كدا يزود واحد ف الكونتيتي 
-             (bool, ProductCartItem) result  = cartproudect.CheckExeistProduct(ProID, CartID);
+             (bool, ProductCartItem) result  = cartproudectRepository.CheckExeistProduct(ProID, CartID);
 
             if(result.Item1 == true)
             {
                 result.Item2.Quantity += 1;
-              return  cartproudect.update(result.Item2);
+              return cartproudectRepository.update(result.Item2);
             }
             else
             {
                 ProductCartItem productCart = new ProductCartItem() { CartId = CartID, Pro_Id = ProID };
-                return cartproudect.add(productCart);
+                return cartproudectRepository.add(productCart);
             }
 
-           
+
+
+        }
+    
+       
+
+        public void DeleteOneProductFromCart(int proID)
+        {
+            cartproudectRepository.DeleteOneProductFromCart(proID);
+        }
+
+        public void DeleteListOfProductFromCart(List<int> proIDs)
+        {
+            cartproudectRepository.DeleteProductFromCart(proIDs);
         }
     }
 }

@@ -40,42 +40,8 @@ namespace Presentation.User_Role
         }
 
 
-        private void text_prof_name_TextChanged(object sender, EventArgs e)
-        {
-        }
+   
 
-        private void Prof_Name_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void text_email_prof_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void text_Number_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void email_prof_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Phone_num_prof_Click(object sender, EventArgs e)
-        {
-        }
-
-        
-
-        private void label_UserName_Click(object sender, EventArgs e)
-        {
-        }
-
-    /*    private void Text_UserName_TextChanged(object sender, EventArgs e)
-        {
-            UserCurrenID = userCurrenID;
-
-        }
-*/
        
     }
 }

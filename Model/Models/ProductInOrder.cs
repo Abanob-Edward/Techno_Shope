@@ -15,7 +15,7 @@ namespace Model.Models
         public int ID { get; set; }
         public int Quantity { get; set; }
         [ForeignKey("item")]
-        public int? itemID { get; set; }
+        public int? item_ID { get; set; }
         public Item? item { get; set; }
         /*
         public string? Color { get; set; }
@@ -26,7 +26,7 @@ namespace Model.Models
         public Order order { get; set; }
 
         [ForeignKey("Product")]
-        public int productId { get; set; }
+        public int product_Id { get; set; }
         public Product  Product { get; set; }
      
 

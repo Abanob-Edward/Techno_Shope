@@ -1,5 +1,6 @@
 ﻿using Appliaction.Contract;
 using Appliaction.Services;
+using Autofac;
 using Context;
 using Infrastructure.Contract;
 using Infrastructure.Repositores;
@@ -36,7 +37,8 @@ namespace Presentation
         public LoginAndRegister()
         {
             InitializeComponent();
-            cartService = new CartService(new CartRepository(new _Context()) , new CartproudectRepository(new _Context()));
+            var inject = AutoFact.Inject();
+            cartService = inject.Resolve<ICartService>();
             userService = new UserService(new UserRepository(new _Context()));
         }
 
@@ -164,7 +166,7 @@ namespace Presentation
                     NameofUser = user.FirstName + "  " + user.LastName;
                     
                     userPanel = new UserPanel(NameofUser, user.Id);
-                    userPanel.currentUserId = user.Id;
+                   // userPanel.currentUserId = user.Id;
                     this.Hide();
                     userPanel.Show();
                 }

@@ -1,4 +1,5 @@
-﻿using Model.Models;
+﻿using DTOs.Orders;
+using Model.Models;
 
 namespace Appliaction.Services
 {
@@ -6,13 +7,14 @@ namespace Appliaction.Services
     {
         IQueryable<Order> GetAllOrders();
 
-        Order addOrder(Order order);   
+        Order addOrder(Order order);
+        public Order UpdateOrderStatus(int orderID, OrderStatus status);
         /// <summary>
         ///  this function need dtos  to  mapp data 
         /// </summary>
         /// <param name="productsID"></param>
         /// <param name="orderID"></param>
         /// <returns></returns>
-        ProductInOrder AddListOfProducts (List<int> productsID ,int orderID );
+        void AddListOfProducts(List<orderProductDTO> orderProductDTOs, int orderID);
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Appliaction.Contract;
+using Appliaction.Mapper;
 using Appliaction.Services;
 using Autofac;
+using AutoMapper;
 using Context;
 using Infrastructure.Contract;
 using Infrastructure.Repositores;
@@ -29,11 +31,25 @@ namespace Presentation
             builder.RegisterType<CartRepository>().As<ICartRepository>();
             builder.RegisterType<CartproudectRepository>().As<ICartproudectRepository>();
 
-            builder.RegisterType<OrderService>().As<IOrderService>();
+            builder.RegisterType<OrderService>().As<IOrderService>().InstancePerLifetimeScope();
+           // builder.RegisterType<OrderService>().As<IOrderService>();
             builder.RegisterType<OrderRepository>().As<IOrderRepository>();
+            builder.RegisterType<OrderProductRepository>().As<IOrderProductRepository>();
+
+            
 
             builder.RegisterType<_Context>().As<_Context>();
-            
+
+
+            builder.Register(c => new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<_Mapper>();
+            })).AsSelf().SingleInstance();
+
+            builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper(c.Resolve))
+                   .As<IMapper>()
+                   .InstancePerLifetimeScope();
+
             return builder.Build();
         }
     }
