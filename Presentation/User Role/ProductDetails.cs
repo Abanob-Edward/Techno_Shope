@@ -42,7 +42,7 @@ namespace Presentation.User_Role
             cartService = inject.Resolve<ICartService>();
             UserService = inject.Resolve<IUserService>();
             ///new
-            cartService = cartService;
+            
 
             currentUserId = _currentUserId;
 

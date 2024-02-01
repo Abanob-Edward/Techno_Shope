@@ -130,7 +130,7 @@ namespace Presentation.User_Role
             {
                 // Details
                 var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
-                productDetails = new ProductDetails(ProductID);
+                productDetails = new ProductDetails(ProductID, CurrentUserID);
                 productDetails.FormClosed += productDetailslClosed;
                 productDetails.MdiParent = UserPanel;
                 productDetails.Dock = DockStyle.Fill;

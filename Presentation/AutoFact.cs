@@ -26,6 +26,9 @@ namespace Presentation
 
             builder.RegisterType<ProductService>().As<IProductService>();
             builder.RegisterType<ProudectRepository>().As<IProudectRepository>();
+
+            builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
            
             builder.RegisterType<CartService>().As<ICartService>();
             builder.RegisterType<CartRepository>().As<ICartRepository>();
