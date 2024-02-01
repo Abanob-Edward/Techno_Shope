@@ -43,6 +43,12 @@ namespace Presentation.User_Role
             UserN = new Label();
             Emial = new Label();
             Mobile = new Label();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            label12 = new Label();
+            pictureBox3 = new PictureBox();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // Prof_Name
@@ -105,7 +111,7 @@ namespace Presentation.User_Role
             // UserName
             // 
             UserName.AutoSize = true;
-            UserName.Location = new Point(474, 225);
+            UserName.Location = new Point(838, 367);
             UserName.Name = "UserName";
             UserName.Size = new Size(19, 29);
             UserName.TabIndex = 11;
@@ -114,7 +120,7 @@ namespace Presentation.User_Role
             // UserN
             // 
             UserN.AutoSize = true;
-            UserN.Location = new Point(474, 319);
+            UserN.Location = new Point(838, 472);
             UserN.Name = "UserN";
             UserN.Size = new Size(25, 29);
             UserN.TabIndex = 12;
@@ -123,7 +129,7 @@ namespace Presentation.User_Role
             // Emial
             // 
             Emial.AutoSize = true;
-            Emial.Location = new Point(474, 414);
+            Emial.Location = new Point(844, 554);
             Emial.Name = "Emial";
             Emial.Size = new Size(19, 29);
             Emial.TabIndex = 13;
@@ -132,11 +138,53 @@ namespace Presentation.User_Role
             // Mobile
             // 
             Mobile.AutoSize = true;
-            Mobile.Location = new Point(474, 509);
+            Mobile.Location = new Point(850, 666);
             Mobile.Name = "Mobile";
             Mobile.Size = new Size(19, 29);
             Mobile.TabIndex = 14;
             Mobile.Text = " ";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(189, 172, 148);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1201, 18);
+            panel1.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(189, 172, 148);
+            panel2.Controls.Add(label12);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Location = new Point(82, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(155, 186);
+            panel2.TabIndex = 19;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label12.Location = new Point(17, 145);
+            label12.Margin = new Padding(1, 0, 1, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(130, 18);
+            label12.TabIndex = 2;
+            label12.Text = "Techno_Shope";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(17, 20);
+            pictureBox3.Margin = new Padding(1);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(108, 101);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
             // 
             // userProfielPanel
             // 
@@ -146,6 +194,8 @@ namespace Presentation.User_Role
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1201, 736);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(Mobile);
             Controls.Add(Emial);
             Controls.Add(UserN);
@@ -161,6 +211,9 @@ namespace Presentation.User_Role
             Name = "userProfielPanel";
             Text = "userPrfielPanel";
             Load += userProfielPanel_Load;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,11 +226,14 @@ namespace Presentation.User_Role
         private Label email_prof;
         private Label Phone_num_prof;
         private TextBox textBox1;
-        private Label label1;
         private Label label_UserName;
         private Label UserName;
         private Label UserN;
         private Label Emial;
         private Label Mobile;
+        private Panel panel1;
+        private Panel panel2;
+        private PictureBox pictureBox3;
+        private Label label12;
     }
 }

@@ -39,8 +39,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(0, 10, 42, 155);
             label1.Font = new Font("Segoe UI Variable Display Semib", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(414, 9);
+            label1.ForeColor = Color.FromArgb(33, 42, 81);
+            label1.Location = new Point(438, 36);
             label1.Name = "label1";
             label1.Size = new Size(243, 31);
             label1.TabIndex = 0;
@@ -49,8 +51,9 @@
             // ProductsDGV
             // 
             ProductsDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ProductsDGV.BackgroundColor = Color.Linen;
             ProductsDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsDGV.Location = new Point(32, 57);
+            ProductsDGV.Location = new Point(49, 96);
             ProductsDGV.Name = "ProductsDGV";
             ProductsDGV.RowHeadersWidth = 51;
             ProductsDGV.Size = new Size(1087, 447);
@@ -68,28 +71,35 @@
             // 
             // NextBtn
             // 
-            NextBtn.Location = new Point(641, 588);
+            NextBtn.BackColor = Color.FromArgb(33, 42, 81);
+            NextBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NextBtn.ForeColor = Color.White;
+            NextBtn.Location = new Point(637, 588);
             NextBtn.Name = "NextBtn";
-            NextBtn.Size = new Size(147, 54);
+            NextBtn.Size = new Size(160, 59);
             NextBtn.TabIndex = 3;
             NextBtn.Text = "Next";
-            NextBtn.UseVisualStyleBackColor = true;
+            NextBtn.UseVisualStyleBackColor = false;
             NextBtn.Click += NextBtn_Click;
             // 
             // previousBtn
             // 
+            previousBtn.BackColor = Color.FromArgb(33, 42, 81);
+            previousBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            previousBtn.ForeColor = Color.White;
             previousBtn.Location = new Point(375, 588);
             previousBtn.Name = "previousBtn";
-            previousBtn.Size = new Size(138, 54);
+            previousBtn.Size = new Size(143, 62);
             previousBtn.TabIndex = 4;
             previousBtn.Text = "Previou";
-            previousBtn.UseVisualStyleBackColor = true;
+            previousBtn.UseVisualStyleBackColor = false;
             previousBtn.Click += previousBtn_Click;
             // 
             // uHomePanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(189, 172, 148);
             ClientSize = new Size(1201, 736);
             Controls.Add(previousBtn);
             Controls.Add(NextBtn);
