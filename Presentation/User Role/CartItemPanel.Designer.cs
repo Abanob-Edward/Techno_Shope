@@ -42,6 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Variable Display Semib", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(33, 42, 81);
             label1.Location = new Point(487, 9);
             label1.Name = "label1";
             label1.Size = new Size(222, 31);
@@ -51,8 +52,9 @@
             // CartItemDGV
             // 
             CartItemDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CartItemDGV.BackgroundColor = Color.Linen;
             CartItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CartItemDGV.Location = new Point(35, 54);
+            CartItemDGV.Location = new Point(34, 58);
             CartItemDGV.Name = "CartItemDGV";
             CartItemDGV.RowHeadersWidth = 51;
             CartItemDGV.Size = new Size(1127, 480);
@@ -61,40 +63,49 @@
             // 
             // button1
             // 
-            button1.Location = new Point(721, 555);
+            button1.BackColor = Color.FromArgb(33, 42, 81);
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(682, 555);
             button1.Name = "button1";
-            button1.Size = new Size(112, 53);
+            button1.Size = new Size(151, 58);
             button1.TabIndex = 2;
-            button1.Text = "NextBtn";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Next";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(33, 42, 81);
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(351, 555);
             button2.Name = "button2";
-            button2.Size = new Size(115, 53);
+            button2.Size = new Size(153, 58);
             button2.TabIndex = 3;
-            button2.Text = "previousBtn";
-            button2.UseVisualStyleBackColor = true;
+            button2.Text = "previous";
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // OrderAll
             // 
-            OrderAll.Location = new Point(35, 649);
+            OrderAll.BackColor = Color.FromArgb(33, 42, 81);
+            OrderAll.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OrderAll.ForeColor = SystemColors.ControlLight;
+            OrderAll.Location = new Point(12, 634);
             OrderAll.Name = "OrderAll";
-            OrderAll.Size = new Size(112, 53);
+            OrderAll.Size = new Size(155, 53);
             OrderAll.TabIndex = 4;
             OrderAll.Text = "Order now";
-            OrderAll.UseVisualStyleBackColor = true;
+            OrderAll.UseVisualStyleBackColor = false;
             OrderAll.Click += OrderAll_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Symbol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Blue;
-            label2.Location = new Point(169, 656);
+            label2.ForeColor = Color.FromArgb(33, 42, 81);
+            label2.Location = new Point(213, 654);
             label2.Name = "label2";
             label2.Size = new Size(217, 31);
             label2.TabIndex = 5;
@@ -113,6 +124,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(189, 172, 148);
             ClientSize = new Size(1201, 736);
             Controls.Add(OrderTotalprice);
             Controls.Add(label2);

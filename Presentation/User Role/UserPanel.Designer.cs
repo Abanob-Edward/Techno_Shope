@@ -64,7 +64,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(189, 172, 148);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(UserName);
             panel1.Controls.Add(BtnSideBar);
@@ -105,7 +105,7 @@
             // Search
             // 
             Search.AutoSize = true;
-            Search.BackColor = Color.White;
+            Search.BackColor = Color.Transparent;
             Search.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Search.ForeColor = Color.Navy;
             Search.Location = new Point(0, 0);
@@ -141,7 +141,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
+            label1.ForeColor = Color.FromArgb(33, 42, 81);
             label1.Location = new Point(81, 16);
             label1.Name = "label1";
             label1.Size = new Size(232, 37);
@@ -155,7 +155,7 @@
             // 
             // sideBar
             // 
-            sideBar.BackColor = Color.FromArgb(34, 40, 49);
+            sideBar.BackColor = Color.FromArgb(33, 42, 81);
             sideBar.Controls.Add(panel4);
             sideBar.Controls.Add(panel6);
             sideBar.Controls.Add(panel2);
@@ -181,7 +181,7 @@
             // 
             // HomeBTN
             // 
-            HomeBTN.BackColor = Color.FromArgb(34, 40, 49);
+            HomeBTN.BackColor = Color.FromArgb(33, 42, 81);
             HomeBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             HomeBTN.ForeColor = SystemColors.ControlLightLight;
             HomeBTN.Image = (Image)resources.GetObject("HomeBTN.Image");
@@ -209,7 +209,7 @@
             // 
             // ProfileBTN
             // 
-            ProfileBTN.BackColor = Color.FromArgb(34, 40, 49);
+            ProfileBTN.BackColor = Color.FromArgb(33, 42, 81);
             ProfileBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             ProfileBTN.ForeColor = SystemColors.ControlLightLight;
             ProfileBTN.Image = (Image)resources.GetObject("ProfileBTN.Image");
@@ -237,7 +237,7 @@
             // 
             // CartItemsBTN
             // 
-            CartItemsBTN.BackColor = Color.FromArgb(34, 40, 49);
+            CartItemsBTN.BackColor = Color.FromArgb(33, 42, 81);
             CartItemsBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             CartItemsBTN.ForeColor = SystemColors.ControlLightLight;
             CartItemsBTN.Image = (Image)resources.GetObject("CartItemsBTN.Image");
@@ -265,7 +265,7 @@
             // 
             // OrdersBtn
             // 
-            OrdersBtn.BackColor = Color.FromArgb(34, 40, 49);
+            OrdersBtn.BackColor = Color.FromArgb(33, 42, 81);
             OrdersBtn.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             OrdersBtn.ForeColor = SystemColors.ControlLightLight;
             OrdersBtn.Image = (Image)resources.GetObject("OrdersBtn.Image");
@@ -292,7 +292,7 @@
             // 
             // LogoutBTN
             // 
-            LogoutBTN.BackColor = Color.FromArgb(34, 40, 49);
+            LogoutBTN.BackColor = Color.FromArgb(33, 42, 81);
             LogoutBTN.Font = new Font("Snap ITC", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             LogoutBTN.ForeColor = SystemColors.ControlLightLight;
             LogoutBTN.Image = (Image)resources.GetObject("LogoutBTN.Image");

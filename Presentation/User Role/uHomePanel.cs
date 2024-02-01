@@ -130,7 +130,7 @@ namespace Presentation.User_Role
             {
                 // Details
 
-                productDetails = new ProductDetails(ProductID);
+                productDetails = new ProductDetails(ProductID, CurrentUserID);
                 productDetails.FormClosed += productDetailslClosed;
                 productDetails.MdiParent = UserPanel;
                 productDetails.Dock = DockStyle.Fill;
