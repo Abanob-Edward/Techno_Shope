@@ -17,5 +17,10 @@ namespace Appliaction.Services
         /// <returns></returns>
         void AddListOfProducts(List<orderProductDTO> orderProductDTOs, int orderID);
         void addProductToOrderNow(ProductInOrder product, int orderID);
+      //  List<ProductInOrder> GetProductsInOrder(Order order);
+
+        
+            List<Product> GetProductsInOrder(Order order);
+      //  List<Product> GetProductsInOrder(int orderId);
     }
 }

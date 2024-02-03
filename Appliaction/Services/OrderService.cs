@@ -15,6 +15,8 @@ namespace Appliaction.Services
         private readonly IMapper _mapper;
         private readonly IOrderRepository orderRepository;
         private readonly IOrderProductRepository orderProductRepository;
+
+
         public OrderService(IOrderRepository _orderRepository, IMapper mapper, IOrderProductRepository _orderProductRepository)
         {
             this.orderRepository = _orderRepository;
@@ -42,6 +44,11 @@ namespace Appliaction.Services
             return orderRepository.add(order);
         }
 
+        public List<ProductInOrder> GetProductsInOrder(Order order)//up
+        {
+            return orderProductRepository.GetProductsInOrder(order);
+        }
+
         public void AddListOfProducts(List<orderProductDTO> orderProductDTOs, int orderID)
         {
             var productInOrder = _mapper.Map<List<ProductInOrder>>(orderProductDTOs);
@@ -65,5 +72,13 @@ namespace Appliaction.Services
 
             orderProductRepository.add(product);
         }
+
+       
+        List<Product> IOrderService.GetProductsInOrder(Order order)
+        {
+            return orderProductRepository.GetProductsByOrderID(order.Id);
+        }
+
+       
     }
 }

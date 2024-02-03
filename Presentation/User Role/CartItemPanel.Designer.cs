@@ -42,11 +42,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Variable Display Semib", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(33, 42, 81);
-            label1.Location = new Point(487, 9);
+            label1.Location = new Point(609, 11);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(222, 31);
+            label1.Size = new Size(274, 32);
             label1.TabIndex = 0;
             label1.Text = "product In cart item";
             // 
@@ -55,10 +56,11 @@
             CartItemDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CartItemDGV.BackgroundColor = Color.Linen;
             CartItemDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CartItemDGV.Location = new Point(34, 58);
+            CartItemDGV.Location = new Point(42, 72);
+            CartItemDGV.Margin = new Padding(4);
             CartItemDGV.Name = "CartItemDGV";
             CartItemDGV.RowHeadersWidth = 51;
-            CartItemDGV.Size = new Size(1127, 480);
+            CartItemDGV.Size = new Size(1409, 600);
             CartItemDGV.TabIndex = 1;
             CartItemDGV.CellContentClick += CartItemDGV_CellContentClick;
             // 
@@ -67,9 +69,10 @@
             button1.BackColor = Color.FromArgb(33, 42, 81);
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(682, 555);
+            button1.Location = new Point(852, 694);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(151, 58);
+            button1.Size = new Size(189, 72);
             button1.TabIndex = 2;
             button1.Text = "Next";
             button1.UseVisualStyleBackColor = false;
@@ -80,9 +83,10 @@
             button2.BackColor = Color.FromArgb(33, 42, 81);
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(351, 555);
+            button2.Location = new Point(439, 694);
+            button2.Margin = new Padding(4);
             button2.Name = "button2";
-            button2.Size = new Size(153, 58);
+            button2.Size = new Size(191, 72);
             button2.TabIndex = 3;
             button2.Text = "previous";
             button2.UseVisualStyleBackColor = false;
@@ -93,9 +97,10 @@
             OrderAll.BackColor = Color.FromArgb(33, 42, 81);
             OrderAll.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             OrderAll.ForeColor = SystemColors.ControlLight;
-            OrderAll.Location = new Point(12, 634);
+            OrderAll.Location = new Point(15, 792);
+            OrderAll.Margin = new Padding(4);
             OrderAll.Name = "OrderAll";
-            OrderAll.Size = new Size(155, 53);
+            OrderAll.Size = new Size(194, 66);
             OrderAll.TabIndex = 4;
             OrderAll.Text = "Order now";
             OrderAll.UseVisualStyleBackColor = false;
@@ -106,9 +111,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Symbol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(33, 42, 81);
-            label2.Location = new Point(213, 654);
+            label2.Location = new Point(266, 818);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(217, 31);
+            label2.Size = new Size(260, 38);
             label2.TabIndex = 5;
             label2.Text = "Order Total price :";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -116,9 +122,10 @@
             // OrderTotalprice
             // 
             OrderTotalprice.AutoSize = true;
-            OrderTotalprice.Location = new Point(392, 665);
+            OrderTotalprice.Location = new Point(490, 831);
+            OrderTotalprice.Margin = new Padding(4, 0, 4, 0);
             OrderTotalprice.Name = "OrderTotalprice";
-            OrderTotalprice.Size = new Size(0, 20);
+            OrderTotalprice.Size = new Size(0, 25);
             OrderTotalprice.TabIndex = 6;
             // 
             // Reload
@@ -133,7 +140,7 @@
             // 
             // CartItemPanel
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(189, 172, 148);
             ClientSize = new Size(1201, 736);
@@ -146,6 +153,7 @@
             Controls.Add(CartItemDGV);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "CartItemPanel";
             Text = "CartItemPanel";
             Load += CartItemPanel_Load;

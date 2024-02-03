@@ -299,6 +299,7 @@ namespace Presentation.User_Role
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
     }
 }
+
+

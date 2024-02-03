@@ -17,5 +17,30 @@ namespace Infrastructure.Repositores
             this.context = _context;
 
         }
+        //public List<ProductInOrder> GetProductsByOrderID(int orderID)////up
+        //{
+        //    return context.ProductInOrders.Where(p => p.ID == orderID).ToList();
+        //}
+
+        
+
+        //public List<ProductInOrder> GetProductsInOrder(Order order)
+        //{
+        //    return context.ProductInOrders.Where(p => p.order.Id == order.Id).ToList();
+        //}
+
+        public List<Product> GetProductsByOrderID(int orderID)
+        {
+            // Assuming ProductInOrder has a reference to Product
+            return context.ProductInOrders
+                .Where(p => p.order.Id == orderID)
+                .Select(p => p.Product) // Assuming Product is the reference to products in ProductInOrder
+                .ToList();
+        }
+
+        public List<ProductInOrder> GetProductsInOrder(Order order)
+        {
+            return context.ProductInOrders.Where(p => p.order.Id == order.Id).ToList();
+        }
     }
 }

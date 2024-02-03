@@ -23,12 +23,8 @@
     <Compile Update="User Role\userProfielPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="User Role\CartItemPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="User Role\OrderPanel.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="User Role\CartItemPanel.cs" />
+    <Compile Update="User Role\OrderPanel.cs" />
   </ItemGroup>
 
   <ItemGroup>

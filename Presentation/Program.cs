@@ -25,9 +25,9 @@ namespace Presentation
 
             Application.Run(new LoginAndRegister());
             //Application.Run(new CartItemPanel());
-            // Application.Run(new UserPanel());
+          //Application.Run(new UserPanel());
 
-            // Application.Run(new AdminPanal());
+            //Application.Run(new AdminPanal());
             //Application.Run(new tsetpigin());
             //Application.Run(new userProfielPanel());
         }
