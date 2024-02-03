@@ -27,6 +27,7 @@ namespace Presentation.User_Role
         IUserService UserService;
         IProductService ProductService;
         ICartService cartService;
+        IOrderService orderService;
         int currentUserId;
         string ProductImageSelction = "";
         string newImageName = "";
@@ -40,48 +41,18 @@ namespace Presentation.User_Role
             var inject = AutoFact.Inject();
             ProductService = inject.Resolve<IProductService>();
             cartService = inject.Resolve<ICartService>();
+            orderService = inject.Resolve<IOrderService>();
             UserService = inject.Resolve<IUserService>();
             ///new
-            
+
 
             currentUserId = _currentUserId;
 
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-            if (int.TryParse(Idlabel, out int productID))
-            {
-
-                int cartID = cartService.GetCartByUserID(currentUserId).Id;
-                // int cartID = cartID1.Id;
-
-                ProductCartItem addedProduct = cartService.addproductToCart(productID, cartID);
-
-                if (addedProduct != null)
-                {
-                    MessageBox.Show("Product added to cart successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add product to cart.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid product ID.");
-            }
-        }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+        Product product;
 
         private void ProductDetails_Load_1(object sender, EventArgs e)
         {
@@ -110,11 +81,11 @@ namespace Presentation.User_Role
 
 
             int proID;
-
+     
 
             if (int.TryParse(Idlabel, out proID))
             {
-                Product product = ProductService.GettechById(proID);
+                 product = ProductService.GettechById(proID);
 
                 if (product != null)
                 {
@@ -122,34 +93,21 @@ namespace Presentation.User_Role
                     label8.Text = product.Description;
                     label9.Text = product.Price.ToString();
 
-                    // string pic = product.Image;
-
-                    //static image
-                  //  string imagePath = @"C:\Users\ALAWAEL\OneDrive\Desktop\Asmaa\new\Techno_Shope\Presentation\images\download.jPG";
-                    string imagePath = @"D:\Project\Techno_Shope\Presentation\images\download.jPG";
-
-                    //daynamic image
-                    // string imagePath = Path.Combine(@"C:\Users\ALAWAEL\OneDrive\Desktop\Asmaa\new5\Techno_Shope\Presentation\images", product.Image);
 
 
-                    if (!string.IsNullOrEmpty(imagePath))
+                    try
                     {
-                        try
-                        {
-                            pictureBox1.Image = Image.FromFile(imagePath);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error loading image: {ex.Message}");
-                        }
+                        Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + product.Image);
+
+
+                        pictureBox1.Image = bmp;
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("No image found for this product.");
+                        Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + "Defult.jpeg");
+
+                        MessageBox.Show($"Error loading image: {ex.Message}");
                     }
-
-
-
                 }
                 else
                 {
@@ -165,7 +123,78 @@ namespace Presentation.User_Role
 
         }
 
-        
+        private void addtocartBTN_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(Idlabel, out int productID))
+            {
+
+                int cartID = cartService.GetCartByUserID(currentUserId).Id;
+                // int cartID = cartID1.Id;
+
+                ProductCartItem addedProduct = cartService.addproductToCart(productID, cartID);
+
+                if (addedProduct != null)
+                {
+                  
+                    SuccessLapel.Text = "Product added to cart successfully ";
+
+                }
+                else
+                {
+                    SuccessLapel.ForeColor = Color.Red;
+                    SuccessLapel.Text = "Failed to add product to cart.!";
+                   
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid product ID.");
+            }
+        }
+
+        private void OrderNowBTN_Click(object sender, EventArgs e)
+        {
+            var Result = MessageBox.Show($"Are you sure From this order with Total price{product.Price.ToString()} ", "Order Confirm", MessageBoxButtons.YesNo);
+
+            if (Result == DialogResult.Yes)
+            {
+                try
+                {
+                    // add new order
+                    Order newOrder = new Order()
+                    {
+                        OrderDate = DateTime.Now,
+                        OrderStatus = OrderStatus.processing,
+                        totalprice = (decimal)product.Price,
+                        User_ID = currentUserId,
+
+
+                    };
+
+                    var inctanceOrder = orderService.addOrder(newOrder);
+                    ProductInOrder inctanceProduct = new ProductInOrder()
+                    {
+                        OrderNumber = inctanceOrder.Id,
+                        Quantity = 1,
+                        product_Id = product.Id,
+
+                    };
+                    // function to take  product and add it  to order 
+                    orderService.addProductToOrderNow(inctanceProduct, inctanceOrder.Id);
+                    //  orderService.AddListOfProducts(ProductIdWithQuantitylist, inctanceOrder.Id);
+                    SuccessLapel.Text = "Successful Order ";
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+
+
+        }
     }
 }
 

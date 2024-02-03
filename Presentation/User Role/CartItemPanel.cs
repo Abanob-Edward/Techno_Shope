@@ -29,7 +29,7 @@ namespace Presentation.User_Role
         IProductService ProductService;
         ICartService cartService;
         IOrderService orderService;
-       // CartproudectRepository cartproudectRepository;
+        // CartproudectRepository cartproudectRepository;
 
         private int currentPage = 1;
         private const int PageSize = 10;
@@ -44,7 +44,7 @@ namespace Presentation.User_Role
 
             cartService = inject.Resolve<ICartService>();
             orderService = inject.Resolve<IOrderService>();
-           // cartproudectRepository = new CartproudectRepository(new _Context());
+            // cartproudectRepository = new CartproudectRepository(new _Context());
 
 
         }
@@ -59,9 +59,29 @@ namespace Presentation.User_Role
         private void LoadTable()
         {
 
-
+            ArrayList list;
             int skipCount = (currentPage - 1) * PageSize;
             int takeCount = PageSize;
+
+            // get the current cartid for current user 
+
+            var cartID = cartService.GetCartByUserID(UserCurrenID).Id;
+            // Get product list for a specific User ID 
+            var cartiteampro = cartService.GetAllProductInCartItems(cartID).ToList();
+
+
+            var newList = cartiteampro.Select(p => new
+            {
+                p.Product.Id,
+                p.Product.Image,
+                p.Product.Price,
+                p.Product.Title,
+                p.Product.Code,
+                Quantity = p.Quantity + 1,  // Increment quantity by 1
+                TotalPrice = p.Product.Price * (p.Quantity + 1)  // Adjust total price calculation accordingly
+            }).ToList();
+            CartItemDGV.DataSource = null;
+            CartItemDGV.DataSource = newList;
 
             // List<Product> listOfproduct = ProductService.GetAllPagination(skipCount, takeCount);
 
@@ -104,8 +124,7 @@ namespace Presentation.User_Role
             DeleteFromCart.HeaderText = "Delete Details";
             DeleteFromCart.UseColumnTextForButtonValue = true;
             CartItemDGV.Columns.Add(DeleteFromCart);
-            LoadTable();
-
+        
 
         }
 
@@ -115,7 +134,7 @@ namespace Presentation.User_Role
             int skipCount = (page - 1) * PageSize;
             int takeCount = PageSize;
 
-            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount);
+            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount, "");
 
             return products.Any(); // Check if there is any data on the specified page
         }
@@ -171,15 +190,15 @@ namespace Presentation.User_Role
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        List<int> ProductIDlist = new List<int>();
+       
         List<orderProductDTO> ProductIdWithQuantitylist = new List<orderProductDTO>();
         private void CartItemDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
             var ProductID = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[2].Value.ToString());
-             var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[8].Value.ToString());
-             var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[7].Value.ToString());
+            var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[8].Value.ToString());
+            var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[7].Value.ToString());
 
             //check box
             if (e.ColumnIndex == 0)
@@ -190,24 +209,24 @@ namespace Presentation.User_Role
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn &&
                     e.RowIndex >= 0)
                 {
-                  
+
                     bool isChecked = (bool)CartItemDGV[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
                     if (isChecked)
                     {
                         // ProductIDlist.Add(ProductID);
-                      
+
                         ProductIdWithQuantitylist.Add(new orderProductDTO() { product_Id = ProductID, Quantity = Quantaty });
                         totalPrice += total;
-                      
+
                     }
                     else
                     {
 
                         // ProductIDlist.Remove(ProductID);
-                       var item = ProductIdWithQuantitylist.FirstOrDefault(c => c.product_Id == ProductID && c.Quantity == Quantaty);
+                        var item = ProductIdWithQuantitylist.FirstOrDefault(c => c.product_Id == ProductID && c.Quantity == Quantaty);
                         ProductIdWithQuantitylist.Remove(item);
-                         totalPrice -= total;
-                      
+                        totalPrice -= total;
+
                     }
                     OrderTotalprice.Text = totalPrice.ToString();
                 }
@@ -237,7 +256,7 @@ namespace Presentation.User_Role
         private void OrderAll_Click(object sender, EventArgs e)
         {
             var Result = MessageBox.Show($"Are you sure From this order with Total price{totalPrice.ToString()} ", "Order Confirm", MessageBoxButtons.YesNo);
-            
+
             if (Result == DialogResult.Yes)
             {
                 try
@@ -248,16 +267,16 @@ namespace Presentation.User_Role
                         OrderDate = DateTime.Now,
                         OrderStatus = OrderStatus.processing,
                         totalprice = (decimal)totalPrice,
-                        User_ID= UserCurrenID,
-                    
-                        
+                        User_ID = UserCurrenID,
+
+
                     };
 
                     var inctanceOrder = orderService.addOrder(newOrder);
                     // function to take list of product id's and add it list to order 
                     orderService.AddListOfProducts(ProductIdWithQuantitylist, inctanceOrder.Id);
                     // function to take list of product id's and Delete the products from product cart item
-                    cartService.DeleteListOfProductFromCart(ProductIdWithQuantitylist.Select(c=>c.product_Id).ToList());
+                    cartService.DeleteListOfProductFromCart(ProductIdWithQuantitylist.Select(c => c.product_Id).ToList());
                 }
                 catch (Exception ex)
                 {
@@ -265,8 +284,22 @@ namespace Presentation.User_Role
 
                 }
             }
-            
-           
+
+
+        }
+
+        private void Reload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
+
+

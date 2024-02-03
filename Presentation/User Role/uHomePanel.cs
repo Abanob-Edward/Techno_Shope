@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentation.User_Role
 {
@@ -40,6 +41,7 @@ namespace Presentation.User_Role
             cartproudectRepository = new CartproudectRepository(new _Context());
             CurrentUserID = currentUserID;
         }
+        string searchtxt = "";
 
         public uHomePanel(UserPanel userPanel, int currentUserID = 0)
         {
@@ -54,6 +56,7 @@ namespace Presentation.User_Role
         }
         DataGridViewButtonColumn addToCart = new DataGridViewButtonColumn();
         DataGridViewButtonColumn ProductDetails = new DataGridViewButtonColumn();
+        DataGridViewImageColumn ProductImage = new DataGridViewImageColumn();
 
         private void uHomePanel_Load(object sender, EventArgs e)
         {
@@ -65,33 +68,75 @@ namespace Presentation.User_Role
                 Image = p.Image
             })*/
 
-             var listOfproduct = ProductService.GetAlltech();
+           
+            var listOfproduct = ProductService.GetAlltech();
             // ID  -  Name   - price    - image --   add to cart 
 
-            ProductsDGV.ColumnCount = 4;
+            // ProductsDGV.Columns.Add("Picture", Type.GetType(""));
+
+
+
+
+            ProductsDGV.ColumnCount = 3;
             ProductsDGV.Columns[0].Name = "ID";
-            ProductsDGV.Columns[1].Name = "Name ";
+            ProductsDGV.Columns[1].Name = "Name";
             ProductsDGV.Columns[2].Name = "Price";
-            ProductsDGV.Columns[3].Name = "Image";
-            //  ProductsDGV.Columns[4].Name = "ID";
+            // ProductsDGV.Columns[3].Name = "Image ";
+            ProductsDGV.Columns[0].Width = 60;
+
+
 
             ArrayList list;
-           
+            
 
             foreach (var item in listOfproduct)
             {
                 list = new ArrayList();
                 list.Add(item.Id);
+              
                 list.Add(item.Name);
                 list.Add(item.Price);
-                list.Add(item.Image);
+
                 ProductsDGV.Rows.Add(list.ToArray());
             }
+            ProductImage.Name = "ProPic";
+
+            ProductImage.HeaderText = "Image";
+            ProductImage.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            ProductsDGV.Columns.Add(ProductImage);
+
+
+            int row = 0;
+            foreach (var item in listOfproduct)
+            {
+                try
+                {
+
+                    Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + item.Image);
+                    ((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
+                    row++;
+                }
+                catch (Exception)
+                {
+
+                    Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + "Defult.jpeg");
+                    ((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
+                    row++;
+                }
+
+              
+            }
+
+
             addToCart.Text = "Add to Cart";
             addToCart.Name = "addToCartBtn";
             addToCart.HeaderText = "Cart Item";
+          
+
             addToCart.UseColumnTextForButtonValue = true;
-            ProductsDGV.Columns.Add(addToCart);
+            ProductsDGV.Columns.Add( addToCart);
+           
 
             ProductDetails.Text = "Details";
             ProductDetails.Name = "ProductDetailsBtn";
@@ -114,7 +159,7 @@ namespace Presentation.User_Role
             }*/
         private void ProductsDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
             if (e.ColumnIndex == 4 && e.RowIndex != -1)
             {
                 var ProductID = int.Parse(ProductsDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -140,23 +185,47 @@ namespace Presentation.User_Role
 
             }
         }
-        private void LoadTable()
+        private void LoadTable(string search = "")
         {
             ProductsDGV.Rows.Clear(); // Clear existing rows
             ArrayList list;
             int skipCount = (currentPage - 1) * PageSize;
             int takeCount = PageSize;
 
-            List<Product> listOfproduct = ProductService.GetAllPagination(skipCount, takeCount);
+            List<Product> listOfproduct = ProductService.GetAllPagination(skipCount, takeCount, search);
+
 
             foreach (var item in listOfproduct)
             {
                 list = new ArrayList();
                 list.Add(item.Id);
+
                 list.Add(item.Name);
                 list.Add(item.Price);
-                list.Add(item.Image);
+
                 ProductsDGV.Rows.Add(list.ToArray());
+            }
+
+
+            int row = 0;
+            foreach (var item in listOfproduct)
+            {
+                try
+                {
+
+                    Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + item.Image);
+                    ((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
+                    row++;
+                }
+                catch (Exception)
+                {
+
+                    Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + "Defult.jpeg");
+                    ((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
+                    row++;
+                }
+
+
             }
         }
 
@@ -181,7 +250,7 @@ namespace Presentation.User_Role
                 if (HasDataOnPage(nextPage))
                 {
                     currentPage = nextPage;
-                    LoadTable(); // Reload the table for the next page
+                    LoadTable(searchtxt); // Reload the table for the next page
                 }
                 else
                 {
@@ -206,7 +275,7 @@ namespace Presentation.User_Role
                     if (HasDataOnPage(previousPage))
                     {
                         currentPage = previousPage;
-                        LoadTable(); // Reload the table for the previous page
+                        LoadTable(searchtxt); // Reload the table for the previous page
                     }
                     else
                     {
@@ -229,9 +298,20 @@ namespace Presentation.User_Role
             int skipCount = (page - 1) * PageSize;
             int takeCount = PageSize;
 
-            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount);
+            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount, "");
 
             return products.Any(); // Check if there is any data on the specified page
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            searchtxt = searchBox.Text.ToString();
+
+            LoadTable(searchtxt);
+
+
+        }
+
+    
     }
 }
