@@ -92,7 +92,6 @@ namespace Presentation.User_Role
             Phone_num_prof.Size = new Size(192, 29);
             Phone_num_prof.TabIndex = 2;
             Phone_num_prof.Text = "Mobile Number :";
-           
             // 
             // label_UserName
             // 
@@ -111,7 +110,7 @@ namespace Presentation.User_Role
             // UserName
             // 
             UserName.AutoSize = true;
-            UserName.Location = new Point(838, 367);
+            UserName.Location = new Point(447, 219);
             UserName.Name = "UserName";
             UserName.Size = new Size(19, 29);
             UserName.TabIndex = 11;
@@ -120,7 +119,7 @@ namespace Presentation.User_Role
             // UserN
             // 
             UserN.AutoSize = true;
-            UserN.Location = new Point(838, 472);
+            UserN.Location = new Point(447, 324);
             UserN.Name = "UserN";
             UserN.Size = new Size(25, 29);
             UserN.TabIndex = 12;
@@ -129,7 +128,7 @@ namespace Presentation.User_Role
             // Emial
             // 
             Emial.AutoSize = true;
-            Emial.Location = new Point(844, 554);
+            Emial.Location = new Point(453, 406);
             Emial.Name = "Emial";
             Emial.Size = new Size(19, 29);
             Emial.TabIndex = 13;
@@ -138,7 +137,7 @@ namespace Presentation.User_Role
             // Mobile
             // 
             Mobile.AutoSize = true;
-            Mobile.Location = new Point(850, 666);
+            Mobile.Location = new Point(459, 518);
             Mobile.Name = "Mobile";
             Mobile.Size = new Size(19, 29);
             Mobile.TabIndex = 14;
@@ -168,6 +167,7 @@ namespace Presentation.User_Role
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Transparent;
             label12.Location = new Point(17, 145);
             label12.Margin = new Padding(1, 0, 1, 0);
             label12.Name = "label12";

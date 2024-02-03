@@ -71,7 +71,6 @@
             // UserName
             // 
             UserName.AutoSize = true;
-            UserName.BackColor = Color.White;
             UserName.Font = new Font("Stencil", 19.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
             UserName.ForeColor = Color.Navy;
             UserName.Location = new Point(1002, 9);

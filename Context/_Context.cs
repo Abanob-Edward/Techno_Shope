@@ -7,7 +7,7 @@ namespace Context
     {
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-1TR7VH7;Initial Catalog=TEchnosoo2;Integrated Security=True;Encrypt=False");
+            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=TECHNOSHOPE;Integrated Security=True;Encrypt=False");
         }
        
         public virtual DbSet<CartItem> CartItems { get; set; }
