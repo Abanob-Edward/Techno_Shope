@@ -118,7 +118,7 @@
             textBox4.BackColor = Color.FromArgb(238, 238, 238);
             textBox4.Location = new Point(273, 63);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(801, 27);
+            textBox4.Size = new Size(737, 27);
             textBox4.TabIndex = 17;
             textBox4.TextChanged += textBox4_TextChanged;
             // 

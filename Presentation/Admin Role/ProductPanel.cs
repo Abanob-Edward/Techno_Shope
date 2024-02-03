@@ -23,13 +23,14 @@ namespace Presentation
         ICategoryService categoryService;
         string selectedProduct = " ";
         string ProductImageSelction = "";
-        public ProductPanel()
+        int currentUserID = 0;
+        public ProductPanel(int currentUserID =0)
         {
             InitializeComponent();
             ProductService = new ProductService(new ProudectRepository(new _Context()));
             categoryService = new CategoryService(new CatgoryRepositry(new _Context()));
             loadtabel();
-
+            this.currentUserID = currentUserID;
         }
 
         public void loadtabel()
@@ -86,11 +87,11 @@ namespace Presentation
             // try to add image 
             try
             {
-                newImageName = DateTime.Now.ToString() + Path.GetFileName(ProductImageSelction);
+                newImageName = Guid.NewGuid() + Path.GetFileName(ProductImageSelction);
 
 
                 File.Copy(ProductImageSelction, Path.Combine(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images",
-                    Path.GetFileName(ProductImageSelction)), true);
+                   newImageName), true);
 
             }
             catch (Exception ex)
@@ -107,6 +108,7 @@ namespace Presentation
                 Description = prouductDescraption,
                 Image = newImageName,
                 CatID = selectedCategory,
+                AdminID= 5
 
             });
 

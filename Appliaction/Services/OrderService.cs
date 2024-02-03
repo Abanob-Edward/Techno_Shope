@@ -46,11 +46,11 @@ namespace Appliaction.Services
         {
             var productInOrder = _mapper.Map<List<ProductInOrder>>(orderProductDTOs);
 
-            
+
             foreach (var product in productInOrder)
             {
                 product.OrderNumber = orderID;
-               
+
                 // add each product to productIn order
                 orderProductRepository.add(product);
 
@@ -58,6 +58,12 @@ namespace Appliaction.Services
 
 
 
+        }
+
+        public void addProductToOrderNow(ProductInOrder product, int orderID)
+        {
+
+            orderProductRepository.add(product);
         }
     }
 }

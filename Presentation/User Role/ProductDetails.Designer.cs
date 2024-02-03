@@ -32,8 +32,8 @@
             pictureBox1 = new PictureBox();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            addtocartBTN = new Button();
+            OrderNowBTN = new Button();
             label4 = new Label();
             label7 = new Label();
             label8 = new Label();
@@ -44,6 +44,7 @@
             label12 = new Label();
             pictureBox3 = new PictureBox();
             label11 = new Label();
+            SuccessLapel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -51,6 +52,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(650, 174);
             pictureBox1.Margin = new Padding(1);
             pictureBox1.Name = "pictureBox1";
@@ -64,7 +66,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 36F, FontStyle.Regular, GraphicsUnit.Point, 178);
             label2.ForeColor = Color.FromArgb(66, 73, 124);
-            label2.Location = new Point(184, 300);
+            label2.Location = new Point(181, 298);
             label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
             label2.Size = new Size(63, 69);
@@ -83,33 +85,33 @@
             label3.TabIndex = 4;
             label3.Text = " Prices include VAT.\n You can purchase in installments and  pay 14.01 pounds \nfor 60 months with selected banks.  know more";
             // 
-            // button1
+            // addtocartBTN
             // 
-            button1.BackColor = Color.FromArgb(33, 42, 81);
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(64, 572);
-            button1.Margin = new Padding(1);
-            button1.Name = "button1";
-            button1.Size = new Size(197, 52);
-            button1.TabIndex = 5;
-            button1.Text = "Add TO Cart";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            addtocartBTN.BackColor = Color.FromArgb(33, 42, 81);
+            addtocartBTN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addtocartBTN.ForeColor = Color.White;
+            addtocartBTN.Location = new Point(64, 572);
+            addtocartBTN.Margin = new Padding(1);
+            addtocartBTN.Name = "addtocartBTN";
+            addtocartBTN.Size = new Size(197, 52);
+            addtocartBTN.TabIndex = 5;
+            addtocartBTN.Text = "Add TO Cart";
+            addtocartBTN.UseVisualStyleBackColor = false;
+            addtocartBTN.Click += addtocartBTN_Click;
             // 
-            // button2
+            // OrderNowBTN
             // 
-            button2.BackColor = Color.FromArgb(33, 42, 81);
-            button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(323, 572);
-            button2.Margin = new Padding(1);
-            button2.Name = "button2";
-            button2.Size = new Size(197, 52);
-            button2.TabIndex = 6;
-            button2.Text = "Order Now";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            OrderNowBTN.BackColor = Color.FromArgb(33, 42, 81);
+            OrderNowBTN.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            OrderNowBTN.ForeColor = Color.White;
+            OrderNowBTN.Location = new Point(323, 572);
+            OrderNowBTN.Margin = new Padding(1);
+            OrderNowBTN.Name = "OrderNowBTN";
+            OrderNowBTN.Size = new Size(197, 52);
+            OrderNowBTN.TabIndex = 6;
+            OrderNowBTN.Text = "Order Now";
+            OrderNowBTN.UseVisualStyleBackColor = false;
+            OrderNowBTN.Click += OrderNowBTN_Click;
             // 
             // label4
             // 
@@ -148,10 +150,9 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = SystemColors.Control;
             label9.Font = new Font("Segoe UI Emoji", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.Black;
-            label9.Location = new Point(247, 299);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(261, 287);
             label9.Margin = new Padding(1, 0, 1, 0);
             label9.Name = "label9";
             label9.Size = new Size(0, 80);
@@ -194,6 +195,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label12.ForeColor = SystemColors.ButtonHighlight;
             label12.Location = new Point(7, 148);
             label12.Margin = new Padding(1, 0, 1, 0);
             label12.Name = "label12";
@@ -224,12 +226,24 @@
             label11.TabIndex = 20;
             label11.Text = "Only";
             // 
+            // SuccessLapel
+            // 
+            SuccessLapel.AutoSize = true;
+            SuccessLapel.Font = new Font("Candara", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuccessLapel.ForeColor = Color.Lime;
+            SuccessLapel.Location = new Point(323, 59);
+            SuccessLapel.Margin = new Padding(1, 0, 1, 0);
+            SuccessLapel.Name = "SuccessLapel";
+            SuccessLapel.Size = new Size(0, 41);
+            SuccessLapel.TabIndex = 21;
+            // 
             // ProductDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(189, 172, 148);
             ClientSize = new Size(1314, 792);
+            Controls.Add(SuccessLapel);
             Controls.Add(label11);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -238,8 +252,8 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label4);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(OrderNowBTN);
+            Controls.Add(addtocartBTN);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
@@ -261,8 +275,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
-        private Button button2;
+        private Button addtocartBTN;
+        private Button OrderNowBTN;
         private Label label4;
         private Label label6;
         private Label label7;
@@ -274,5 +288,6 @@
         private Label label12;
         private PictureBox pictureBox3;
         private Label label11;
+        private Label SuccessLapel;
     }
 }

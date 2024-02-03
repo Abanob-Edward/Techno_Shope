@@ -31,10 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPanel));
             panel1 = new Panel();
-            panel7 = new Panel();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            Search = new Label();
             UserName = new Label();
             BtnSideBar = new PictureBox();
             label1 = new Label();
@@ -51,8 +47,6 @@
             panel3 = new Panel();
             LogoutBTN = new Button();
             panel1.SuspendLayout();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BtnSideBar).BeginInit();
             sideBar.SuspendLayout();
             panel4.SuspendLayout();
@@ -65,7 +59,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(189, 172, 148);
-            panel1.Controls.Add(panel7);
             panel1.Controls.Add(UserName);
             panel1.Controls.Add(BtnSideBar);
             panel1.Controls.Add(label1);
@@ -74,45 +67,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1677, 60);
             panel1.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(pictureBox1);
-            panel7.Controls.Add(textBox1);
-            panel7.Controls.Add(Search);
-            panel7.Location = new Point(425, 12);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(484, 36);
-            panel7.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(418, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(55, 31);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(111, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(301, 27);
-            textBox1.TabIndex = 5;
-            // 
-            // Search
-            // 
-            Search.AutoSize = true;
-            Search.BackColor = Color.Transparent;
-            Search.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Search.ForeColor = Color.Navy;
-            Search.Location = new Point(0, 0);
-            Search.Name = "Search";
-            Search.Size = new Size(105, 33);
-            Search.TabIndex = 3;
-            Search.Text = "Search :";
             // 
             // UserName
             // 
@@ -320,9 +274,6 @@
             Load += UserPanel_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnSideBar).EndInit();
             sideBar.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -351,9 +302,5 @@
         private Button LogoutBTN;
         private Panel panel5;
         private Button OrdersBtn;
-        private Label Search;
-        private Panel panel7;
-        private PictureBox pictureBox1;
-        private TextBox textBox1;
     }
 }

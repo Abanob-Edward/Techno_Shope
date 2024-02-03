@@ -35,6 +35,7 @@
             OrderAll = new Button();
             label2 = new Label();
             OrderTotalprice = new Label();
+            Reload = new Button();
             ((System.ComponentModel.ISupportInitialize)CartItemDGV).BeginInit();
             SuspendLayout();
             // 
@@ -120,12 +121,23 @@
             OrderTotalprice.Size = new Size(0, 20);
             OrderTotalprice.TabIndex = 6;
             // 
+            // Reload
+            // 
+            Reload.Location = new Point(967, 586);
+            Reload.Name = "Reload";
+            Reload.Size = new Size(94, 29);
+            Reload.TabIndex = 7;
+            Reload.Text = "R";
+            Reload.UseVisualStyleBackColor = true;
+            Reload.Click += Reload_Click;
+            // 
             // CartItemPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(189, 172, 148);
             ClientSize = new Size(1201, 736);
+            Controls.Add(Reload);
             Controls.Add(OrderTotalprice);
             Controls.Add(label2);
             Controls.Add(OrderAll);
@@ -151,5 +163,6 @@
         private Button OrderAll;
         private Label label2;
         private Label OrderTotalprice;
+        private Button Reload;
     }
 }

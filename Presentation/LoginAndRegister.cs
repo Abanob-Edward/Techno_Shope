@@ -155,7 +155,7 @@ namespace Presentation
                 if (userService.GetUserRole(user) == "admin")
                 {
                     NameofUser = user.FirstName + "  " + user.LastName;
-                    adminPanal = new AdminPanal(NameofUser);
+                    adminPanal = new AdminPanal(NameofUser, user.Id);
                     //userPanel.currentUserId = user.Id;
                     this.Hide();
                     adminPanal.Show();

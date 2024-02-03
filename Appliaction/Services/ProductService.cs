@@ -53,9 +53,9 @@ namespace Appliaction.Services
         {
             return _productRepository.update(entity);
         }
-        public List<Product> GetAllPagination(int skipCount, int takeCount)
+        public List<Product> GetAllPagination(int skipCount, int takeCount, string? searchtxt)
         {
-            var products = _productRepository.getAll().Skip(skipCount).Take(takeCount).ToList();
+            var products = _productRepository.getAll().Where(x=>x.Name.Contains(searchtxt) || x.Name ==null|| x.Name == "").Skip(skipCount).Take(takeCount).ToList();
             return products;
         }
     }

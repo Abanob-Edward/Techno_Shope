@@ -13,10 +13,12 @@ namespace Presentation
         AllOrdersPanal allOrdersPanal;
         LoginAndRegister loginAndRegister;
         // LoginAndRegister loginAndRegister = 
-        public AdminPanal(string? name = "Admin Name")
+        int currentID;
+        public AdminPanal(string? name = "Admin Name", int UserID =0)
         {
             InitializeComponent();
             AdminName.Text = "Welcome  " + name;
+            currentID = UserID;
         }
 
         bool CatMenuExpand = false;
@@ -136,7 +138,7 @@ namespace Presentation
         {
             if (productPanel == null)
             {
-                productPanel = new ProductPanel();
+                productPanel = new ProductPanel(currentID);
                 productPanel.FormClosed += Category_FormClosed;
                 productPanel.MdiParent = this;
                 productPanel.Dock = DockStyle.Fill;
