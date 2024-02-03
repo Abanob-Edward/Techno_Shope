@@ -142,7 +142,7 @@ namespace Presentation.User_Role
             InitializeComponent();
             if (OrderDGV != null)
             {
-                OrderDGV.CellContentClick += OrderDGV_CellContentClick;
+               // OrderDGV.CellContentClick += OrderDGV_CellContentClick;
                 loadTable();
             }
         }
@@ -183,8 +183,8 @@ namespace Presentation.User_Role
 
                        
                 var productsInOrderForm = new productsInOrder(productsInOrder);
-                productsInOrderForm.Dock = DockStyle.Fill;
-                productsInOrderForm.ShowDialog();
+              //  productsInOrderForm.Dock = DockStyle.Fill;
+               productsInOrderForm.ShowDialog();
              
             }
         }

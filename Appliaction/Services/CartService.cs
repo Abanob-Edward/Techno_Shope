@@ -31,6 +31,11 @@ namespace Appliaction.Services
         {
           return  cartproudectRepository.getAll().Where(c=>c.CartId == cartId).Include(p => p.Product);
         }
+        
+        public IQueryable<ProductCartItem> GetAllProductInCartItemsPaging(int skipCount, int takeCount, int cartId)
+        {
+          return  cartproudectRepository.getAll().Where(c=>c.CartId == cartId).Include(p => p.Product).Skip(skipCount).Take(takeCount);
+        }
         public CartItem GetCartByUserID(int USerID)
         {
             return cartRepository.GetCartByUserID(USerID);
@@ -56,7 +61,7 @@ namespace Appliaction.Services
             }
             else
             {
-                ProductCartItem productCart = new ProductCartItem() { CartId = CartID, Pro_Id = ProID };
+                ProductCartItem productCart = new ProductCartItem() { CartId = CartID, Pro_Id = ProID ,Quantity=1};
                 return cartproudectRepository.add(productCart);
             }
 

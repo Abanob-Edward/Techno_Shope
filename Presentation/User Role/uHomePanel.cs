@@ -60,21 +60,12 @@ namespace Presentation.User_Role
 
         private void uHomePanel_Load(object sender, EventArgs e)
         {
-            /*.Select(p => new
-            {
-                ID = p.Id,
-                Name = p.Name,
-                Price = p.Price,
-                Image = p.Image
-            })*/
 
            
             var listOfproduct = ProductService.GetAlltech();
             // ID  -  Name   - price    - image --   add to cart 
 
-            // ProductsDGV.Columns.Add("Picture", Type.GetType(""));
-
-
+ 
 
 
             ProductsDGV.ColumnCount = 3;
@@ -132,8 +123,6 @@ namespace Presentation.User_Role
             addToCart.Text = "Add to Cart";
             addToCart.Name = "addToCartBtn";
             addToCart.HeaderText = "Cart Item";
-          
-
             addToCart.UseColumnTextForButtonValue = true;
             ProductsDGV.Columns.Add( addToCart);
            

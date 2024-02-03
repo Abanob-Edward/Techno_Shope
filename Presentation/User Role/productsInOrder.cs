@@ -31,8 +31,7 @@ namespace Presentation.User_Role
             InitializeComponent();
           
             this.products = products;
-            this.order= order;
-          
+            
             
 
             loadtabel();

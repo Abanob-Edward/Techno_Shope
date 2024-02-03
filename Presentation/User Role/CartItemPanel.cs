@@ -46,7 +46,7 @@ namespace Presentation.User_Role
             orderService = inject.Resolve<IOrderService>();
             // cartproudectRepository = new CartproudectRepository(new _Context());
 
-
+            
         }
         // get product list fot spcific User id 
 
@@ -56,63 +56,51 @@ namespace Presentation.User_Role
         //Get product list for a specific User ID 
         //var cartiteampro = cartproudectRepository.getAll()
 
-        private void LoadTable()
-        {
-
-            ArrayList list;
-            int skipCount = (currentPage - 1) * PageSize;
-            int takeCount = PageSize;
-
-            // get the current cartid for current user 
-
-            var cartID = cartService.GetCartByUserID(UserCurrenID).Id;
-            // Get product list for a specific User ID 
-            var cartiteampro = cartService.GetAllProductInCartItems(cartID).ToList();
-
-
-            var newList = cartiteampro.Select(p => new
-            {
-                p.Product.Id,
-                p.Product.Image,
-                p.Product.Price,
-                p.Product.Title,
-                p.Product.Code,
-                Quantity = p.Quantity + 1,  // Increment quantity by 1
-                TotalPrice = p.Product.Price * (p.Quantity + 1)  // Adjust total price calculation accordingly
-            }).ToList();
-            CartItemDGV.DataSource = null;
-            CartItemDGV.DataSource = newList;
-
-            // List<Product> listOfproduct = ProductService.GetAllPagination(skipCount, takeCount);
-
-
-
-        }
+    
         DataGridViewCheckBoxColumn OrderListcheckBox = new DataGridViewCheckBoxColumn();
         DataGridViewButtonColumn DeleteFromCart = new DataGridViewButtonColumn();
         private void CartItemPanel_Load(object sender, EventArgs e)
         {
-            ArrayList list;
-            int skipCount = (currentPage - 1) * PageSize;
-            int takeCount = PageSize;
+           
+          
+           /// int skipCount = (currentPage - 1) * PageSize;
+          //  int takeCount = PageSize;
 
             // get the current cartid for current user 
 
             var cartID = cartService.GetCartByUserID(UserCurrenID).Id;
             // Get product list for a specific User ID 
-            var cartiteampro = cartService.GetAllProductInCartItems(cartID).ToList();
-            var newList = cartiteampro.Select(p => new
+            var listOfproduct = cartService.GetAllProductInCartItems(cartID);
+
+            CartItemDGV.ColumnCount = 7;
+            CartItemDGV.Columns[0].Name = "ID";
+            CartItemDGV.Columns[1].Name = "Image";
+            CartItemDGV.Columns[2].Name = "Price";
+            CartItemDGV.Columns[3].Name = "Title";
+            CartItemDGV.Columns[4].Name = "Code";
+            CartItemDGV.Columns[5].Name = "Quantity";
+            CartItemDGV.Columns[6].Name = "Total Price";
+           
+          
+            CartItemDGV.Columns[0].Width = 60;
+
+            ArrayList list;
+            foreach (var item in listOfproduct)
             {
-                p.Product.Id,
-                p.Product.Image,
-                p.Product.Price,
-                p.Product.Title,
-                p.Product.Code,
-                Quantity = p.Quantity + 1,  // Increment quantity by 1
-                TotalPrice = p.Product.Price * (p.Quantity + 1)  // Adjust total price calculation accordingly
-            }).ToList();
-            CartItemDGV.DataSource = null;
-            CartItemDGV.DataSource = newList;
+                list = new ArrayList();
+                list.Add(item.Product.Id);
+                list.Add(item.Product.Image);
+                list.Add(item.Product.Price);
+                list.Add(item.Product.Title);
+                list.Add(item.Product.Code);
+                list.Add(item.Quantity);
+                list.Add((item.Quantity) * (item.Product.Price));
+              
+
+
+                CartItemDGV.Rows.Add(list.ToArray());
+            }
+
 
             OrderListcheckBox.HeaderText = " Order list";
             OrderListcheckBox.Name = " Orderlist";
@@ -127,81 +115,17 @@ namespace Presentation.User_Role
         
 
         }
-
-
-        private bool HasDataOnPage(int page)
-        {
-            int skipCount = (page - 1) * PageSize;
-            int takeCount = PageSize;
-
-            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount, "");
-
-            return products.Any(); // Check if there is any data on the specified page
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int nextPage = currentPage + 1;
-
-                if (HasDataOnPage(nextPage))
-                {
-                    currentPage = nextPage;
-                    LoadTable(); // Reload the table for the next page
-                }
-                else
-                {
-                    MessageBox.Show("No more data available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int previousPage = currentPage - 1;
-
-                if (previousPage >= 1)
-                {
-                    if (HasDataOnPage(previousPage))
-                    {
-                        currentPage = previousPage;
-                        LoadTable(); // Reload the table for the previous page
-                    }
-                    else
-                    {
-                        MessageBox.Show("No more data available on the previous page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("You are already on the first page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-       
         List<orderProductDTO> ProductIdWithQuantitylist = new List<orderProductDTO>();
         private void CartItemDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
-            var ProductID = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[2].Value.ToString());
-            var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[8].Value.ToString());
-            var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[7].Value.ToString());
+            var ProductID = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
+            var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[6].Value.ToString());
+            var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[5].Value.ToString());
 
             //check box
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 7)
             {
 
                 CartItemDGV.EndEdit();
@@ -229,11 +153,12 @@ namespace Presentation.User_Role
 
                     }
                     OrderTotalprice.Text = totalPrice.ToString();
+                    LoadTable();
                 }
 
             }
             //Delete btn
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 8)
             {
                 try
                 {
@@ -244,7 +169,7 @@ namespace Presentation.User_Role
 
                     MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                CartItemDGV.Update();
+                LoadTable();
 
 
             }
@@ -252,6 +177,106 @@ namespace Presentation.User_Role
 
 
         }
+
+        private void LoadTable()
+        {
+            CartItemDGV.Rows.Clear();
+            ArrayList list;
+            int skipCount = (currentPage - 1) * PageSize;
+            int takeCount = PageSize;
+
+            // get the current cartid for current user 
+
+            var cartID = cartService.GetCartByUserID(UserCurrenID).Id;
+            // Get product list for a specific User ID 
+            var listOfproduct = cartService.GetAllProductInCartItemsPaging(skipCount,takeCount,cartID).ToList();
+
+  
+
+            foreach (var item in listOfproduct)
+            {
+                list = new ArrayList();
+                list.Add(item.Product.Id);
+                list.Add(item.Product.Image);
+                list.Add(item.Product.Price);
+                list.Add(item.Product.Title);
+                list.Add(item.Product.Code);
+                list.Add(item.Quantity);
+                list.Add((item.Quantity) * (item.Product.Price));
+
+
+
+                CartItemDGV.Rows.Add(list.ToArray());
+            }
+            // List<Product> listOfproduct = ProductService.GetAllPagination(skipCount, takeCount);
+
+
+
+        }
+      
+        private void button1_Click(object sender, EventArgs e) // next 
+        {
+            try
+            {
+                int nextPage = currentPage + 1;
+
+                if (HasDataOnPage(nextPage))
+                {
+                    currentPage = nextPage;
+                    LoadTable(); // Reload the table for the next page
+                }
+                else
+                {
+                    MessageBox.Show("No more data available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e) // previous 
+        {
+            try
+            {
+                int previousPage = currentPage - 1;
+
+                if (previousPage >= 1)
+                {
+                    if (HasDataOnPage(previousPage))
+                    {
+                        currentPage = previousPage;
+                        LoadTable(); // Reload the table for the previous page
+                    }
+                    else
+                    {
+                        MessageBox.Show("No more data available on the previous page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You are already on the first page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool HasDataOnPage(int page)
+        {
+            int skipCount = (page - 1) * PageSize;
+            int takeCount = PageSize;
+
+            List<Product> products = ProductService.GetAllPagination(skipCount, takeCount, "");
+
+            return products.Any(); // Check if there is any data on the specified page
+        }
+
+
+
 
         private void OrderAll_Click(object sender, EventArgs e)
         {
@@ -277,6 +302,7 @@ namespace Presentation.User_Role
                     orderService.AddListOfProducts(ProductIdWithQuantitylist, inctanceOrder.Id);
                     // function to take list of product id's and Delete the products from product cart item
                     cartService.DeleteListOfProductFromCart(ProductIdWithQuantitylist.Select(c => c.product_Id).ToList());
+                    LoadTable();
                 }
                 catch (Exception ex)
                 {
