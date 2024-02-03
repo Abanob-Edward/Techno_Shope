@@ -1,10 +1,12 @@
 using Model.Models;
+using Presentation.Admin_Role;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Presentation
 {
     public partial class AdminPanal : Form
     {
+        Home_Admin home_Admin;
         CategoryPanel categoryPanel;
         ProductPanel productPanel;
         EditProductPanel editProductPanel;
@@ -250,7 +252,18 @@ namespace Presentation
 
         private void HomeBTN_Click(object sender, EventArgs e)
         {
-
+            if (home_Admin == null)
+            {
+                home_Admin = new Home_Admin(this);
+               home_Admin.FormClosed += BestSellerClosed;
+                home_Admin.MdiParent = this;
+                home_Admin.Dock = DockStyle.Fill;
+                home_Admin.Show();
+            }
+            else
+            {
+                home_Admin.Activate();
+            }
         }
 
         private void LogoutBTN_Click(object sender, EventArgs e)
