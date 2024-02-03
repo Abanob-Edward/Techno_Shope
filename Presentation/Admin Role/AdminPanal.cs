@@ -254,7 +254,7 @@ namespace Presentation
         {
             if (home_Admin == null)
             {
-                home_Admin = new Home_Admin();
+                home_Admin = new Home_Admin(this);
                home_Admin.FormClosed += BestSellerClosed;
                 home_Admin.MdiParent = this;
                 home_Admin.Dock = DockStyle.Fill;

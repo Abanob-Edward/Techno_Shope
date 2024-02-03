@@ -172,6 +172,7 @@
             Controls.Add(but_Best_Seller_Ad);
             Controls.Add(but_Category_Ad);
             DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Home_Admin";
             Text = "Home_Admin";
             Load += Home_Admin_Load;
