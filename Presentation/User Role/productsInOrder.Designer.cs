@@ -1,6 +1,6 @@
 ﻿namespace Presentation.User_Role
 {
-    partial class OrderPanel
+    partial class productsInOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            OrderDGV = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)OrderDGV).BeginInit();
+            ProudectInorderDGV = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)ProudectInorderDGV).BeginInit();
             SuspendLayout();
             // 
-            // OrderDGV
+            // ProudectInorderDGV
             // 
-            OrderDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            OrderDGV.BackgroundColor = Color.Linen;
-            OrderDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OrderDGV.Location = new Point(30, 73);
-            OrderDGV.Margin = new Padding(4);
-            OrderDGV.Name = "OrderDGV";
-            OrderDGV.RowHeadersWidth = 51;
-            OrderDGV.Size = new Size(1409, 600);
-            OrderDGV.TabIndex = 2;
-            OrderDGV.CellContentClick += OrderDGV_CellContentClick;
+            ProudectInorderDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ProudectInorderDGV.BackgroundColor = Color.Linen;
+            ProudectInorderDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ProudectInorderDGV.Location = new Point(9, 31);
+            ProudectInorderDGV.Margin = new Padding(4);
+            ProudectInorderDGV.Name = "ProudectInorderDGV";
+            ProudectInorderDGV.RowHeadersWidth = 51;
+            ProudectInorderDGV.Size = new Size(1409, 551);
+            ProudectInorderDGV.TabIndex = 3;
             // 
-            // OrderPanel
+            // productsInOrder
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1501, 920);
-            Controls.Add(OrderDGV);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            Name = "OrderPanel";
-            Text = "OrderPanel";
-            ((System.ComponentModel.ISupportInitialize)OrderDGV).EndInit();
+            ClientSize = new Size(1431, 611);
+            Controls.Add(ProudectInorderDGV);
+            Name = "productsInOrder";
+            Text = "productsInOrder";
+            ((System.ComponentModel.ISupportInitialize)ProudectInorderDGV).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView OrderDGV;
+        private DataGridView ProudectInorderDGV;
     }
 }

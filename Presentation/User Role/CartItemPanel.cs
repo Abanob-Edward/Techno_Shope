@@ -29,7 +29,7 @@ namespace Presentation.User_Role
         IProductService ProductService;
         ICartService cartService;
         IOrderService orderService;
-       // CartproudectRepository cartproudectRepository;
+        // CartproudectRepository cartproudectRepository;
 
         private int currentPage = 1;
         private const int PageSize = 10;
@@ -44,7 +44,7 @@ namespace Presentation.User_Role
 
             cartService = inject.Resolve<ICartService>();
             orderService = inject.Resolve<IOrderService>();
-           // cartproudectRepository = new CartproudectRepository(new _Context());
+            // cartproudectRepository = new CartproudectRepository(new _Context());
 
 
         }
@@ -178,8 +178,8 @@ namespace Presentation.User_Role
             var senderGrid = (DataGridView)sender;
 
             var ProductID = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[2].Value.ToString());
-             var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[8].Value.ToString());
-             var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[7].Value.ToString());
+            var total = double.Parse(CartItemDGV.Rows[e.RowIndex].Cells[8].Value.ToString());
+            var Quantaty = int.Parse(CartItemDGV.Rows[e.RowIndex].Cells[7].Value.ToString());
 
             //check box
             if (e.ColumnIndex == 0)
@@ -190,24 +190,24 @@ namespace Presentation.User_Role
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn &&
                     e.RowIndex >= 0)
                 {
-                  
+
                     bool isChecked = (bool)CartItemDGV[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
                     if (isChecked)
                     {
                         // ProductIDlist.Add(ProductID);
-                      
+
                         ProductIdWithQuantitylist.Add(new orderProductDTO() { product_Id = ProductID, Quantity = Quantaty });
                         totalPrice += total;
-                      
+
                     }
                     else
                     {
 
                         // ProductIDlist.Remove(ProductID);
-                       var item = ProductIdWithQuantitylist.FirstOrDefault(c => c.product_Id == ProductID && c.Quantity == Quantaty);
+                        var item = ProductIdWithQuantitylist.FirstOrDefault(c => c.product_Id == ProductID && c.Quantity == Quantaty);
                         ProductIdWithQuantitylist.Remove(item);
-                         totalPrice -= total;
-                      
+                        totalPrice -= total;
+
                     }
                     OrderTotalprice.Text = totalPrice.ToString();
                 }
@@ -237,7 +237,7 @@ namespace Presentation.User_Role
         private void OrderAll_Click(object sender, EventArgs e)
         {
             var Result = MessageBox.Show($"Are you sure From this order with Total price{totalPrice.ToString()} ", "Order Confirm", MessageBoxButtons.YesNo);
-            
+
             if (Result == DialogResult.Yes)
             {
                 try
@@ -248,16 +248,16 @@ namespace Presentation.User_Role
                         OrderDate = DateTime.Now,
                         OrderStatus = OrderStatus.processing,
                         totalprice = (decimal)totalPrice,
-                        User_ID= UserCurrenID,
-                    
-                        
+                        User_ID = UserCurrenID,
+
+
                     };
 
                     var inctanceOrder = orderService.addOrder(newOrder);
                     // function to take list of product id's and add it list to order 
                     orderService.AddListOfProducts(ProductIdWithQuantitylist, inctanceOrder.Id);
                     // function to take list of product id's and Delete the products from product cart item
-                    cartService.DeleteListOfProductFromCart(ProductIdWithQuantitylist.Select(c=>c.product_Id).ToList());
+                    cartService.DeleteListOfProductFromCart(ProductIdWithQuantitylist.Select(c => c.product_Id).ToList());
                 }
                 catch (Exception ex)
                 {
@@ -265,8 +265,25 @@ namespace Presentation.User_Role
 
                 }
             }
-            
-           
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                LoadTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+
         }
     }
 }
+
+
