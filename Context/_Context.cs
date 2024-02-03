@@ -7,6 +7,7 @@ namespace Context
     {
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+             //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=TECHNOSHOPE;Integrated Security=True;Encrypt=False");
             optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=TECHNOSHOPE;Integrated Security=True;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true");
         }
        

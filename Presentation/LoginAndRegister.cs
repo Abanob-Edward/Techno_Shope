@@ -150,7 +150,7 @@ namespace Presentation
             {
 
                 label_log_suc.Text = ("Login successful!");
-                label_error_mas_log.Text = (" ");
+                label_error_mas_log.Text = ("");
                 //  Logic to handle  Role
                 if (userService.GetUserRole(user) == "admin")
                 {
@@ -175,7 +175,7 @@ namespace Presentation
             else
             {
                 label_error_mas_log.Text = ("Login failed. Please check the username and password.");
-                label_log_suc.Text = (" ");
+                label_log_suc.Text = ("");
             }
         }
 

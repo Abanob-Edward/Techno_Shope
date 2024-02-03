@@ -28,34 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            label7 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // dataGridView1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe MDL2 Assets", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(168, 165);
-            label1.Name = "label1";
-            label1.Size = new Size(409, 37);
-            label1.TabIndex = 1;
-            label1.Text = "Show the Best Seller Product";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.ButtonFace;
+            dataGridView1.ColumnHeadersHeight = 29;
+            dataGridView1.Location = new Point(88, 170);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(993, 266);
+            dataGridView1.TabIndex = 0;
             // 
-            // BestSellerPanal
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Perpetua Titling MT", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(214, 90, 49);
+            label7.Location = new Point(327, 507);
+            label7.Name = "label7";
+            label7.Size = new Size(370, 33);
+            label7.TabIndex = 17;
+            label7.Text = "Best Seller Products";
+            // 
+            // BestSellerPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            BackColor = Color.FromArgb(57, 62, 70);
+            ClientSize = new Size(1102, 690);
+            Controls.Add(label7);
+            Controls.Add(dataGridView1);
+            ForeColor = Color.FromArgb(57, 62, 70);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "BestSellerPanal";
+            Name = "BestSellerPanel";
             Text = "BestSellerPanal";
+            Load += BestSellerPanel_Load_1;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private DataGridView dataGridView1;
+        private Label label7;
     }
 }

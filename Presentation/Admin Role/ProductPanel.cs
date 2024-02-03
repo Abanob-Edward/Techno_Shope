@@ -50,7 +50,7 @@ namespace Presentation
                 p.Title,
                 p.Code,
                 p.Image,
-               // AdmineName = p.User != null ? p.User.FirstName : "No Admin",
+                // AdmineName = p.User != null ? p.User.FirstName : "No Admin",
                 CategoryName = p.category != null ? p.category.Name : "No Category"
             }).ToList();
 
@@ -161,7 +161,10 @@ namespace Presentation
             }
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 
