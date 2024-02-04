@@ -60,21 +60,12 @@ namespace Presentation.User_Role
 
         private void uHomePanel_Load(object sender, EventArgs e)
         {
-            /*.Select(p => new
-            {
-                ID = p.Id,
-                Name = p.Name,
-                Price = p.Price,
-                Image = p.Image
-            })*/
 
            
             var listOfproduct = ProductService.GetAlltech();
             // ID  -  Name   - price    - image --   add to cart 
 
-            // ProductsDGV.Columns.Add("Picture", Type.GetType(""));
-
-
+ 
 
 
             ProductsDGV.ColumnCount = 3;
@@ -120,9 +111,9 @@ namespace Presentation.User_Role
                 catch (Exception)
                 {
 
-                    Bitmap bmp = new Bitmap(@"C:\Users\HP\Desktop\project\Techno_Shope\Presentation\images\" + "Defult.jpeg");
-                    ((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
-                    row++;
+                    //Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + "Defult.jpeg");
+                    //((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
+                    //row++;
                 }
 
               
@@ -132,8 +123,6 @@ namespace Presentation.User_Role
             addToCart.Text = "Add to Cart";
             addToCart.Name = "addToCartBtn";
             addToCart.HeaderText = "Cart Item";
-          
-
             addToCart.UseColumnTextForButtonValue = true;
             ProductsDGV.Columns.Add( addToCart);
            

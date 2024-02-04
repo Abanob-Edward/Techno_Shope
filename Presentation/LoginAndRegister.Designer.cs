@@ -445,8 +445,8 @@ namespace Presentation
             Controls.Add(pictureBox1_close);
             Controls.Add(button_GoTo_Register);
             Controls.Add(button_GoToLogin);
-            Controls.Add(panel_register);
             Controls.Add(panel_login);
+            Controls.Add(panel_register);
             ForeColor = Color.FromArgb(34, 40, 49);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 4, 4, 4);

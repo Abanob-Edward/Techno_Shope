@@ -10,17 +10,12 @@ namespace Model.Models
     public class ProductInOrder
     {
 
-
-
         public int ID { get; set; }
         public int Quantity { get; set; }
         [ForeignKey("item")]
         public int? item_ID { get; set; }
         public Item? item { get; set; }
-        /*
-        public string? Color { get; set; }
-        public float? Inch { get; set; }
-        public int? Storge { get; set; }*/
+        
         [ForeignKey("order")]
         public int OrderNumber { get; set; }
         public Order order { get; set; }
