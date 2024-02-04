@@ -23,7 +23,7 @@ namespace Presentation
 
 
 
-            Application.Run(new LoginAndRegister());
+           Application.Run(new LoginAndRegister());
             //Application.Run(new CartItemPanel());
           //Application.Run(new UserPanel());
 

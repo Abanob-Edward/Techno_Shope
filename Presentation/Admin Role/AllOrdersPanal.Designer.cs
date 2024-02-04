@@ -37,9 +37,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(-1, -2);
+            label1.ForeColor = Color.Coral;
+            label1.Location = new Point(516, 35);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(209, 38);
+            label1.Size = new Size(245, 45);
             label1.TabIndex = 0;
             label1.Text = "View All orders";
             // 
@@ -47,20 +49,22 @@
             // 
             AllOrdersDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AllOrdersDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AllOrdersDGV.Location = new Point(35, 83);
+            AllOrdersDGV.Location = new Point(44, 104);
+            AllOrdersDGV.Margin = new Padding(4, 4, 4, 4);
             AllOrdersDGV.Name = "AllOrdersDGV";
             AllOrdersDGV.RowHeadersWidth = 51;
-            AllOrdersDGV.Size = new Size(1019, 563);
+            AllOrdersDGV.Size = new Size(1274, 704);
             AllOrdersDGV.TabIndex = 1;
             // 
             // AllOrdersPanal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1102, 690);
+            ClientSize = new Size(1378, 862);
             Controls.Add(AllOrdersDGV);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "AllOrdersPanal";
             Text = "AllOrdersPanal";
             ((System.ComponentModel.ISupportInitialize)AllOrdersDGV).EndInit();

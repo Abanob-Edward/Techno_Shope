@@ -60,7 +60,7 @@
             CartItemDGV.Margin = new Padding(4);
             CartItemDGV.Name = "CartItemDGV";
             CartItemDGV.RowHeadersWidth = 51;
-            CartItemDGV.Size = new Size(1409, 600);
+            CartItemDGV.Size = new Size(1409, 614);
             CartItemDGV.TabIndex = 1;
             CartItemDGV.CellContentClick += CartItemDGV_CellContentClick;
             // 
@@ -88,7 +88,7 @@
             button2.Name = "button2";
             button2.Size = new Size(191, 72);
             button2.TabIndex = 3;
-            button2.Text = "previous";
+            button2.Text = "Pervious";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -122,19 +122,23 @@
             // OrderTotalprice
             // 
             OrderTotalprice.AutoSize = true;
-            OrderTotalprice.Location = new Point(490, 831);
+            OrderTotalprice.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            OrderTotalprice.ForeColor = Color.FromArgb(33, 42, 81);
+            OrderTotalprice.Location = new Point(534, 826);
             OrderTotalprice.Margin = new Padding(4, 0, 4, 0);
             OrderTotalprice.Name = "OrderTotalprice";
-            OrderTotalprice.Size = new Size(0, 25);
+            OrderTotalprice.Size = new Size(0, 32);
             OrderTotalprice.TabIndex = 6;
             // 
             // Reload
             // 
-            Reload.Location = new Point(967, 586);
+            Reload.Font = new Font("Papyrus", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Reload.ForeColor = Color.FromArgb(33, 42, 81);
+            Reload.Location = new Point(598, 576);
             Reload.Name = "Reload";
-            Reload.Size = new Size(94, 29);
+            Reload.Size = new Size(148, 48);
             Reload.TabIndex = 7;
-            Reload.Text = "R";
+            Reload.Text = "Reload";
             Reload.UseVisualStyleBackColor = true;
             Reload.Click += Reload_Click;
             // 
@@ -143,7 +147,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(189, 172, 148);
-            ClientSize = new Size(1201, 736);
+            ClientSize = new Size(1201, 916);
             Controls.Add(Reload);
             Controls.Add(OrderTotalprice);
             Controls.Add(label2);

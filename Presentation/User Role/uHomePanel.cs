@@ -120,7 +120,7 @@ namespace Presentation.User_Role
                 catch (Exception)
                 {
 
-                    Bitmap bmp = new Bitmap(@"D:\ITI Intake24 3 months\Visual C#\lap\onion architecture Day12\Presentation\images\" + "Defult.jpeg");
+                    Bitmap bmp = new Bitmap(@"C:\Users\HP\Desktop\project\Techno_Shope\Presentation\images\" + "Defult.jpeg");
                     ((DataGridViewImageCell)ProductsDGV.Rows[row].Cells[3]).Value = bmp;
                     row++;
                 }

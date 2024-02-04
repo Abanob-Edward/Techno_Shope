@@ -124,7 +124,7 @@ namespace Presentation.User_Role
             DeleteFromCart.HeaderText = "Delete Details";
             DeleteFromCart.UseColumnTextForButtonValue = true;
             CartItemDGV.Columns.Add(DeleteFromCart);
-        
+
 
         }
 
@@ -190,7 +190,7 @@ namespace Presentation.User_Role
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
+
         List<orderProductDTO> ProductIdWithQuantitylist = new List<orderProductDTO>();
         private void CartItemDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -301,5 +301,7 @@ namespace Presentation.User_Role
         }
     }
 }
+
+
 
 
